@@ -1,5 +1,5 @@
 Fitter report for fyp_max10_tse_top
-Sat Feb 16 15:42:34 2019
+Sat Feb 16 16:21:34 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -74,7 +74,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Sat Feb 16 15:42:34 2019       ;
+; Fitter Status                      ; Successful - Sat Feb 16 16:21:34 2019       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; fyp_max10_tse_top                           ;
 ; Top-level Entity Name              ; fyp_max10_tse_top                           ;
@@ -158,21 +158,15 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 8           ;
-; Maximum allowed            ; 8           ;
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
 ;                            ;             ;
-; Average used               ; 1.52        ;
-; Maximum used               ; 8           ;
+; Average used               ; 1.14        ;
+; Maximum used               ; 2           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;  10.7%      ;
-;     Processor 3            ;   8.4%      ;
-;     Processor 4            ;   7.2%      ;
-;     Processor 5            ;   6.6%      ;
-;     Processor 6            ;   6.4%      ;
-;     Processor 7            ;   6.2%      ;
-;     Processor 8            ;   6.1%      ;
+;     Processor 2            ;  14.3%      ;
 +----------------------------+-------------+
 
 
@@ -793,7 +787,7 @@ refer to the applicable agreement for further details.
 +--------------+
 ; Pin-Out File ;
 +--------------+
-The pin-out file can be found in C:/intelFPGA_lite/18.1/fyp_max10_tse/output_files/fyp_max10_tse_top.pin.
+The pin-out file can be found in C:/intelFPGA_lite/18.1/max10_packet_gen/output_files/fyp_max10_tse_top.pin.
 
 
 +---------------------------------------------------------------------------+
@@ -3319,13 +3313,13 @@ Note: This table only shows the top 100 path(s) that have the largest delay adde
 +-----------------+
 ; Fitter Messages ;
 +-----------------+
-Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (119006): Selected device 10M50DAF484C6GES for design "fyp_max10_tse_top"
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
-Info (15535): Implemented PLL "fyp_eth_pll:fyp_eth_pll1|altpll:altpll_component|fyp_eth_pll_altpll:auto_generated|pll1" as MAX 10 PLL type File: C:/intelFPGA_lite/18.1/fyp_max10_tse/db/fyp_eth_pll_altpll.v Line: 46
-    Info (15099): Implementing clock multiplication of 5, clock division of 2, and phase shift of 0 degrees (0 ps) for fyp_eth_pll:fyp_eth_pll1|altpll:altpll_component|fyp_eth_pll_altpll:auto_generated|wire_pll1_clk[0] port File: C:/intelFPGA_lite/18.1/fyp_max10_tse/db/fyp_eth_pll_altpll.v Line: 46
-    Info (15099): Implementing clock multiplication of 5, clock division of 2, and phase shift of 11 degrees (250 ps) for fyp_eth_pll:fyp_eth_pll1|altpll:altpll_component|fyp_eth_pll_altpll:auto_generated|wire_pll1_clk[1] port File: C:/intelFPGA_lite/18.1/fyp_max10_tse/db/fyp_eth_pll_altpll.v Line: 46
+Info (15535): Implemented PLL "fyp_eth_pll:fyp_eth_pll1|altpll:altpll_component|fyp_eth_pll_altpll:auto_generated|pll1" as MAX 10 PLL type File: C:/intelFPGA_lite/18.1/max10_packet_gen/db/fyp_eth_pll_altpll.v Line: 46
+    Info (15099): Implementing clock multiplication of 5, clock division of 2, and phase shift of 0 degrees (0 ps) for fyp_eth_pll:fyp_eth_pll1|altpll:altpll_component|fyp_eth_pll_altpll:auto_generated|wire_pll1_clk[0] port File: C:/intelFPGA_lite/18.1/max10_packet_gen/db/fyp_eth_pll_altpll.v Line: 46
+    Info (15099): Implementing clock multiplication of 5, clock division of 2, and phase shift of 11 degrees (250 ps) for fyp_eth_pll:fyp_eth_pll1|altpll:altpll_component|fyp_eth_pll_altpll:auto_generated|wire_pll1_clk[1] port File: C:/intelFPGA_lite/18.1/max10_packet_gen/db/fyp_eth_pll_altpll.v Line: 46
 Warning (18550): Found RAM instances implemented as ROM because the write logic is disabled. One instance is listed below as an example.
     Info (119043): Atom "fyp_max10_tse_sys:fyp_max10_tse_sys1|fyp_max10_tse_sys_jtag_uart_0:jtag_uart_0|fyp_max10_tse_sys_jtag_uart_0_scfifo_w:the_fyp_max10_tse_sys_jtag_uart_0_scfifo_w|scfifo:wfifo|scfifo_9621:auto_generated|a_dpfifo_bb01:dpfifo|altsyncram_dtn1:FIFOram|ram_block1a7" is instantiated as RAM, but it is actually implemented as ROM function because the write logic is always disabled
 Info (171003): Fitter is performing an Auto Fit compilation, which may decrease Fitter effort to reduce compilation time
@@ -3428,38 +3422,41 @@ Info (332104): Reading SDC File: 'fyp_max10_tse_sys/synthesis/submodules/altera_
 Info (332104): Reading SDC File: 'fyp_max10_tse_sys/synthesis/submodules/altera_avalon_st_jtag_interface.sdc'
 Info (332104): Reading SDC File: 'fyp_max10_tse_sys/synthesis/submodules/altera_eth_tse_mac.sdc'
 Info (332104): Reading SDC File: 'fyp_tse.sdc'
-Warning (332174): Ignored filter at fyp_tse.sdc(12): fyp_clkctrl1|altclkctrl_0|fyp_clkctrl_altclkctrl_0_sub_component|clkctrl1|outclk could not be matched with a pin File: C:/intelFPGA_lite/18.1/fyp_max10_tse/fyp_tse.sdc Line: 12
-Warning (332049): Ignored create_generated_clock at fyp_tse.sdc(12): Argument -source is an empty collection File: C:/intelFPGA_lite/18.1/fyp_max10_tse/fyp_tse.sdc Line: 12
-    Info (332050): create_generated_clock -name gtx_125_clk -source [get_pins {fyp_clkctrl1|altclkctrl_0|fyp_clkctrl_altclkctrl_0_sub_component|clkctrl1|outclk}] -master_clock {clk_125_shift} [get_ports {eneta_gtx_clk}] File: C:/intelFPGA_lite/18.1/fyp_max10_tse/fyp_tse.sdc Line: 12
+Warning (332174): Ignored filter at fyp_tse.sdc(12): fyp_clkctrl1|altclkctrl_0|fyp_clkctrl_altclkctrl_0_sub_component|clkctrl1|outclk could not be matched with a pin File: C:/intelFPGA_lite/18.1/max10_packet_gen/fyp_tse.sdc Line: 12
+Warning (332049): Ignored create_generated_clock at fyp_tse.sdc(12): Argument -source is an empty collection File: C:/intelFPGA_lite/18.1/max10_packet_gen/fyp_tse.sdc Line: 12
+    Info (332050): create_generated_clock -name gtx_125_clk -source [get_pins {fyp_clkctrl1|altclkctrl_0|fyp_clkctrl_altclkctrl_0_sub_component|clkctrl1|outclk}] -master_clock {clk_125_shift} [get_ports {eneta_gtx_clk}] File: C:/intelFPGA_lite/18.1/max10_packet_gen/fyp_tse.sdc Line: 12
 Info (332151): Clock uncertainty is not calculated until you update the timing netlist.
 Info: Output Max Delay = -0.9
 Info: Output Min Delay = -2.7
-Warning (332174): Ignored filter at fyp_tse.sdc(27): gtx_125_clk could not be matched with a clock File: C:/intelFPGA_lite/18.1/fyp_max10_tse/fyp_tse.sdc Line: 27
-Warning (332049): Ignored set_output_delay at fyp_tse.sdc(27): Argument -clock is not an object ID File: C:/intelFPGA_lite/18.1/fyp_max10_tse/fyp_tse.sdc Line: 27
-    Info (332050): set_output_delay -clock gtx_125_clk -max $output_max_delay [get_ports "eneta_tx_d* eneta_tx_en"] File: C:/intelFPGA_lite/18.1/fyp_max10_tse/fyp_tse.sdc Line: 27
-Warning (332049): Ignored set_output_delay at fyp_tse.sdc(28): Argument -clock is not an object ID File: C:/intelFPGA_lite/18.1/fyp_max10_tse/fyp_tse.sdc Line: 28
-    Info (332050): set_output_delay -clock gtx_125_clk -max $output_max_delay [get_ports "eneta_tx_d* eneta_tx_en"] -clock_fall -add_delay File: C:/intelFPGA_lite/18.1/fyp_max10_tse/fyp_tse.sdc Line: 28
-Warning (332049): Ignored set_output_delay at fyp_tse.sdc(29): Argument -clock is not an object ID File: C:/intelFPGA_lite/18.1/fyp_max10_tse/fyp_tse.sdc Line: 29
-    Info (332050): set_output_delay -clock gtx_125_clk -min $output_min_delay [get_ports "eneta_tx_d* eneta_tx_en"] -add_delay File: C:/intelFPGA_lite/18.1/fyp_max10_tse/fyp_tse.sdc Line: 29
-Warning (332049): Ignored set_output_delay at fyp_tse.sdc(30): Argument -clock is not an object ID File: C:/intelFPGA_lite/18.1/fyp_max10_tse/fyp_tse.sdc Line: 30
-    Info (332050): set_output_delay -clock gtx_125_clk -min $output_min_delay [get_ports "eneta_tx_d* eneta_tx_en"] -clock_fall -add_delay File: C:/intelFPGA_lite/18.1/fyp_max10_tse/fyp_tse.sdc Line: 30
-Warning (332049): Ignored set_false_path at fyp_tse.sdc(35): Argument <to> is an empty collection File: C:/intelFPGA_lite/18.1/fyp_max10_tse/fyp_tse.sdc Line: 35
-    Info (332050): set_false_path -fall_from [get_clocks clk_125] -rise_to [get_clocks gtx_125_clk] -setup File: C:/intelFPGA_lite/18.1/fyp_max10_tse/fyp_tse.sdc Line: 35
-Warning (332049): Ignored set_false_path at fyp_tse.sdc(36): Argument <to> is an empty collection File: C:/intelFPGA_lite/18.1/fyp_max10_tse/fyp_tse.sdc Line: 36
-    Info (332050): set_false_path -rise_from [get_clocks clk_125] -fall_to [get_clocks gtx_125_clk] -setup File: C:/intelFPGA_lite/18.1/fyp_max10_tse/fyp_tse.sdc Line: 36
-Warning (332049): Ignored set_false_path at fyp_tse.sdc(37): Argument <to> is an empty collection File: C:/intelFPGA_lite/18.1/fyp_max10_tse/fyp_tse.sdc Line: 37
-    Info (332050): set_false_path -fall_from [get_clocks clk_125] -fall_to [get_clocks gtx_125_clk] -hold File: C:/intelFPGA_lite/18.1/fyp_max10_tse/fyp_tse.sdc Line: 37
-Warning (332049): Ignored set_false_path at fyp_tse.sdc(38): Argument <to> is an empty collection File: C:/intelFPGA_lite/18.1/fyp_max10_tse/fyp_tse.sdc Line: 38
-    Info (332050): set_false_path -rise_from [get_clocks clk_125] -rise_to [get_clocks gtx_125_clk] -hold File: C:/intelFPGA_lite/18.1/fyp_max10_tse/fyp_tse.sdc Line: 38
+Warning (332174): Ignored filter at fyp_tse.sdc(27): gtx_125_clk could not be matched with a clock File: C:/intelFPGA_lite/18.1/max10_packet_gen/fyp_tse.sdc Line: 27
+Warning (332049): Ignored set_output_delay at fyp_tse.sdc(27): Argument -clock is not an object ID File: C:/intelFPGA_lite/18.1/max10_packet_gen/fyp_tse.sdc Line: 27
+    Info (332050): set_output_delay -clock gtx_125_clk -max $output_max_delay [get_ports "eneta_tx_d* eneta_tx_en"] File: C:/intelFPGA_lite/18.1/max10_packet_gen/fyp_tse.sdc Line: 27
+Warning (332049): Ignored set_output_delay at fyp_tse.sdc(28): Argument -clock is not an object ID File: C:/intelFPGA_lite/18.1/max10_packet_gen/fyp_tse.sdc Line: 28
+    Info (332050): set_output_delay -clock gtx_125_clk -max $output_max_delay [get_ports "eneta_tx_d* eneta_tx_en"] -clock_fall -add_delay File: C:/intelFPGA_lite/18.1/max10_packet_gen/fyp_tse.sdc Line: 28
+Warning (332049): Ignored set_output_delay at fyp_tse.sdc(29): Argument -clock is not an object ID File: C:/intelFPGA_lite/18.1/max10_packet_gen/fyp_tse.sdc Line: 29
+    Info (332050): set_output_delay -clock gtx_125_clk -min $output_min_delay [get_ports "eneta_tx_d* eneta_tx_en"] -add_delay File: C:/intelFPGA_lite/18.1/max10_packet_gen/fyp_tse.sdc Line: 29
+Warning (332049): Ignored set_output_delay at fyp_tse.sdc(30): Argument -clock is not an object ID File: C:/intelFPGA_lite/18.1/max10_packet_gen/fyp_tse.sdc Line: 30
+    Info (332050): set_output_delay -clock gtx_125_clk -min $output_min_delay [get_ports "eneta_tx_d* eneta_tx_en"] -clock_fall -add_delay File: C:/intelFPGA_lite/18.1/max10_packet_gen/fyp_tse.sdc Line: 30
+Warning (332049): Ignored set_false_path at fyp_tse.sdc(35): Argument <to> is an empty collection File: C:/intelFPGA_lite/18.1/max10_packet_gen/fyp_tse.sdc Line: 35
+    Info (332050): set_false_path -fall_from [get_clocks clk_125] -rise_to [get_clocks gtx_125_clk] -setup File: C:/intelFPGA_lite/18.1/max10_packet_gen/fyp_tse.sdc Line: 35
+Warning (332049): Ignored set_false_path at fyp_tse.sdc(36): Argument <to> is an empty collection File: C:/intelFPGA_lite/18.1/max10_packet_gen/fyp_tse.sdc Line: 36
+    Info (332050): set_false_path -rise_from [get_clocks clk_125] -fall_to [get_clocks gtx_125_clk] -setup File: C:/intelFPGA_lite/18.1/max10_packet_gen/fyp_tse.sdc Line: 36
+Warning (332049): Ignored set_false_path at fyp_tse.sdc(37): Argument <to> is an empty collection File: C:/intelFPGA_lite/18.1/max10_packet_gen/fyp_tse.sdc Line: 37
+    Info (332050): set_false_path -fall_from [get_clocks clk_125] -fall_to [get_clocks gtx_125_clk] -hold File: C:/intelFPGA_lite/18.1/max10_packet_gen/fyp_tse.sdc Line: 37
+Warning (332049): Ignored set_false_path at fyp_tse.sdc(38): Argument <to> is an empty collection File: C:/intelFPGA_lite/18.1/max10_packet_gen/fyp_tse.sdc Line: 38
+    Info (332050): set_false_path -rise_from [get_clocks clk_125] -rise_to [get_clocks gtx_125_clk] -hold File: C:/intelFPGA_lite/18.1/max10_packet_gen/fyp_tse.sdc Line: 38
 Info: Input Max Delay for 125MHz domain= 0.8
 Info: Input Min Delay for 125MHz domain= -0.8
-Warning (332174): Ignored filter at fyp_tse.sdc(64): gtx_125_clk could not be matched with a clock File: C:/intelFPGA_lite/18.1/fyp_max10_tse/fyp_tse.sdc Line: 64
-Warning (332174): Ignored filter at fyp_tse.sdc(66): *sld_signaltap* could not be matched with a register File: C:/intelFPGA_lite/18.1/fyp_max10_tse/fyp_tse.sdc Line: 66
-Warning (332049): Ignored set_false_path at fyp_tse.sdc(66): Argument <to> is an empty collection File: C:/intelFPGA_lite/18.1/fyp_max10_tse/fyp_tse.sdc Line: 66
-    Info (332050): set_false_path -to [get_registers *sld_signaltap*] File: C:/intelFPGA_lite/18.1/fyp_max10_tse/fyp_tse.sdc Line: 66
-Info (332104): Reading SDC File: 'c:/intelfpga_lite/18.1/fyp_max10_tse/db/ip/fyp_max10_tse_sys/submodules/altera_avalon_st_jtag_interface.sdc'
-Info (332104): Reading SDC File: 'c:/intelfpga_lite/18.1/fyp_max10_tse/db/ip/fyp_max10_tse_sys/submodules/altera_eth_tse_mac.sdc'
-Info (332104): Reading SDC File: 'c:/intelfpga_lite/18.1/fyp_max10_tse/db/ip/fyp_max10_tse_sys/submodules/altera_reset_controller.sdc'
+Warning (332174): Ignored filter at fyp_tse.sdc(64): gtx_125_clk could not be matched with a clock File: C:/intelFPGA_lite/18.1/max10_packet_gen/fyp_tse.sdc Line: 64
+Warning (332174): Ignored filter at fyp_tse.sdc(66): *sld_signaltap* could not be matched with a register File: C:/intelFPGA_lite/18.1/max10_packet_gen/fyp_tse.sdc Line: 66
+Warning (332049): Ignored set_false_path at fyp_tse.sdc(66): Argument <to> is an empty collection File: C:/intelFPGA_lite/18.1/max10_packet_gen/fyp_tse.sdc Line: 66
+    Info (332050): set_false_path -to [get_registers *sld_signaltap*] File: C:/intelFPGA_lite/18.1/max10_packet_gen/fyp_tse.sdc Line: 66
+Info (332104): Reading SDC File: 'c:/intelfpga_lite/18.1/max10_packet_gen/db/ip/fyp_max10_tse_sys/submodules/altera_avalon_st_jtag_interface.sdc'
+Info (332104): Reading SDC File: 'c:/intelfpga_lite/18.1/max10_packet_gen/db/ip/fyp_max10_tse_sys/submodules/altera_eth_tse_mac.sdc'
+Info (332104): Reading SDC File: 'c:/intelfpga_lite/18.1/max10_packet_gen/db/ip/fyp_max10_tse_sys/submodules/altera_reset_controller.sdc'
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'c:/intelfpga_lite/18.1/fyp_max10_tse/db/ip/fyp_max10_tse_sys/submodules/altera_avalon_st_jtag_interface.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'c:/intelfpga_lite/18.1/fyp_max10_tse/db/ip/fyp_max10_tse_sys/submodules/altera_eth_tse_mac.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'c:/intelfpga_lite/18.1/fyp_max10_tse/db/ip/fyp_max10_tse_sys/submodules/altera_reset_controller.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
 Info (332097): The following timing edges are non-unate.  The Timing Analyzer will assume pos-unate behavior for these edges in the clock network.
     Info (332098): Cell: altera_internal_jtag  from: tck  to: tckutap
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
@@ -3473,11 +3470,11 @@ Info (332111): Found 6 clocks
     Info (332111):    8.000 clk_125_shift
     Info (332111):    8.000   rx_clk_125
     Info (332111):    8.000 virtual_clk_125
-Info (176353): Automatically promoted node fyp_eth_pll:fyp_eth_pll1|altpll:altpll_component|fyp_eth_pll_altpll:auto_generated|wire_pll1_clk[0] (placed in counter C0 of PLL_1) File: C:/intelFPGA_lite/18.1/fyp_max10_tse/db/fyp_eth_pll_altpll.v Line: 80
+Info (176353): Automatically promoted node fyp_eth_pll:fyp_eth_pll1|altpll:altpll_component|fyp_eth_pll_altpll:auto_generated|wire_pll1_clk[0] (placed in counter C0 of PLL_1) File: C:/intelFPGA_lite/18.1/max10_packet_gen/db/fyp_eth_pll_altpll.v Line: 80
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G18
-Info (176353): Automatically promoted node fyp_eth_pll:fyp_eth_pll1|altpll:altpll_component|fyp_eth_pll_altpll:auto_generated|wire_pll1_clk[1] (placed in counter C1 of PLL_1) File: C:/intelFPGA_lite/18.1/fyp_max10_tse/db/fyp_eth_pll_altpll.v Line: 80
+Info (176353): Automatically promoted node fyp_eth_pll:fyp_eth_pll1|altpll:altpll_component|fyp_eth_pll_altpll:auto_generated|wire_pll1_clk[1] (placed in counter C1 of PLL_1) File: C:/intelFPGA_lite/18.1/max10_packet_gen/db/fyp_eth_pll_altpll.v Line: 80
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G19
-Info (176353): Automatically promoted node eneta_rx_clk~input (placed in PIN P3 (DPCLK0, DIFFIO_RX_L38n, DIFFOUT_L38n, High_Speed)) File: C:/intelFPGA_lite/18.1/fyp_max10_tse/fyp_max10_tse_top.v Line: 34
+Info (176353): Automatically promoted node eneta_rx_clk~input (placed in PIN P3 (DPCLK0, DIFFIO_RX_L38n, DIFFOUT_L38n, High_Speed)) File: C:/intelFPGA_lite/18.1/max10_packet_gen/fyp_max10_tse_top.v Line: 34
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G2
 Info (176353): Automatically promoted node altera_internal_jtag~TCKUTAP 
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
@@ -3487,19 +3484,19 @@ Info (176353): Automatically promoted node pzdyqx:nabboc|pzdyqx_impl:pzdyqx_impl
         Info (176357): Destination node pzdyqx:nabboc|pzdyqx_impl:pzdyqx_impl_inst|GHVD5181:\cycloneiii_BITP7563_gen_0:cycloneiii_BITP7563_gen_1|JEQQ5299_7~0 File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/pzdyqx.vhd Line: 730
 Info (176353): Automatically promoted node pzdyqx:nabboc|pzdyqx_impl:pzdyqx_impl_inst|GHVD5181:\cycloneiii_BITP7563_gen_0:cycloneiii_BITP7563_gen_1|BITP7563_0  File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/pzdyqx.vhd Line: 829
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
-Info (176353): Automatically promoted node fyp_max10_tse_sys:fyp_max10_tse_sys1|fyp_max10_tse_sys_eth_tse_0:eth_tse_0|altera_eth_tse_mac:i_tse_mac|altera_tse_reset_synchronizer:reset_sync_0|altera_tse_reset_synchronizer_chain_out  File: C:/intelFPGA_lite/18.1/fyp_max10_tse/fyp_max10_tse_sys/synthesis/submodules/altera_tse_reset_synchronizer.v Line: 76
+Info (176353): Automatically promoted node fyp_max10_tse_sys:fyp_max10_tse_sys1|fyp_max10_tse_sys_eth_tse_0:eth_tse_0|altera_eth_tse_mac:i_tse_mac|altera_tse_reset_synchronizer:reset_sync_0|altera_tse_reset_synchronizer_chain_out  File: C:/intelFPGA_lite/18.1/max10_packet_gen/fyp_max10_tse_sys/synthesis/submodules/altera_tse_reset_synchronizer.v Line: 76
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
-Info (176353): Automatically promoted node fyp_max10_tse_sys:fyp_max10_tse_sys1|fyp_max10_tse_sys_eth_tse_0:eth_tse_0|altera_eth_tse_mac:i_tse_mac|altera_tse_reset_synchronizer:reset_sync_1|altera_tse_reset_synchronizer_chain_out  File: C:/intelFPGA_lite/18.1/fyp_max10_tse/fyp_max10_tse_sys/synthesis/submodules/altera_tse_reset_synchronizer.v Line: 76
+Info (176353): Automatically promoted node fyp_max10_tse_sys:fyp_max10_tse_sys1|fyp_max10_tse_sys_eth_tse_0:eth_tse_0|altera_eth_tse_mac:i_tse_mac|altera_tse_reset_synchronizer:reset_sync_1|altera_tse_reset_synchronizer_chain_out  File: C:/intelFPGA_lite/18.1/max10_packet_gen/fyp_max10_tse_sys/synthesis/submodules/altera_tse_reset_synchronizer.v Line: 76
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
-Info (176353): Automatically promoted node fyp_max10_tse_sys:fyp_max10_tse_sys1|fyp_max10_tse_sys_eth_tse_0:eth_tse_0|altera_eth_tse_mac:i_tse_mac|altera_tse_reset_synchronizer:reset_sync_4|altera_tse_reset_synchronizer_chain_out  File: C:/intelFPGA_lite/18.1/fyp_max10_tse/fyp_max10_tse_sys/synthesis/submodules/altera_tse_reset_synchronizer.v Line: 76
+Info (176353): Automatically promoted node fyp_max10_tse_sys:fyp_max10_tse_sys1|fyp_max10_tse_sys_eth_tse_0:eth_tse_0|altera_eth_tse_mac:i_tse_mac|altera_tse_reset_synchronizer:reset_sync_4|altera_tse_reset_synchronizer_chain_out  File: C:/intelFPGA_lite/18.1/max10_packet_gen/fyp_max10_tse_sys/synthesis/submodules/altera_tse_reset_synchronizer.v Line: 76
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
-Info (176353): Automatically promoted node fyp_max10_tse_sys:fyp_max10_tse_sys1|fyp_max10_tse_sys_master_0:master_0|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1|altera_reset_synchronizer_int_chain_out  File: C:/intelFPGA_lite/18.1/fyp_max10_tse/fyp_max10_tse_sys/synthesis/submodules/altera_reset_synchronizer.v Line: 62
+Info (176353): Automatically promoted node fyp_max10_tse_sys:fyp_max10_tse_sys1|fyp_max10_tse_sys_master_0:master_0|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1|altera_reset_synchronizer_int_chain_out  File: C:/intelFPGA_lite/18.1/max10_packet_gen/fyp_max10_tse_sys/synthesis/submodules/altera_reset_synchronizer.v Line: 62
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
     Info (176356): Following destination nodes may be non-global or may not use global or regional clocks
         Info (176357): Destination node fyp_max10_tse_sys:fyp_max10_tse_sys1|fyp_max10_tse_sys_master_0:master_0|altera_avalon_st_jtag_interface:jtag_phy_embedded_in_jtag_master|altera_jtag_dc_streaming:normal.jtag_dc_streaming|altera_jtag_streaming:jtag_streaming|altera_std_synchronizer:reset_to_sample_synchronizer|din_s1 File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altera_std_synchronizer.v Line: 45
-Info (176353): Automatically promoted node fyp_max10_tse_sys:fyp_max10_tse_sys1|fyp_max10_tse_sys_eth_tse_0:eth_tse_0|altera_eth_tse_mac:i_tse_mac|altera_tse_reset_synchronizer:reset_sync_3|altera_tse_reset_synchronizer_chain_out  File: C:/intelFPGA_lite/18.1/fyp_max10_tse/fyp_max10_tse_sys/synthesis/submodules/altera_tse_reset_synchronizer.v Line: 76
+Info (176353): Automatically promoted node fyp_max10_tse_sys:fyp_max10_tse_sys1|fyp_max10_tse_sys_eth_tse_0:eth_tse_0|altera_eth_tse_mac:i_tse_mac|altera_tse_reset_synchronizer:reset_sync_3|altera_tse_reset_synchronizer_chain_out  File: C:/intelFPGA_lite/18.1/max10_packet_gen/fyp_max10_tse_sys/synthesis/submodules/altera_tse_reset_synchronizer.v Line: 76
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
-Info (176353): Automatically promoted node fyp_max10_tse_sys:fyp_max10_tse_sys1|fyp_max10_tse_sys_eth_tse_0:eth_tse_0|altera_eth_tse_mac:i_tse_mac|altera_tse_reset_synchronizer:reset_sync_2|altera_tse_reset_synchronizer_chain_out  File: C:/intelFPGA_lite/18.1/fyp_max10_tse/fyp_max10_tse_sys/synthesis/submodules/altera_tse_reset_synchronizer.v Line: 76
+Info (176353): Automatically promoted node fyp_max10_tse_sys:fyp_max10_tse_sys1|fyp_max10_tse_sys_eth_tse_0:eth_tse_0|altera_eth_tse_mac:i_tse_mac|altera_tse_reset_synchronizer:reset_sync_2|altera_tse_reset_synchronizer_chain_out  File: C:/intelFPGA_lite/18.1/max10_packet_gen/fyp_max10_tse_sys/synthesis/submodules/altera_tse_reset_synchronizer.v Line: 76
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
 Info: Output Max Delay = -0.9
 Info: Output Min Delay = -2.7
@@ -3508,7 +3505,7 @@ Info: Input Min Delay for 125MHz domain= -0.8
 Info (176233): Starting register packing
 Info (176235): Finished register packing
     Extra Info (176218): Packed 10 registers into blocks of type Block RAM
-Warning (15064): PLL "fyp_eth_pll:fyp_eth_pll1|altpll:altpll_component|fyp_eth_pll_altpll:auto_generated|pll1" output port clk[1] feeds output pin "eneta_gtx_clk~output" via non-dedicated routing -- jitter performance depends on switching rate of other design elements. Use PLL dedicated clock outputs to ensure jitter performance File: C:/intelFPGA_lite/18.1/fyp_max10_tse/db/fyp_eth_pll_altpll.v Line: 46
+Warning (15064): PLL "fyp_eth_pll:fyp_eth_pll1|altpll:altpll_component|fyp_eth_pll_altpll:auto_generated|pll1" output port clk[1] feeds output pin "eneta_gtx_clk~output" via non-dedicated routing -- jitter performance depends on switching rate of other design elements. Use PLL dedicated clock outputs to ensure jitter performance File: C:/intelFPGA_lite/18.1/max10_packet_gen/db/fyp_eth_pll_altpll.v Line: 46
 Warning (15705): Ignored locations or region assignments to the following nodes
     Warning (15706): Node "adc1in[1]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "adc1in[2]" is assigned to location or region, but does not exist in design
@@ -3784,17 +3781,17 @@ Warning (15705): Ignored locations or region assignments to the following nodes
     Warning (15706): Node "user_dipsw[2]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "user_dipsw[3]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "user_dipsw[4]" is assigned to location or region, but does not exist in design
-Info (171121): Fitter preparation operations ending: elapsed time is 00:00:13
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:12
 Info (14896): Fitter has disabled Advanced Physical Optimization because it is not supported for the current family.
 Info: Output Max Delay = -0.9
 Info: Output Min Delay = -2.7
 Info: Input Max Delay for 125MHz domain= 0.8
 Info: Input Min Delay for 125MHz domain= -0.8
 Info (170189): Fitter placement preparation operations beginning
-Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:03
+Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:05
 Info (170191): Fitter placement operations beginning
 Info (170137): Fitter placement was successful
-Info (170192): Fitter placement operations ending: elapsed time is 00:00:24
+Info (170192): Fitter placement operations ending: elapsed time is 00:00:29
 Info: Output Max Delay = -0.9
 Info: Output Min Delay = -2.7
 Info: Input Max Delay for 125MHz domain= 0.8
@@ -3805,8 +3802,8 @@ Info (170195): Router estimated average interconnect usage is 3% of the availabl
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
     Info (170200): Optimizations that may affect the design's timing were skipped
-Info (170194): Fitter routing operations ending: elapsed time is 00:00:14
-Info (11888): Total time spent on timing analysis during the Fitter is 18.57 seconds.
+Info (170194): Fitter routing operations ending: elapsed time is 00:00:16
+Info (11888): Total time spent on timing analysis during the Fitter is 17.83 seconds.
 Info (334003): Started post-fitting delay annotation
 Warning (334000): Timing characteristics of device 10M50DAF484C6GES are preliminary
 Info (334004): Delay annotation completed successfully
@@ -3817,22 +3814,22 @@ Info: Output Max Delay = -0.9
 Info: Output Min Delay = -2.7
 Info: Input Max Delay for 125MHz domain= 0.8
 Info: Input Min Delay for 125MHz domain= -0.8
-Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:09
+Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:15
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
 Warning (169177): 1 pins must meet Intel FPGA requirements for 3.3-, 3.0-, and 2.5-V interfaces. For more information, refer to AN 447: Interfacing MAX 10 Devices with 3.3/3.0/2.5-V LVTTL/LVCMOS I/O Systems.
-    Info (169178): Pin fpga_resetn uses I/O standard 3.3-V LVCMOS at D9 File: C:/intelFPGA_lite/18.1/fyp_max10_tse/fyp_max10_tse_top.v Line: 31
+    Info (169178): Pin fpga_resetn uses I/O standard 3.3-V LVCMOS at D9 File: C:/intelFPGA_lite/18.1/max10_packet_gen/fyp_max10_tse_top.v Line: 31
 Warning (169202): Inconsistent VCCIO across multiple banks of configuration pins. The configuration pins are contained in 2 banks in 'Internal Configuration' configuration scheme and there are 2 different VCCIOs.
-Info (144001): Generated suppressed messages file C:/intelFPGA_lite/18.1/fyp_max10_tse/output_files/fyp_max10_tse_top.fit.smsg
-Info: Quartus Prime Fitter was successful. 0 errors, 321 warnings
-    Info: Peak virtual memory: 6154 megabytes
-    Info: Processing ended: Sat Feb 16 15:42:39 2019
-    Info: Elapsed time: 00:01:30
-    Info: Total CPU time (on all processors): 00:02:57
+Info (144001): Generated suppressed messages file C:/intelFPGA_lite/18.1/max10_packet_gen/output_files/fyp_max10_tse_top.fit.smsg
+Info: Quartus Prime Fitter was successful. 0 errors, 324 warnings
+    Info: Peak virtual memory: 5486 megabytes
+    Info: Processing ended: Sat Feb 16 16:21:41 2019
+    Info: Elapsed time: 00:01:44
+    Info: Total CPU time (on all processors): 00:02:15
 
 
 +----------------------------+
 ; Fitter Suppressed Messages ;
 +----------------------------+
-The suppressed messages can be found in C:/intelFPGA_lite/18.1/fyp_max10_tse/output_files/fyp_max10_tse_top.fit.smsg.
+The suppressed messages can be found in C:/intelFPGA_lite/18.1/max10_packet_gen/output_files/fyp_max10_tse_top.fit.smsg.
 
 

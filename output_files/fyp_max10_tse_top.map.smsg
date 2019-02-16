@@ -1,1 +1,1 @@
-Warning (10268): Verilog HDL information at fyp_generator.v(151): always construct contains both blocking and non-blocking assignments File: C:/intelFPGA_lite/18.1/fyp_max10_tse/fyp_generator/fyp_generator.v Line: 151
+Warning (10268): Verilog HDL information at fyp_generator.v(151): always construct contains both blocking and non-blocking assignments File: C:/intelFPGA_lite/18.1/max10_packet_gen/fyp_generator/fyp_generator.v Line: 151

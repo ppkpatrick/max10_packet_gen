@@ -2,8 +2,6 @@ Info: Starting: Create block symbol file (.bsf)
 Info: qsys-generate C:\intelFPGA_lite\18.1\fyp_max10_tse\fyp_max10_tse_sys.qsys --block-symbol-file --output-directory=C:\intelFPGA_lite\18.1\fyp_max10_tse\fyp_max10_tse_sys --family="MAX 10" --part=10M50DAF484C6GES
 Progress: Loading fyp_max10_tse/fyp_max10_tse_sys.qsys
 Progress: Reading input file
-Progress: Adding clk_100 [clock_source 18.1]
-Progress: Parameterizing module clk_100
 Progress: Adding clk_125 [clock_source 18.1]
 Progress: Parameterizing module clk_125
 Progress: Adding eth_tse_0 [altera_eth_tse 18.1]
@@ -12,17 +10,13 @@ Progress: Adding jtag_uart_0 [altera_avalon_jtag_uart 18.1]
 Progress: Parameterizing module jtag_uart_0
 Progress: Adding master_0 [altera_jtag_avalon_master 18.1]
 Progress: Parameterizing module master_0
-Progress: Adding nios2_gen2_0 [altera_nios2_gen2 18.1]
-Progress: Parameterizing module nios2_gen2_0
-Progress: Adding onchip_flash_0 [altera_onchip_flash 18.1]
-Progress: Parameterizing module onchip_flash_0
-Progress: Adding onchip_memory2_0 [altera_avalon_onchip_memory2 18.1]
-Progress: Parameterizing module onchip_memory2_0
 Progress: Building connections
 Progress: Parameterizing connections
 Progress: Validating
 Progress: Done reading input file
 Info: fyp_max10_tse_sys.jtag_uart_0: JTAG UART IP input clock need to be at least double (2x) the operating frequency of JTAG TCK on board
+Warning: fyp_max10_tse_sys.jtag_uart_0: Interrupt sender jtag_uart_0.irq is not connected to an interrupt receiver
+Warning: fyp_max10_tse_sys.jtag_uart_0: jtag_uart_0.avalon_jtag_slave must be connected to an Avalon-MM master
 Info: qsys-generate succeeded.
 Info: Finished: Create block symbol file (.bsf)
 Info: 
@@ -30,8 +24,6 @@ Info: Starting: Create HDL design files for synthesis
 Info: qsys-generate C:\intelFPGA_lite\18.1\fyp_max10_tse\fyp_max10_tse_sys.qsys --synthesis=VERILOG --output-directory=C:\intelFPGA_lite\18.1\fyp_max10_tse\fyp_max10_tse_sys\synthesis --family="MAX 10" --part=10M50DAF484C6GES
 Progress: Loading fyp_max10_tse/fyp_max10_tse_sys.qsys
 Progress: Reading input file
-Progress: Adding clk_100 [clock_source 18.1]
-Progress: Parameterizing module clk_100
 Progress: Adding clk_125 [clock_source 18.1]
 Progress: Parameterizing module clk_125
 Progress: Adding eth_tse_0 [altera_eth_tse 18.1]
@@ -40,45 +32,24 @@ Progress: Adding jtag_uart_0 [altera_avalon_jtag_uart 18.1]
 Progress: Parameterizing module jtag_uart_0
 Progress: Adding master_0 [altera_jtag_avalon_master 18.1]
 Progress: Parameterizing module master_0
-Progress: Adding nios2_gen2_0 [altera_nios2_gen2 18.1]
-Progress: Parameterizing module nios2_gen2_0
-Progress: Adding onchip_flash_0 [altera_onchip_flash 18.1]
-Progress: Parameterizing module onchip_flash_0
-Progress: Adding onchip_memory2_0 [altera_avalon_onchip_memory2 18.1]
-Progress: Parameterizing module onchip_memory2_0
 Progress: Building connections
 Progress: Parameterizing connections
 Progress: Validating
 Progress: Done reading input file
 Info: fyp_max10_tse_sys.jtag_uart_0: JTAG UART IP input clock need to be at least double (2x) the operating frequency of JTAG TCK on board
+Warning: fyp_max10_tse_sys.jtag_uart_0: Interrupt sender jtag_uart_0.irq is not connected to an interrupt receiver
+Warning: fyp_max10_tse_sys.jtag_uart_0: jtag_uart_0.avalon_jtag_slave must be connected to an Avalon-MM master
 Info: fyp_max10_tse_sys: Generating fyp_max10_tse_sys "fyp_max10_tse_sys" for QUARTUS_SYNTH
-Info: Inserting clock-crossing logic between cmd_demux.src2 and cmd_mux_002.sink0
-Info: Inserting clock-crossing logic between cmd_demux.src3 and cmd_mux_003.sink0
-Info: Inserting clock-crossing logic between cmd_demux_001.src0 and cmd_mux_003.sink1
-Info: Inserting clock-crossing logic between rsp_demux_002.src0 and rsp_mux.sink2
-Info: Inserting clock-crossing logic between rsp_demux_003.src0 and rsp_mux.sink3
-Info: Inserting clock-crossing logic between rsp_demux_003.src1 and rsp_mux_001.sink0
+Info: Interconnect is inserted between master master_0.master and slave eth_tse_0.control_port because the master has address signal 32 bit wide, but the slave is 8 bit wide.
+Info: Interconnect is inserted between master master_0.master and slave eth_tse_0.control_port because the master has readdatavalid signal 1 bit wide, but the slave is 0 bit wide.
+Info: Interconnect is inserted between master master_0.master and slave eth_tse_0.control_port because the master has byteenable signal 4 bit wide, but the slave is 0 bit wide.
 Info: eth_tse_0: "fyp_max10_tse_sys" instantiated altera_eth_tse "eth_tse_0"
 Info: jtag_uart_0: Starting RTL generation for module 'fyp_max10_tse_sys_jtag_uart_0'
-Info: jtag_uart_0:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=fyp_max10_tse_sys_jtag_uart_0 --dir=C:/Users/Patrick/AppData/Local/Temp/alt7912_1493926111779510042.dir/0002_jtag_uart_0_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/Patrick/AppData/Local/Temp/alt7912_1493926111779510042.dir/0002_jtag_uart_0_gen//fyp_max10_tse_sys_jtag_uart_0_component_configuration.pl  --do_build_sim=0  ]
+Info: jtag_uart_0:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=fyp_max10_tse_sys_jtag_uart_0 --dir=C:/Users/Patrick/AppData/Local/Temp/alt7943_2701055626944365478.dir/0002_jtag_uart_0_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/Patrick/AppData/Local/Temp/alt7943_2701055626944365478.dir/0002_jtag_uart_0_gen//fyp_max10_tse_sys_jtag_uart_0_component_configuration.pl  --do_build_sim=0  ]
 Info: jtag_uart_0: Done RTL generation for module 'fyp_max10_tse_sys_jtag_uart_0'
 Info: jtag_uart_0: "fyp_max10_tse_sys" instantiated altera_avalon_jtag_uart "jtag_uart_0"
 Info: master_0: "fyp_max10_tse_sys" instantiated altera_jtag_avalon_master "master_0"
-Info: nios2_gen2_0: "fyp_max10_tse_sys" instantiated altera_nios2_gen2 "nios2_gen2_0"
-Info: onchip_flash_0: Generating top-level entity altera_onchip_flash
-Info: onchip_flash_0: "fyp_max10_tse_sys" instantiated altera_onchip_flash "onchip_flash_0"
-Info: onchip_memory2_0: Starting RTL generation for module 'fyp_max10_tse_sys_onchip_memory2_0'
-Info: onchip_memory2_0:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=fyp_max10_tse_sys_onchip_memory2_0 --dir=C:/Users/Patrick/AppData/Local/Temp/alt7912_1493926111779510042.dir/0004_onchip_memory2_0_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/Patrick/AppData/Local/Temp/alt7912_1493926111779510042.dir/0004_onchip_memory2_0_gen//fyp_max10_tse_sys_onchip_memory2_0_component_configuration.pl  --do_build_sim=0  ]
-Info: onchip_memory2_0: Done RTL generation for module 'fyp_max10_tse_sys_onchip_memory2_0'
-Info: onchip_memory2_0: "fyp_max10_tse_sys" instantiated altera_avalon_onchip_memory2 "onchip_memory2_0"
-Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
-Info: avalon_st_adapter_001: Inserting error_adapter: error_adapter_0
-Info: avalon_st_adapter_002: Inserting error_adapter: error_adapter_0
-Info: avalon_st_adapter_003: Inserting error_adapter: error_adapter_0
-Info: avalon_st_adapter_004: Inserting error_adapter: error_adapter_0
-Info: avalon_st_adapter_005: Inserting error_adapter: error_adapter_0
 Info: mm_interconnect_0: "fyp_max10_tse_sys" instantiated altera_mm_interconnect "mm_interconnect_0"
-Info: irq_mapper: "fyp_max10_tse_sys" instantiated altera_irq_mapper "irq_mapper"
 Info: rst_controller: "fyp_max10_tse_sys" instantiated altera_reset_controller "rst_controller"
 Info: i_tse_mac: "eth_tse_0" instantiated altera_eth_tse_mac "i_tse_mac"
 Info: rgmii_in4_0: "eth_tse_0" instantiated altera_gpio_lite "rgmii_in4_0"
@@ -91,53 +62,8 @@ Info: p2b: "master_0" instantiated altera_avalon_st_packets_to_bytes "p2b"
 Info: transacto: "master_0" instantiated altera_avalon_packets_to_master "transacto"
 Info: b2p_adapter: "master_0" instantiated channel_adapter "b2p_adapter"
 Info: p2b_adapter: "master_0" instantiated channel_adapter "p2b_adapter"
-Info: cpu: Starting RTL generation for module 'fyp_max10_tse_sys_nios2_gen2_0_cpu'
-Info: cpu:   Generation command is [exec C:/intelFPGA_lite/18.1/quartus/bin64//eperlcmd.exe -I C:/intelFPGA_lite/18.1/quartus/bin64//perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/cpu_lib -I C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/nios_lib -I C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -I C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -- C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/generate_rtl.epl --name=fyp_max10_tse_sys_nios2_gen2_0_cpu --dir=C:/Users/Patrick/AppData/Local/Temp/alt7912_1493926111779510042.dir/0017_cpu_gen/ --quartus_bindir=C:/intelFPGA_lite/18.1/quartus/bin64/ --verilog --config=C:/Users/Patrick/AppData/Local/Temp/alt7912_1493926111779510042.dir/0017_cpu_gen//fyp_max10_tse_sys_nios2_gen2_0_cpu_processor_configuration.pl  --do_build_sim=0  ]
-Info: cpu: # 2019.01.16 17:31:45 (*) Starting Nios II generation
-Info: cpu: # 2019.01.16 17:31:45 (*)   Checking for plaintext license.
-Info: cpu: # 2019.01.16 17:31:46 (*)   Couldn't query license setup in Quartus directory C:/intelFPGA_lite/18.1/quartus/bin64/
-Info: cpu: # 2019.01.16 17:31:46 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
-Info: cpu: # 2019.01.16 17:31:46 (*)   LM_LICENSE_FILE environment variable is empty
-Info: cpu: # 2019.01.16 17:31:46 (*)   Plaintext license not found.
-Info: cpu: # 2019.01.16 17:31:46 (*)   No license required to generate encrypted Nios II/e.
-Info: cpu: # 2019.01.16 17:31:46 (*)   Elaborating CPU configuration settings
-Info: cpu: # 2019.01.16 17:31:46 (*)   Creating all objects for CPU
-Info: cpu: # 2019.01.16 17:31:48 (*)   Generating RTL from CPU objects
-Info: cpu: # 2019.01.16 17:31:48 (*)   Creating plain-text RTL
-Info: cpu: # 2019.01.16 17:31:49 (*) Done Nios II generation
-Info: cpu: Done RTL generation for module 'fyp_max10_tse_sys_nios2_gen2_0_cpu'
-Info: cpu: "nios2_gen2_0" instantiated altera_nios2_gen2_unit "cpu"
-Info: nios2_gen2_0_data_master_translator: "mm_interconnect_0" instantiated altera_merlin_master_translator "nios2_gen2_0_data_master_translator"
-Info: jtag_uart_0_avalon_jtag_slave_translator: "mm_interconnect_0" instantiated altera_merlin_slave_translator "jtag_uart_0_avalon_jtag_slave_translator"
-Info: nios2_gen2_0_data_master_agent: "mm_interconnect_0" instantiated altera_merlin_master_agent "nios2_gen2_0_data_master_agent"
-Info: jtag_uart_0_avalon_jtag_slave_agent: "mm_interconnect_0" instantiated altera_merlin_slave_agent "jtag_uart_0_avalon_jtag_slave_agent"
-Info: router: "mm_interconnect_0" instantiated altera_merlin_router "router"
-Info: router_001: "mm_interconnect_0" instantiated altera_merlin_router "router_001"
-Info: router_002: "mm_interconnect_0" instantiated altera_merlin_router "router_002"
-Info: router_003: "mm_interconnect_0" instantiated altera_merlin_router "router_003"
-Info: router_004: "mm_interconnect_0" instantiated altera_merlin_router "router_004"
-Info: router_006: "mm_interconnect_0" instantiated altera_merlin_router "router_006"
-Info: cmd_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux"
-Info: cmd_demux_001: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux_001"
-Info: cmd_demux_002: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux_002"
-Info: cmd_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux"
-Info: cmd_mux_001: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux_001"
-Info: Reusing file C:/intelFPGA_lite/18.1/fyp_max10_tse/fyp_max10_tse_sys/synthesis/submodules/altera_merlin_arbitrator.sv
-Info: rsp_demux_001: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux_001"
-Info: rsp_demux_002: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux_002"
-Info: rsp_demux_003: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux_003"
-Info: rsp_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux"
-Info: Reusing file C:/intelFPGA_lite/18.1/fyp_max10_tse/fyp_max10_tse_sys/synthesis/submodules/altera_merlin_arbitrator.sv
-Info: rsp_mux_001: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux_001"
-Info: Reusing file C:/intelFPGA_lite/18.1/fyp_max10_tse/fyp_max10_tse_sys/synthesis/submodules/altera_merlin_arbitrator.sv
-Info: rsp_mux_002: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux_002"
-Info: Reusing file C:/intelFPGA_lite/18.1/fyp_max10_tse/fyp_max10_tse_sys/synthesis/submodules/altera_merlin_arbitrator.sv
-Info: crosser: "mm_interconnect_0" instantiated altera_avalon_st_handshake_clock_crosser "crosser"
-Info: Reusing file C:/intelFPGA_lite/18.1/fyp_max10_tse/fyp_max10_tse_sys/synthesis/submodules/altera_avalon_st_clock_crosser.v
-Info: Reusing file C:/intelFPGA_lite/18.1/fyp_max10_tse/fyp_max10_tse_sys/synthesis/submodules/altera_avalon_st_pipeline_base.v
-Info: Reusing file C:/intelFPGA_lite/18.1/fyp_max10_tse/fyp_max10_tse_sys/synthesis/submodules/altera_std_synchronizer_nocut.v
-Info: avalon_st_adapter: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter"
-Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
-Info: fyp_max10_tse_sys: Done "fyp_max10_tse_sys" with 45 modules, 187 files
+Info: master_0_master_translator: "mm_interconnect_0" instantiated altera_merlin_master_translator "master_0_master_translator"
+Info: eth_tse_0_control_port_translator: "mm_interconnect_0" instantiated altera_merlin_slave_translator "eth_tse_0_control_port_translator"
+Info: fyp_max10_tse_sys: Done "fyp_max10_tse_sys" with 18 modules, 144 files
 Info: qsys-generate succeeded.
 Info: Finished: Create HDL design files for synthesis

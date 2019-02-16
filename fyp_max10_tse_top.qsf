@@ -755,7 +755,6 @@ set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -fall
 set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -rise
 set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -fall
 set_global_assignment -name INTERNAL_FLASH_UPDATE_MODE "SINGLE IMAGE"
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
 set_global_assignment -name VERILOG_FILE fyp_checksums/submodules/axis_adapter.v
 set_global_assignment -name VERILOG_FILE fyp_checksums/submodules/udp_checksum_gen.v
 set_global_assignment -name VERILOG_FILE fyp_checksums/submodules/axis_fifo.v
@@ -769,3 +768,4 @@ set_global_assignment -name QIP_FILE fyp_gpio/fyp_gpio.qip
 set_global_assignment -name SIP_FILE fyp_gpio/fyp_gpio.sip
 set_global_assignment -name VERILOG_FILE fyp_generator/fyp_generator.v
 set_global_assignment -name QIP_FILE fyp_eth_pll/fyp_eth_pll.qip
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
