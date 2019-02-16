@@ -1,0 +1,584 @@
+
+/*
+
+	Patrick Corley - University of Limerick Final Year Project
+	FPGA-implemented Ethernet packet generator 
+
+	Student I.D: 15181383
+	Supervisor: Richard Conway
+	
+	Current file: Packet generator module
+	
+	TODO:
+	
+	1. [DONE] - Implement ethernet frame generation and transmission
+	2. After Ethernet frame generation, implement IP protocol logic
+	3. After IP protocol, implement Layer 4 protocol such as UDP
+	
+*/
+
+
+module fyp_generator(
+
+	// Module inputs 
+	
+	// Avalon-ST receive interface <- MAc (Probably not necessary)
+	
+	input wire			clk,
+	input wire			reset,
+	
+	input wire 			tx_start,
+	input wire 			tx_stop,
+	input wire [31:0] eth_ast_rx_data,                   
+	input	wire			eth_ast_rx_eop,               
+	input wire [5:0] 	eth_ast_rx_err,                     
+	input wire [1:0] 	eth_ast_rx_empty,                    
+	output wire			eth_ast_rx_rdy,                     
+	input wire			eth_ast_rx_sop,             
+	input wire			eth_ast_rx_valid,
+
+	// Module outputs
+	
+	// Avalon ST transmit interface -> MAC
+
+	output wire [31:0]eth_ast_tx_data,
+	output wire			eth_ast_tx_eop,
+	output wire			eth_ast_tx_err,
+	output wire [1:0]	eth_ast_tx_empty,
+	input wire			eth_ast_tx_rdy,
+	output wire			eth_ast_tx_sop,
+	output wire			eth_ast_tx_valid
+	
+
+);
+
+// Data wires driven by UDP module
+
+wire [15:0] udp_src;
+wire [15:0] udp_dst;
+wire [15:0] udp_length;
+wire [15:0] udp_checksum;
+
+//	UDP data field wires
+wire [7:0] udp_tdata;
+
+//	IP Header wires (V4)
+wire [3:0] ip_version;
+wire [3:0] ip_ihl;
+wire [5:0] ip_dscp;
+wire [1:0] ip_ecn;
+wire [15:0] ip_length;
+wire [15:0] ip_id;
+wire [2:0] ip_flags;
+wire [12:0] ip_frag_offset;
+wire [7:0] ip_ttl;
+wire [7:0] ip_protocol;
+wire [15:0] ip_head_checksum;
+wire [31:0] ip_src;
+wire [31:0] ip_dst;
+
+// MAC Header wires
+
+wire [47:0] mac_dst;
+wire [47:0] mac_src;
+wire [15:0] mac_type;
+wire [31:0] mac_crc;
+
+// Control signals
+
+wire udp_head_valid;
+reg udp_head_ready;
+
+wire udp_data_tvalid;
+reg udp_data_tready;
+wire udp_data_tuser;
+wire udp_data_tlast;
+
+wire busy;
+
+// Flag registers 
+reg tx_flag;
+reg head_rdy;
+
+// Stat Registers
+
+reg [15:0] tx_count;
+reg [1:0] data_index;
+
+// Registers to drive output wires
+
+reg [31:0] tx_d;
+reg tx_valid;
+reg tx_sop;
+reg tx_eop;
+
+reg [31:0] data0, data1, data2, data3, data4, data5, data6, data7, data8, data9, data10, data11, data12, data13, data14, data15;
+
+assign eth_ast_tx_data = tx_d;
+assign eth_ast_tx_sop = tx_sop;
+assign eth_ast_tx_eop = tx_eop;
+assign eth_ast_tx_valid = tx_valid;
+
+initial
+	begin
+		
+		tx_flag = 1'b0;
+		tx_count = 16'h0000;
+		tx_d = 32'h00000000;
+		tx_valid = 1'b0;
+		tx_sop = 1'b0;
+		tx_eop = 1'b0;
+		
+		data_index <= 2'b0;
+		
+		udp_data_tready <= 1'b0;
+		udp_head_ready <= 1'b0;
+	
+	end
+
+	
+
+	
+always @(posedge clk)
+	begin
+		
+		// Eth frame size = 64 bytes:
+	
+		// Dest MAC		Source MAC		Eth Type			DATA			CRC
+	
+		// 6 Bytes		6 Bytes			2 Bytes		46 Bytes		4 Bytes
+		
+		if(reset)
+			begin
+				tx_flag <= 1'b0;
+				tx_count <= 16'h0000;
+				tx_d <= 32'h00000000;
+				tx_valid <= 1'b0;
+				tx_sop <= 1'b0;
+				tx_eop <= 1'b0;
+				
+				data_index <= 2'b0;
+				
+				udp_data_tready <= 1'b0;
+				udp_head_ready <= 1'b0;
+		
+			end
+		
+		else
+			begin
+				if(tx_start)
+					begin
+						// Set transmission flag to start transmission
+						tx_flag <= 1'b1;
+						udp_head_ready <= 1'b1;
+					end
+					
+				if(tx_stop)
+					begin
+						// Set transmission flag to stop transmission
+						tx_flag <= 1'b0;
+						
+					end
+					
+				if ((tx_flag) && (tx_count == 0) && (eth_ast_tx_rdy))
+					begin
+						if(udp_head_valid)
+							begin
+								tx_d[31:0] <= mac_dst[47:16];
+								tx_valid <= 1'b1;
+								tx_sop <= 1'b1;
+								tx_eop <= 1'b0;
+								tx_count <= tx_count + 16'b1;
+								
+							end
+					end
+				else if((tx_flag) && (tx_count == 1) && (eth_ast_tx_rdy))
+					begin
+						if(udp_head_valid)
+							begin
+								tx_d[31:16] <= mac_dst[15:0];
+								tx_d[15:0] <= mac_src[47:32];
+								tx_valid <= 1'b1;
+								tx_sop <= 1'b0;
+								tx_eop <= 1'b0;
+								tx_count <= tx_count + 16'b1;
+								
+							end
+					end
+				else if((tx_flag) && (tx_count == 2) && (eth_ast_tx_rdy))
+					begin
+						if(udp_head_valid)
+							begin
+								tx_d[31:0] <= mac_src[31:0];
+								tx_valid <= 1'b1;
+								tx_sop <= 1'b0;
+								tx_eop <= 1'b0;
+								tx_count <= tx_count + 16'b1;
+								
+							end
+					end
+				else if((tx_flag) && (tx_count == 3) && (eth_ast_tx_rdy))
+					begin
+						if(udp_head_valid)
+							begin
+								tx_d[31:16] <= mac_type;
+								tx_d[15:12] <= ip_version;
+								tx_d[11:8] <= ip_ihl;
+								tx_d[7:2] <= ip_dscp;
+								tx_d[1:0] <= ip_ecn;
+								tx_valid <= 1'b1;
+								tx_sop <= 1'b0;
+								tx_eop <= 1'b0;
+								tx_count <= tx_count + 16'b1;
+								
+							end
+					end
+				else if((tx_flag) && (tx_count == 4) && (eth_ast_tx_rdy))
+					begin
+						if(udp_head_valid)
+							begin
+								//tx_d[31:28] <= ip_version;
+								//tx_d[27:24] <= ip_ihl;
+								//tx_d[23:18] <= ip_dscp;
+								//tx_d[17:16] <= ip_ecn;
+								tx_d[31:16] <= ip_length;
+								tx_d[15:0] <= ip_id;
+								tx_valid <= 1'b1;
+								tx_sop <= 1'b0;
+								tx_eop <= 1'b0;
+								tx_count <= tx_count + 16'b1;
+								
+							end
+					end
+				else if((tx_flag) && (tx_count == 5) && (eth_ast_tx_rdy))
+					begin
+						if(udp_head_valid)
+							begin
+								//tx_d[31:16] <= ip_id;
+								tx_d[31:29] <= ip_flags;
+								tx_d[28:16] <= ip_frag_offset;
+								tx_d[15:8] <= ip_ttl;
+								tx_d[7:0] <= ip_protocol;
+								tx_valid <= 1'b1;
+								tx_sop <= 1'b0;
+								tx_eop <= 1'b0;
+								tx_count <= tx_count + 16'b1;
+								
+							end
+					end
+				else if((tx_flag) && (tx_count == 6) && (eth_ast_tx_rdy))
+					begin
+						if(udp_head_valid)
+							begin
+								//tx_d[31:24] <= ip_ttl;
+								//tx_d[23:16] <= ip_protocol;
+								tx_d[31:16] <= ip_head_checksum;
+								tx_d[15:0] <= ip_src[31:16];
+								tx_valid <= 1'b1;
+								tx_sop <= 1'b0;
+								tx_eop <= 1'b0;
+								tx_count <= tx_count + 16'b1;
+								
+							end
+					end
+				else if((tx_flag) && (tx_count == 7) && (eth_ast_tx_rdy))
+					begin
+						if(udp_head_valid)
+							begin
+								tx_d[31:16] <= ip_src[15:0];
+								tx_d[15:0] <= ip_dst[31:16];
+								tx_valid <= 1'b1;
+								tx_sop <= 1'b0;
+								tx_eop <= 1'b0;
+								tx_count <= tx_count + 16'b1;
+								
+							end
+					end
+				else if((tx_flag) && (tx_count == 8) && (eth_ast_tx_rdy))
+					begin
+						if(udp_head_valid)
+							begin
+								tx_d[31:16] <= ip_dst[15:0];
+								tx_d[15:0] <= udp_src[15:0];
+								tx_valid <= 1'b1;
+								tx_sop <= 1'b0;
+								tx_eop <= 1'b0;
+								tx_count <= tx_count + 16'b1;
+							end
+					end
+				else if((tx_flag) && (tx_count == 9) && (eth_ast_tx_rdy))
+					begin
+						if(udp_head_valid)
+							begin
+								//tx_d[31:16] <= udp_src;
+								tx_d[31:16] <= udp_dst[15:0];
+								tx_d[15:0] <= udp_length[15:0];
+								tx_valid <= 1'b1;
+								tx_sop <= 1'b0;
+								tx_eop <= 1'b0;
+								tx_count <= tx_count + 16'b1;
+							end
+					end
+				else if((tx_flag) && (tx_count == 10) && (eth_ast_tx_rdy))
+					begin
+						if((udp_head_valid) && (udp_data_tvalid))
+							begin
+								//tx_d[31:16] <= udp_length;
+								tx_d[31:16] <= udp_checksum;
+								udp_data_tready <= 1'b1;
+								udp_head_ready <= 1'b0;
+								
+								
+									case (data_index) 
+										0 : begin 
+												tx_d[15:8] <= udp_tdata;
+												tx_valid <= 1'b0;
+												tx_sop <= 1'b0;
+												tx_eop <= 1'b0;
+												data_index <= data_index + 2'b1;
+											end 
+										1 : begin 
+												tx_d[7:0] <= udp_tdata;
+												tx_valid <= 1'b1;
+												tx_sop <= 1'b0;
+												tx_eop <= 1'b0;
+												data_index <= 2'b0;
+												tx_count <= tx_count + 16'b1;
+											end 
+										default : begin
+													tx_d[15:8] <= udp_tdata;
+													tx_valid <= 1'b0;
+													tx_sop <= 1'b0;
+													tx_eop <= 1'b0;
+													data_index <= data_index + 2'b1;
+													end 
+									endcase
+							end
+					end
+				else if((tx_flag) && (tx_count == 11) && (eth_ast_tx_rdy))
+					begin
+						if(udp_data_tvalid)
+							begin
+								case (data_index) 
+									0 : begin 
+											tx_d[31:24] <= udp_tdata;
+											tx_valid <= 1'b0;
+											tx_sop <= 1'b0;
+											tx_eop <= 1'b0;
+											data_index <= data_index + 2'b1;
+										end 
+									1 : begin 
+											tx_d[23:16] <= udp_tdata;
+											tx_valid <= 1'b0;
+											tx_sop <= 1'b0;
+											tx_eop <= 1'b0;
+											data_index <= data_index + 2'b1;
+										end 
+									2 : begin 
+											tx_d[15:8] <= udp_tdata;
+											tx_valid <= 1'b0;
+											tx_sop <= 1'b0;
+											tx_eop <= 1'b0;
+											data_index <= data_index + 2'b1;
+										end 
+									3 : begin 
+											tx_d[7:0] <= udp_tdata;
+											tx_valid <= 1'b1;
+											tx_sop <= 1'b0;
+											tx_eop <= 1'b0;
+											data_index <= 2'b0;
+											tx_count <= tx_count + 16'b1;
+										end 
+									default : begin
+													tx_d[31:24] <= udp_tdata;
+													tx_valid <= 1'b0;
+													tx_sop <= 1'b0;
+													tx_eop <= 1'b0;
+													data_index <= data_index + 2'b1;
+												end 
+								endcase
+							end
+					end
+				else if((tx_flag) && (tx_count == 12) && (eth_ast_tx_rdy))
+					begin
+						if(udp_data_tvalid)
+							begin
+								case (data_index) 
+									0 : begin 
+											tx_d[31:24] <= udp_tdata;
+											tx_valid <= 1'b0;
+											tx_sop <= 1'b0;
+											tx_eop <= 1'b0;
+											data_index <= data_index + 2'b1;
+										end 
+									1 : begin 
+											tx_d[23:16] <= udp_tdata;
+											tx_valid <= 1'b0;
+											tx_sop <= 1'b0;
+											tx_eop <= 1'b0;
+											data_index <= data_index + 2'b1;
+										end 
+									2 : begin 
+											tx_d[15:8] <= udp_tdata;
+											tx_valid <= 1'b0;
+											tx_sop <= 1'b0;
+											tx_eop <= 1'b0;
+											data_index <= data_index + 2'b1;
+										end 
+									3 : begin 
+											tx_d[7:0] <= udp_tdata;
+											tx_valid <= 1'b1;
+											tx_sop <= 1'b0;
+											tx_eop <= 1'b0;
+											data_index <= 2'b0;
+											tx_count <= tx_count + 16'b1;
+										end 
+									default : begin
+													tx_d[31:24] <= udp_tdata;
+													tx_valid <= 1'b0;
+													tx_sop <= 1'b0;
+													tx_eop <= 1'b0;
+													data_index <= data_index + 2'b1;
+												end 
+								endcase
+							end   
+					end
+				else if((tx_flag) && (tx_count == 13) && (eth_ast_tx_rdy))
+					begin
+						if(udp_data_tvalid)
+							begin
+								case (data_index) 
+									0 : begin 
+											tx_d[31:24] <= udp_tdata;
+											tx_valid <= 1'b0;
+											tx_sop <= 1'b0;
+											tx_eop <= 1'b0;
+											data_index <= data_index + 2'b1;
+										end 
+									1 : begin 
+											tx_d[23:16] <= udp_tdata;
+											tx_valid <= 1'b0;
+											tx_sop <= 1'b0;
+											tx_eop <= 1'b0;
+											data_index <= data_index + 2'b1;
+										end 
+									2 : begin 
+											tx_d[15:8] <= udp_tdata;
+											tx_valid <= 1'b0;
+											tx_sop <= 1'b0;
+											tx_eop <= 1'b0;
+											data_index <= data_index + 2'b1;
+										end 
+									3 : begin 
+											tx_d[7:0] <= udp_tdata;
+											tx_valid <= 1'b1;
+											tx_sop <= 1'b0;
+											tx_eop <= 1'b0;
+											data_index <= 2'b0;
+											tx_count <= tx_count + 16'b1;
+										end 
+									default : begin
+													tx_d[31:24] <= udp_tdata;
+													tx_valid <= 1'b0;
+													tx_sop <= 1'b0;
+													tx_eop <= 1'b0;
+													data_index <= data_index + 2'b1;
+												end 
+								endcase
+							end
+					end
+				else if((tx_flag) && (tx_count == 14) && (eth_ast_tx_rdy))
+					begin
+						if(udp_data_tvalid)
+							begin
+								case (data_index) 
+									0 : begin 
+											tx_d[31:24] <= udp_tdata;
+											tx_valid <= 1'b0;
+											tx_sop <= 1'b0;
+											tx_eop <= 1'b0;
+											data_index <= data_index + 2'b1;
+										end 
+									1 : begin 
+											tx_d[23:16] <= udp_tdata;
+											tx_valid <= 1'b0;
+											tx_sop <= 1'b0;
+											tx_eop <= 1'b0;
+											data_index <= data_index + 2'b1;
+										end 
+									2 : begin 
+											tx_d[15:8] <= udp_tdata;
+											tx_valid <= 1'b0;
+											tx_sop <= 1'b0;
+											tx_eop <= 1'b0;
+											data_index <= data_index + 2'b1;
+										end 
+									3 : begin 
+											tx_d[7:0] <= udp_tdata;
+											tx_valid <= 1'b1;
+											tx_sop <= 1'b0;
+											tx_eop <= 1'b0;
+											data_index <= 2'b0;
+											tx_count <= tx_count + 16'b1;
+										end 
+									default : begin
+													tx_d[31:24] <= udp_tdata;
+													tx_valid <= 1'b0;
+													tx_sop <= 1'b0;
+													tx_eop <= 1'b0;
+													data_index <= data_index + 2'b1;
+												end 
+								endcase
+							end
+					end
+				else if((tx_flag) && (tx_count == 15) && (eth_ast_tx_rdy))
+					begin
+						if(udp_head_valid)
+							begin
+								tx_d[31:0] <= mac_crc[15:0];
+								tx_valid <= 1'b1;
+								tx_sop <= 1'b0;
+								tx_eop <= 1'b1;
+								tx_count <= 16'h0000;
+							end
+					end
+			end
+	end	
+	
+fyp_udp fyp_udp1(
+
+	.clk(clk) ,													// input  clk_sig
+	.reset(reset) ,											// input  reset_sig
+	.udp_src_out(udp_src) ,									// output [15:0] udp_src_out_sig
+	.udp_dst_out(udp_dst) ,									// output [15:0] udp_dst_out_sig
+	.udp_length_out(udp_length) ,							// output [15:0] udp_length_out_sig
+	.udp_checksum_out(udp_checksum) ,					// output [15:0] udp_checksum_out_sig
+	.udp_tdata_out(udp_tdata) ,							// output [7:0] udp_tdata_out_sig
+	.ip_version_out(ip_version) ,							// output [3:0] ip_version_out_sig
+	.ip_ihl_out(ip_ihl) ,									// output [3:0] ip_ihl_out_sig
+	.ip_dscp_out(ip_dscp) ,									// output [5:0] ip_dscp_out_sig
+	.ip_ecn_out(ip_ecn) ,									// output [1:0] ip_ecn_out_sig
+	.ip_length_out(ip_length) ,							// output [15:0] ip_length_out_sig
+	.ip_id_out(ip_id) ,										// output [15:0] ip_id_out_sig
+	.ip_flags_out(ip_flags) ,								// output [2:0] ip_flags_out_sig
+	.ip_frag_offset_out(ip_frag_offset) ,				// output [12:0] ip_frag_offset_out_sig
+	.ip_ttl_out(ip_ttl) ,									// output [7:0] ip_ttl_out_sig
+	.ip_protocol_out(ip_protocol) ,						// output [7:0] ip_protocol_out_sig
+	.ip_head_checksum_out(ip_head_checksum) ,			// output [15:0] ip_head_checksum_out_sig
+	.ip_src_out(ip_src) ,									// output [31:0] ip_src_out_sig
+	.ip_dst_out(ip_dst) ,									// output [31:0] ip_dst_out_sig
+	.mac_dst_out(mac_dst) ,									// output [47:0] mac_dst_out_sig
+	.mac_src_out(mac_src) ,									// output [47:0] mac_src_out_sig
+	.mac_type_out(mac_type) ,								// output [15:0] mac_type_out_sig
+	.mac_crc_out(mac_crc) ,									// output [31:0] mac_crc_out_sig
+	.udp_head_valid_out(udp_head_valid) ,				// output  udp_head_valid_out_sig
+	.udp_head_ready_out(udp_head_ready) ,				// input  udp_head_ready_out_sig
+	.udp_data_tvalid_out(udp_data_tvalid) ,			// output  udp_data_tvalid_out_sig
+	.udp_data_tready_out(udp_data_tready) ,			// input  udp_data_tready_out_sig
+	.udp_data_tuser_out(udp_data_tuser) ,				// output  udp_data_tuser_out_sig
+	.udp_data_tlast_out(udp_data_tlast) ,				// output  udp_data_tlast_out_sig
+	.busy(busy) 												// output  busy_sig
+);
+
+
+endmodule

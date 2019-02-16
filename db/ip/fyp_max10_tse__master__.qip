@@ -1,0 +1,1 @@
+set_global_assignment -name QIP_FILE [file join $::quartus(qip_path) fyp_max10_tse_sys/fyp_max10_tse_sys.qip]

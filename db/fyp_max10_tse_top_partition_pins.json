@@ -1,0 +1,101 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "eneta_tx_d[0]",
+					"strict" : false
+				},
+				{
+					"name" : "eneta_tx_d[1]",
+					"strict" : false
+				},
+				{
+					"name" : "eneta_tx_d[2]",
+					"strict" : false
+				},
+				{
+					"name" : "eneta_tx_d[3]",
+					"strict" : false
+				},
+				{
+					"name" : "eneta_tx_en",
+					"strict" : false
+				},
+				{
+					"name" : "eneta_resetn",
+					"strict" : false
+				},
+				{
+					"name" : "user_led[2]",
+					"strict" : false
+				},
+				{
+					"name" : "user_led[3]",
+					"strict" : false
+				},
+				{
+					"name" : "enet_mdc",
+					"strict" : false
+				},
+				{
+					"name" : "enet_mdio",
+					"strict" : false
+				},
+				{
+					"name" : "fpga_resetn",
+					"strict" : false
+				},
+				{
+					"name" : "eneta_rx_dv",
+					"strict" : false
+				},
+				{
+					"name" : "eneta_rx_d[3]",
+					"strict" : false
+				},
+				{
+					"name" : "eneta_rx_d[2]",
+					"strict" : false
+				},
+				{
+					"name" : "eneta_rx_d[1]",
+					"strict" : false
+				},
+				{
+					"name" : "eneta_rx_d[0]",
+					"strict" : false
+				},
+				{
+					"name" : "eneta_rx_clk",
+					"strict" : false
+				},
+				{
+					"name" : "user_pb[2]",
+					"strict" : false
+				},
+				{
+					"name" : "user_pb[3]",
+					"strict" : false
+				},
+				{
+					"name" : "altera_reserved_tms",
+					"strict" : false
+				},
+				{
+					"name" : "altera_reserved_tck",
+					"strict" : false
+				},
+				{
+					"name" : "altera_reserved_tdi",
+					"strict" : false
+				},
+				{
+					"name" : "altera_reserved_tdo",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

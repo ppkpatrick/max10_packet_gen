@@ -1,0 +1,46 @@
+// Initialise fixed fields
+			
+				udp_src_in <= 16'h9999;
+				udp_dst_in <= 16'hFFFF;
+				udp_length_in <= 16'h0012; 	// assuming payload is 18 bytes (decimal)
+				udp_checksum_in <= 16'h0000;
+				
+				//	UDP data field registers
+				udp_tdata_in <= 8'h00;
+				
+				//	IP Header registers (V4)
+				ip_version_in <= 4'h4;
+				ip_ihl_in <= 4'h5;
+				ip_dscp_in <= 6'h00;
+				ip_ecn_in <= 3'h0;
+				ip_length_in <= 8'h2e;
+				ip_id_in <= 16'h0000;
+				ip_flags_in <= 3'h2;
+				ip_frag_offset_in <= 13'h0000;
+				ip_ttl_in <= 8'h00;
+				ip_protocol_in <= 8'h11; // UDP identifier
+				ip_checksum_in <= 16'h0000;
+				ip_src_in <= 32'h00000000;
+				ip_dst_in <= 32'hc0a801ff;
+				
+				// MAC Header field register
+				
+				mac_dst_in <= 48'hac220bd9f6a8;
+				mac_src_in <= 48'h999999999999;
+				mac_type_in <= 16'h0800;
+				mac_crc_in <= 32'h00000000;
+				
+				// Control registers
+				
+				//udp_head_ready_in;
+				udp_head_valid_in <= 1'b0;
+				
+				//udp_data_tready_in;
+				udp_data_tvalid_in <= 1'b0;
+				udp_data_tuser_in <= 1'b0;
+				udp_data_tlast_in <= 1'b0;
+				
+				udp_data_tready_out <= 1'b1;
+				udp_head_ready_out <= 1'b1;
+		
+				counter = 32'h00000000;

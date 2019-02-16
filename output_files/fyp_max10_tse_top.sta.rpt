@@ -1,0 +1,987 @@
+Timing Analyzer report for fyp_max10_tse_top
+Sat Feb 16 15:43:07 2019
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Parallel Compilation
+  4. SDC File List
+  5. Clocks
+  6. Slow 1200mV 85C Model Fmax Summary
+  7. Slow 1200mV 85C Model Setup Summary
+  8. Slow 1200mV 85C Model Hold Summary
+  9. Slow 1200mV 85C Model Recovery Summary
+ 10. Slow 1200mV 85C Model Removal Summary
+ 11. Slow 1200mV 85C Model Minimum Pulse Width Summary
+ 12. Slow 1200mV 85C Model Metastability Summary
+ 13. Slow 1200mV 0C Model Fmax Summary
+ 14. Slow 1200mV 0C Model Setup Summary
+ 15. Slow 1200mV 0C Model Hold Summary
+ 16. Slow 1200mV 0C Model Recovery Summary
+ 17. Slow 1200mV 0C Model Removal Summary
+ 18. Slow 1200mV 0C Model Minimum Pulse Width Summary
+ 19. Slow 1200mV 0C Model Metastability Summary
+ 20. Fast 1200mV 0C Model Setup Summary
+ 21. Fast 1200mV 0C Model Hold Summary
+ 22. Fast 1200mV 0C Model Recovery Summary
+ 23. Fast 1200mV 0C Model Removal Summary
+ 24. Fast 1200mV 0C Model Minimum Pulse Width Summary
+ 25. Fast 1200mV 0C Model Metastability Summary
+ 26. Multicorner Timing Analysis Summary
+ 27. Board Trace Model Assignments
+ 28. Input Transition Times
+ 29. Signal Integrity Metrics (Slow 1200mv 0c Model)
+ 30. Signal Integrity Metrics (Slow 1200mv 85c Model)
+ 31. Signal Integrity Metrics (Fast 1200mv 0c Model)
+ 32. Setup Transfers
+ 33. Hold Transfers
+ 34. Recovery Transfers
+ 35. Removal Transfers
+ 36. Report TCCS
+ 37. Report RSKM
+ 38. Unconstrained Paths Summary
+ 39. Clock Status Summary
+ 40. Unconstrained Input Ports
+ 41. Unconstrained Output Ports
+ 42. Unconstrained Input Ports
+ 43. Unconstrained Output Ports
+ 44. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                     ;
++-----------------------+-----------------------------------------------------+
+; Quartus Prime Version ; Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Timing Analyzer       ; Legacy Timing Analyzer                              ;
+; Revision Name         ; fyp_max10_tse_top                                   ;
+; Device Family         ; MAX 10                                              ;
+; Device Name           ; 10M50DAF484C6GES                                    ;
+; Timing Models         ; Preliminary                                         ;
+; Delay Model           ; Combined                                            ;
+; Rise/Fall Delays      ; Enabled                                             ;
++-----------------------+-----------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 8           ;
+;                            ;             ;
+; Average used               ; 2.44        ;
+; Maximum used               ; 8           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;  26.3%      ;
+;     Processor 3            ;  20.7%      ;
+;     Processor 4            ;  19.6%      ;
+;     Processors 5-8         ;  19.4%      ;
++----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; SDC File List                                                                                                                                   ;
++-------------------------------------------------------------------------------------------------------------+--------+--------------------------+
+; SDC File Path                                                                                               ; Status ; Read at                  ;
++-------------------------------------------------------------------------------------------------------------+--------+--------------------------+
+; fyp_max10_tse_sys/synthesis/submodules/altera_reset_controller.sdc                                          ; OK     ; Sat Feb 16 15:42:59 2019 ;
+; fyp_max10_tse_sys/synthesis/submodules/altera_avalon_st_jtag_interface.sdc                                  ; OK     ; Sat Feb 16 15:42:59 2019 ;
+; fyp_max10_tse_sys/synthesis/submodules/altera_eth_tse_mac.sdc                                               ; OK     ; Sat Feb 16 15:43:00 2019 ;
+; fyp_tse.sdc                                                                                                 ; OK     ; Sat Feb 16 15:43:00 2019 ;
+; c:/intelfpga_lite/18.1/fyp_max10_tse/db/ip/fyp_max10_tse_sys/submodules/altera_avalon_st_jtag_interface.sdc ; OK     ; Sat Feb 16 15:43:00 2019 ;
+; c:/intelfpga_lite/18.1/fyp_max10_tse/db/ip/fyp_max10_tse_sys/submodules/altera_eth_tse_mac.sdc              ; OK     ; Sat Feb 16 15:43:00 2019 ;
+; c:/intelfpga_lite/18.1/fyp_max10_tse/db/ip/fyp_max10_tse_sys/submodules/altera_reset_controller.sdc         ; OK     ; Sat Feb 16 15:43:00 2019 ;
++-------------------------------------------------------------------------------------------------------------+--------+--------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                                                                                                                                        ;
++---------------------+-----------+---------+-----------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------------+------------------------------------------------------------+--------------------------------------------------------------+
+; Clock Name          ; Type      ; Period  ; Frequency ; Rise  ; Fall   ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master       ; Source                                                     ; Targets                                                      ;
++---------------------+-----------+---------+-----------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------------+------------------------------------------------------------+--------------------------------------------------------------+
+; altera_reserved_tck ; Base      ; 100.000 ; 10.0 MHz  ; 0.000 ; 50.000 ;            ;           ;             ;       ;        ;           ;            ;          ;              ;                                                            ; { altera_reserved_tck }                                      ;
+; clk_50_max10        ; Base      ; 20.000  ; 50.0 MHz  ; 0.000 ; 10.000 ;            ;           ;             ;       ;        ;           ;            ;          ;              ;                                                            ; { clk_50_max10 }                                             ;
+; clk_125             ; Generated ; 8.000   ; 125.0 MHz ; 0.000 ; 4.000  ; 50.00      ; 2         ; 5           ;       ;        ;           ;            ; false    ; clk_50_max10 ; fyp_eth_pll1|altpll_component|auto_generated|pll1|inclk[0] ; { fyp_eth_pll1|altpll_component|auto_generated|pll1|clk[0] } ;
+; clk_125_shift       ; Generated ; 8.000   ; 125.0 MHz ; 0.250 ; 4.250  ; 50.00      ; 2         ; 5           ; 11.3  ;        ;           ;            ; false    ; clk_50_max10 ; fyp_eth_pll1|altpll_component|auto_generated|pll1|inclk[0] ; { fyp_eth_pll1|altpll_component|auto_generated|pll1|clk[1] } ;
+; rx_clk_125          ; Base      ; 8.000   ; 125.0 MHz ; 2.000 ; 6.000  ;            ;           ;             ;       ;        ;           ;            ;          ;              ;                                                            ; { eneta_rx_clk }                                             ;
+; virtual_clk_125     ; Virtual   ; 8.000   ; 125.0 MHz ; 0.000 ; 4.000  ;            ;           ;             ;       ;        ;           ;            ;          ;              ;                                                            ; { }                                                          ;
++---------------------+-----------+---------+-----------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------------+------------------------------------------------------------+--------------------------------------------------------------+
+
+
++-----------------------------------------------------------+
+; Slow 1200mV 85C Model Fmax Summary                        ;
++------------+-----------------+---------------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name          ; Note ;
++------------+-----------------+---------------------+------+
+; 86.76 MHz  ; 86.76 MHz       ; altera_reserved_tck ;      ;
+; 142.43 MHz ; 142.43 MHz      ; clk_125             ;      ;
+; 171.7 MHz  ; 171.7 MHz       ; rx_clk_125          ;      ;
++------------+-----------------+---------------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++----------------------------------------------+
+; Slow 1200mV 85C Model Setup Summary          ;
++---------------------+--------+---------------+
+; Clock               ; Slack  ; End Point TNS ;
++---------------------+--------+---------------+
+; rx_clk_125          ; 0.318  ; 0.000         ;
+; clk_125             ; 0.979  ; 0.000         ;
+; altera_reserved_tck ; 44.237 ; 0.000         ;
++---------------------+--------+---------------+
+
+
++---------------------------------------------+
+; Slow 1200mV 85C Model Hold Summary          ;
++---------------------+-------+---------------+
+; Clock               ; Slack ; End Point TNS ;
++---------------------+-------+---------------+
+; rx_clk_125          ; 0.183 ; 0.000         ;
+; clk_125             ; 0.224 ; 0.000         ;
+; altera_reserved_tck ; 0.308 ; 0.000         ;
++---------------------+-------+---------------+
+
+
++----------------------------------------------+
+; Slow 1200mV 85C Model Recovery Summary       ;
++---------------------+--------+---------------+
+; Clock               ; Slack  ; End Point TNS ;
++---------------------+--------+---------------+
+; clk_125             ; 3.079  ; 0.000         ;
+; rx_clk_125          ; 3.773  ; 0.000         ;
+; altera_reserved_tck ; 48.041 ; 0.000         ;
++---------------------+--------+---------------+
+
+
++---------------------------------------------+
+; Slow 1200mV 85C Model Removal Summary       ;
++---------------------+-------+---------------+
+; Clock               ; Slack ; End Point TNS ;
++---------------------+-------+---------------+
+; altera_reserved_tck ; 0.863 ; 0.000         ;
+; clk_125             ; 0.880 ; 0.000         ;
+; rx_clk_125          ; 2.717 ; 0.000         ;
++---------------------+-------+---------------+
+
+
++---------------------------------------------------+
+; Slow 1200mV 85C Model Minimum Pulse Width Summary ;
++---------------------+--------+--------------------+
+; Clock               ; Slack  ; End Point TNS      ;
++---------------------+--------+--------------------+
+; rx_clk_125          ; 3.514  ; 0.000              ;
+; clk_125             ; 3.660  ; 0.000              ;
+; clk_50_max10        ; 9.788  ; 0.000              ;
+; altera_reserved_tck ; 49.575 ; 0.000              ;
++---------------------+--------+--------------------+
+
+
+-----------------------------------------------
+; Slow 1200mV 85C Model Metastability Summary ;
+-----------------------------------------------
+Worst-Case MTBF of Design is 1e+09 years or 3.15e+16 seconds.
+Typical MTBF of Design is 1e+09 years or 3.15e+16 seconds.
+
+Number of Synchronizer Chains Found: 433
+Shortest Synchronizer Chain: 2 Registers
+Fraction of Chains for which MTBFs Could Not be Calculated: 0.497
+Worst Case Available Settling Time: 6.603 ns
+
+Worst-Case MTBF values are calculated based on the worst-case silicon characteristics, with worst-case operating conditions.
+  - Under worst-case conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 2.4
+Typical MTBF values are calculated based on the nominal silicon characteristics, at nominal operating conditions.
+  - Under typical conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 3.7
+
+
+
++-----------------------------------------------------------+
+; Slow 1200mV 0C Model Fmax Summary                         ;
++------------+-----------------+---------------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name          ; Note ;
++------------+-----------------+---------------------+------+
+; 94.89 MHz  ; 94.89 MHz       ; altera_reserved_tck ;      ;
+; 158.28 MHz ; 158.28 MHz      ; clk_125             ;      ;
+; 189.65 MHz ; 189.65 MHz      ; rx_clk_125          ;      ;
++------------+-----------------+---------------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++----------------------------------------------+
+; Slow 1200mV 0C Model Setup Summary           ;
++---------------------+--------+---------------+
+; Clock               ; Slack  ; End Point TNS ;
++---------------------+--------+---------------+
+; rx_clk_125          ; 0.397  ; 0.000         ;
+; clk_125             ; 1.682  ; 0.000         ;
+; altera_reserved_tck ; 44.731 ; 0.000         ;
++---------------------+--------+---------------+
+
+
++---------------------------------------------+
+; Slow 1200mV 0C Model Hold Summary           ;
++---------------------+-------+---------------+
+; Clock               ; Slack ; End Point TNS ;
++---------------------+-------+---------------+
+; rx_clk_125          ; 0.216 ; 0.000         ;
+; clk_125             ; 0.224 ; 0.000         ;
+; altera_reserved_tck ; 0.279 ; 0.000         ;
++---------------------+-------+---------------+
+
+
++----------------------------------------------+
+; Slow 1200mV 0C Model Recovery Summary        ;
++---------------------+--------+---------------+
+; Clock               ; Slack  ; End Point TNS ;
++---------------------+--------+---------------+
+; clk_125             ; 3.549  ; 0.000         ;
+; rx_clk_125          ; 4.149  ; 0.000         ;
+; altera_reserved_tck ; 48.220 ; 0.000         ;
++---------------------+--------+---------------+
+
+
++---------------------------------------------+
+; Slow 1200mV 0C Model Removal Summary        ;
++---------------------+-------+---------------+
+; Clock               ; Slack ; End Point TNS ;
++---------------------+-------+---------------+
+; altera_reserved_tck ; 0.798 ; 0.000         ;
+; clk_125             ; 0.813 ; 0.000         ;
+; rx_clk_125          ; 2.487 ; 0.000         ;
++---------------------+-------+---------------+
+
+
++--------------------------------------------------+
+; Slow 1200mV 0C Model Minimum Pulse Width Summary ;
++---------------------+--------+-------------------+
+; Clock               ; Slack  ; End Point TNS     ;
++---------------------+--------+-------------------+
+; rx_clk_125          ; 3.529  ; 0.000             ;
+; clk_125             ; 3.676  ; 0.000             ;
+; clk_50_max10        ; 9.833  ; 0.000             ;
+; altera_reserved_tck ; 49.600 ; 0.000             ;
++---------------------+--------+-------------------+
+
+
+----------------------------------------------
+; Slow 1200mV 0C Model Metastability Summary ;
+----------------------------------------------
+Worst-Case MTBF of Design is 1e+09 years or 3.15e+16 seconds.
+Typical MTBF of Design is 1e+09 years or 3.15e+16 seconds.
+
+Number of Synchronizer Chains Found: 433
+Shortest Synchronizer Chain: 2 Registers
+Fraction of Chains for which MTBFs Could Not be Calculated: 0.497
+Worst Case Available Settling Time: 6.722 ns
+
+Worst-Case MTBF values are calculated based on the worst-case silicon characteristics, with worst-case operating conditions.
+  - Under worst-case conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 2.4
+Typical MTBF values are calculated based on the nominal silicon characteristics, at nominal operating conditions.
+  - Under typical conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 3.7
+
+
+
++----------------------------------------------+
+; Fast 1200mV 0C Model Setup Summary           ;
++---------------------+--------+---------------+
+; Clock               ; Slack  ; End Point TNS ;
++---------------------+--------+---------------+
+; rx_clk_125          ; 0.866  ; 0.000         ;
+; clk_125             ; 4.535  ; 0.000         ;
+; altera_reserved_tck ; 47.434 ; 0.000         ;
++---------------------+--------+---------------+
+
+
++---------------------------------------------+
+; Fast 1200mV 0C Model Hold Summary           ;
++---------------------+-------+---------------+
+; Clock               ; Slack ; End Point TNS ;
++---------------------+-------+---------------+
+; rx_clk_125          ; 0.094 ; 0.000         ;
+; clk_125             ; 0.102 ; 0.000         ;
+; altera_reserved_tck ; 0.140 ; 0.000         ;
++---------------------+-------+---------------+
+
+
++----------------------------------------------+
+; Fast 1200mV 0C Model Recovery Summary        ;
++---------------------+--------+---------------+
+; Clock               ; Slack  ; End Point TNS ;
++---------------------+--------+---------------+
+; clk_125             ; 5.434  ; 0.000         ;
+; rx_clk_125          ; 5.773  ; 0.000         ;
+; altera_reserved_tck ; 49.277 ; 0.000         ;
++---------------------+--------+---------------+
+
+
++---------------------------------------------+
+; Fast 1200mV 0C Model Removal Summary        ;
++---------------------+-------+---------------+
+; Clock               ; Slack ; End Point TNS ;
++---------------------+-------+---------------+
+; altera_reserved_tck ; 0.400 ; 0.000         ;
+; clk_125             ; 0.408 ; 0.000         ;
+; rx_clk_125          ; 1.452 ; 0.000         ;
++---------------------+-------+---------------+
+
+
++--------------------------------------------------+
+; Fast 1200mV 0C Model Minimum Pulse Width Summary ;
++---------------------+--------+-------------------+
+; Clock               ; Slack  ; End Point TNS     ;
++---------------------+--------+-------------------+
+; rx_clk_125          ; 3.418  ; 0.000             ;
+; clk_125             ; 3.711  ; 0.000             ;
+; clk_50_max10        ; 9.661  ; 0.000             ;
+; altera_reserved_tck ; 49.419 ; 0.000             ;
++---------------------+--------+-------------------+
+
+
+----------------------------------------------
+; Fast 1200mV 0C Model Metastability Summary ;
+----------------------------------------------
+Worst-Case MTBF of Design is 1e+09 years or 3.15e+16 seconds.
+Typical MTBF of Design is 1e+09 years or 3.15e+16 seconds.
+
+Number of Synchronizer Chains Found: 433
+Shortest Synchronizer Chain: 2 Registers
+Fraction of Chains for which MTBFs Could Not be Calculated: 0.497
+Worst Case Available Settling Time: 7.286 ns
+
+Worst-Case MTBF values are calculated based on the worst-case silicon characteristics, with worst-case operating conditions.
+  - Under worst-case conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 2.4
+Typical MTBF values are calculated based on the nominal silicon characteristics, at nominal operating conditions.
+  - Under typical conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 3.7
+
+
+
++----------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                              ;
++----------------------+--------+-------+----------+---------+---------------------+
+; Clock                ; Setup  ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++----------------------+--------+-------+----------+---------+---------------------+
+; Worst-case Slack     ; 0.318  ; 0.094 ; 3.079    ; 0.400   ; 3.418               ;
+;  altera_reserved_tck ; 44.237 ; 0.140 ; 48.041   ; 0.400   ; 49.419              ;
+;  clk_125             ; 0.979  ; 0.102 ; 3.079    ; 0.408   ; 3.660               ;
+;  clk_50_max10        ; N/A    ; N/A   ; N/A      ; N/A     ; 9.661               ;
+;  rx_clk_125          ; 0.318  ; 0.094 ; 3.773    ; 1.452   ; 3.418               ;
+; Design-wide TNS      ; 0.0    ; 0.0   ; 0.0      ; 0.0     ; 0.0                 ;
+;  altera_reserved_tck ; 0.000  ; 0.000 ; 0.000    ; 0.000   ; 0.000               ;
+;  clk_125             ; 0.000  ; 0.000 ; 0.000    ; 0.000   ; 0.000               ;
+;  clk_50_max10        ; N/A    ; N/A   ; N/A      ; N/A     ; 0.000               ;
+;  rx_clk_125          ; 0.000  ; 0.000 ; 0.000    ; 0.000   ; 0.000               ;
++----------------------+--------+-------+----------+---------+---------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Board Trace Model Assignments                                                                                                                                                                                                                                                                                                                                                                                          ;
++---------------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; Pin                 ; I/O Standard ; Near Tline Length ; Near Tline L per Length ; Near Tline C per Length ; Near Series R ; Near Differential R ; Near Pull-up R ; Near Pull-down R ; Near C ; Far Tline Length ; Far Tline L per Length ; Far Tline C per Length ; Far Series R ; Far Pull-up R ; Far Pull-down R ; Far C ; Termination Voltage ; Far Differential R ; EBD File Name ; EBD Signal Name ; EBD Far-end ;
++---------------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; eneta_tx_d[0]       ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; eneta_tx_d[1]       ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; eneta_tx_d[2]       ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; eneta_tx_d[3]       ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; eneta_tx_en         ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; eneta_gtx_clk       ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; eneta_resetn        ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; user_led[0]         ; 1.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; user_led[1]         ; 1.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; user_led[2]         ; 1.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; user_led[3]         ; 1.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; user_led[4]         ; 1.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; enet_mdc            ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; enet_mdio           ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; altera_reserved_tdo ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
++---------------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+
+
++---------------------------------------------------------------------------------+
+; Input Transition Times                                                          ;
++---------------------+-----------------------+-----------------+-----------------+
+; Pin                 ; I/O Standard          ; 10-90 Rise Time ; 90-10 Fall Time ;
++---------------------+-----------------------+-----------------+-----------------+
+; user_pb[0]          ; 1.5 V                 ; 1200 ps         ; 1200 ps         ;
+; user_pb[1]          ; 1.5 V                 ; 1200 ps         ; 1200 ps         ;
+; enet_mdio           ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
+; fpga_resetn         ; 3.3-V LVCMOS          ; 2640 ps         ; 2640 ps         ;
+; eneta_rx_dv         ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
+; eneta_rx_d[3]       ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
+; eneta_rx_d[2]       ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
+; eneta_rx_d[1]       ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
+; eneta_rx_d[0]       ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
+; clk_50_max10        ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
+; eneta_rx_clk        ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
+; user_pb[2]          ; 1.5 V                 ; 1200 ps         ; 1200 ps         ;
+; user_pb[3]          ; 1.5 V                 ; 1200 ps         ; 1200 ps         ;
+; altera_reserved_tms ; 2.5 V Schmitt Trigger ; 2000 ps         ; 2000 ps         ;
+; altera_reserved_tck ; 2.5 V Schmitt Trigger ; 2000 ps         ; 2000 ps         ;
+; altera_reserved_tdi ; 2.5 V Schmitt Trigger ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_CONFIG_SEL~ ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
+; ~ALTERA_nCONFIG~    ; 3.3 V Schmitt Trigger ; 2640 ps         ; 2640 ps         ;
+; ~ALTERA_nSTATUS~    ; 3.3 V Schmitt Trigger ; 2640 ps         ; 2640 ps         ;
+; ~ALTERA_CONF_DONE~  ; 3.3 V Schmitt Trigger ; 2640 ps         ; 2640 ps         ;
++---------------------+-----------------------+-----------------+-----------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Slow 1200mv 0c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  ;
++---------------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin                 ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; eneta_tx_d[0]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.17e-08 V                   ; 2.42 V              ; -0.0607 V           ; 0.271 V                              ; 0.095 V                              ; 2.93e-10 s                  ; 3.92e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 1.17e-08 V                  ; 2.42 V             ; -0.0607 V          ; 0.271 V                             ; 0.095 V                             ; 2.93e-10 s                 ; 3.92e-10 s                 ; No                        ; Yes                       ;
+; eneta_tx_d[1]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.17e-08 V                   ; 2.42 V              ; -0.0607 V           ; 0.271 V                              ; 0.095 V                              ; 2.93e-10 s                  ; 3.92e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 1.17e-08 V                  ; 2.42 V             ; -0.0607 V          ; 0.271 V                             ; 0.095 V                             ; 2.93e-10 s                 ; 3.92e-10 s                 ; No                        ; Yes                       ;
+; eneta_tx_d[2]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.17e-08 V                   ; 2.42 V              ; -0.0619 V           ; 0.272 V                              ; 0.096 V                              ; 2.93e-10 s                  ; 3.92e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 1.17e-08 V                  ; 2.42 V             ; -0.0619 V          ; 0.272 V                             ; 0.096 V                             ; 2.93e-10 s                 ; 3.92e-10 s                 ; No                        ; Yes                       ;
+; eneta_tx_d[3]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.17e-08 V                   ; 2.42 V              ; -0.0607 V           ; 0.271 V                              ; 0.095 V                              ; 2.93e-10 s                  ; 3.92e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 1.17e-08 V                  ; 2.42 V             ; -0.0607 V          ; 0.271 V                             ; 0.095 V                             ; 2.93e-10 s                 ; 3.92e-10 s                 ; No                        ; Yes                       ;
+; eneta_tx_en         ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.17e-08 V                   ; 2.42 V              ; -0.0619 V           ; 0.272 V                              ; 0.096 V                              ; 2.93e-10 s                  ; 3.92e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 1.17e-08 V                  ; 2.42 V             ; -0.0619 V          ; 0.272 V                             ; 0.096 V                             ; 2.93e-10 s                 ; 3.92e-10 s                 ; No                        ; Yes                       ;
+; eneta_gtx_clk       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.17e-08 V                   ; 2.42 V              ; -0.0619 V           ; 0.272 V                              ; 0.096 V                              ; 2.93e-10 s                  ; 3.92e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 1.17e-08 V                  ; 2.42 V             ; -0.0619 V          ; 0.272 V                             ; 0.096 V                             ; 2.93e-10 s                 ; 3.92e-10 s                 ; No                        ; Yes                       ;
+; eneta_resetn        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.17e-08 V                   ; 2.41 V              ; -0.055 V            ; 0.153 V                              ; 0.113 V                              ; 4.49e-10 s                  ; 4.13e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 1.17e-08 V                  ; 2.41 V             ; -0.055 V           ; 0.153 V                             ; 0.113 V                             ; 4.49e-10 s                 ; 4.13e-10 s                 ; No                        ; Yes                       ;
+; user_led[0]         ; 1.5 V        ; 0 s                 ; 0 s                 ; 1.37 V                       ; 4.6e-09 V                    ; 1.4 V               ; -0.0114 V           ; 0.064 V                              ; 0.017 V                              ; 4.42e-10 s                  ; 4.34e-10 s                  ; Yes                        ; Yes                        ; 1.37 V                      ; 4.6e-09 V                   ; 1.4 V              ; -0.0114 V          ; 0.064 V                             ; 0.017 V                             ; 4.42e-10 s                 ; 4.34e-10 s                 ; Yes                       ; Yes                       ;
+; user_led[1]         ; 1.5 V        ; 0 s                 ; 0 s                 ; 1.37 V                       ; 4.61e-09 V                   ; 1.4 V               ; -0.0112 V           ; 0.065 V                              ; 0.046 V                              ; 4.42e-10 s                  ; 4.34e-10 s                  ; Yes                        ; Yes                        ; 1.37 V                      ; 4.61e-09 V                  ; 1.4 V              ; -0.0112 V          ; 0.065 V                             ; 0.046 V                             ; 4.42e-10 s                 ; 4.34e-10 s                 ; Yes                       ; Yes                       ;
+; user_led[2]         ; 1.5 V        ; 0 s                 ; 0 s                 ; 1.37 V                       ; 4.6e-09 V                    ; 1.4 V               ; -0.0114 V           ; 0.064 V                              ; 0.017 V                              ; 4.42e-10 s                  ; 4.34e-10 s                  ; Yes                        ; Yes                        ; 1.37 V                      ; 4.6e-09 V                   ; 1.4 V              ; -0.0114 V          ; 0.064 V                             ; 0.017 V                             ; 4.42e-10 s                 ; 4.34e-10 s                 ; Yes                       ; Yes                       ;
+; user_led[3]         ; 1.5 V        ; 0 s                 ; 0 s                 ; 1.37 V                       ; 4.6e-09 V                    ; 1.4 V               ; -0.0114 V           ; 0.064 V                              ; 0.017 V                              ; 4.42e-10 s                  ; 4.34e-10 s                  ; Yes                        ; Yes                        ; 1.37 V                      ; 4.6e-09 V                   ; 1.4 V              ; -0.0114 V          ; 0.064 V                             ; 0.017 V                             ; 4.42e-10 s                 ; 4.34e-10 s                 ; Yes                       ; Yes                       ;
+; user_led[4]         ; 1.5 V        ; 0 s                 ; 0 s                 ; 1.37 V                       ; 4.61e-09 V                   ; 1.4 V               ; -0.0112 V           ; 0.065 V                              ; 0.046 V                              ; 4.42e-10 s                  ; 4.34e-10 s                  ; Yes                        ; Yes                        ; 1.37 V                      ; 4.61e-09 V                  ; 1.4 V              ; -0.0112 V          ; 0.065 V                             ; 0.046 V                             ; 4.42e-10 s                 ; 4.34e-10 s                 ; Yes                       ; Yes                       ;
+; enet_mdc            ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.17e-08 V                   ; 2.42 V              ; -0.0607 V           ; 0.271 V                              ; 0.095 V                              ; 2.93e-10 s                  ; 3.92e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 1.17e-08 V                  ; 2.42 V             ; -0.0607 V          ; 0.271 V                             ; 0.095 V                             ; 2.93e-10 s                 ; 3.92e-10 s                 ; No                        ; Yes                       ;
+; enet_mdio           ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.17e-08 V                   ; 2.42 V              ; -0.0619 V           ; 0.272 V                              ; 0.096 V                              ; 2.93e-10 s                  ; 3.92e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 1.17e-08 V                  ; 2.42 V             ; -0.0619 V          ; 0.272 V                             ; 0.096 V                             ; 2.93e-10 s                 ; 3.92e-10 s                 ; No                        ; Yes                       ;
+; altera_reserved_tdo ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.97e-08 V                   ; 2.4 V               ; -0.023 V            ; 0.201 V                              ; 0.081 V                              ; 4.59e-10 s                  ; 5.51e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 1.97e-08 V                  ; 2.4 V              ; -0.023 V           ; 0.201 V                             ; 0.081 V                             ; 4.59e-10 s                 ; 5.51e-10 s                 ; No                        ; Yes                       ;
++---------------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Slow 1200mv 85c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 ;
++---------------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin                 ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; eneta_tx_d[0]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.79e-06 V                   ; 2.38 V              ; -0.041 V            ; 0.145 V                              ; 0.14 V                               ; 4.54e-10 s                  ; 4.3e-10 s                   ; No                         ; Yes                        ; 2.32 V                      ; 1.79e-06 V                  ; 2.38 V             ; -0.041 V           ; 0.145 V                             ; 0.14 V                              ; 4.54e-10 s                 ; 4.3e-10 s                  ; No                        ; Yes                       ;
+; eneta_tx_d[1]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.79e-06 V                   ; 2.38 V              ; -0.041 V            ; 0.145 V                              ; 0.14 V                               ; 4.54e-10 s                  ; 4.3e-10 s                   ; No                         ; Yes                        ; 2.32 V                      ; 1.79e-06 V                  ; 2.38 V             ; -0.041 V           ; 0.145 V                             ; 0.14 V                              ; 4.54e-10 s                 ; 4.3e-10 s                  ; No                        ; Yes                       ;
+; eneta_tx_d[2]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.79e-06 V                   ; 2.38 V              ; -0.0389 V           ; 0.145 V                              ; 0.139 V                              ; 4.54e-10 s                  ; 4.3e-10 s                   ; No                         ; Yes                        ; 2.32 V                      ; 1.79e-06 V                  ; 2.38 V             ; -0.0389 V          ; 0.145 V                             ; 0.139 V                             ; 4.54e-10 s                 ; 4.3e-10 s                  ; No                        ; Yes                       ;
+; eneta_tx_d[3]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.79e-06 V                   ; 2.38 V              ; -0.041 V            ; 0.145 V                              ; 0.14 V                               ; 4.54e-10 s                  ; 4.3e-10 s                   ; No                         ; Yes                        ; 2.32 V                      ; 1.79e-06 V                  ; 2.38 V             ; -0.041 V           ; 0.145 V                             ; 0.14 V                              ; 4.54e-10 s                 ; 4.3e-10 s                  ; No                        ; Yes                       ;
+; eneta_tx_en         ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.79e-06 V                   ; 2.38 V              ; -0.0389 V           ; 0.145 V                              ; 0.139 V                              ; 4.54e-10 s                  ; 4.3e-10 s                   ; No                         ; Yes                        ; 2.32 V                      ; 1.79e-06 V                  ; 2.38 V             ; -0.0389 V          ; 0.145 V                             ; 0.139 V                             ; 4.54e-10 s                 ; 4.3e-10 s                  ; No                        ; Yes                       ;
+; eneta_gtx_clk       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.79e-06 V                   ; 2.38 V              ; -0.0389 V           ; 0.145 V                              ; 0.139 V                              ; 4.54e-10 s                  ; 4.3e-10 s                   ; No                         ; Yes                        ; 2.32 V                      ; 1.79e-06 V                  ; 2.38 V             ; -0.0389 V          ; 0.145 V                             ; 0.139 V                             ; 4.54e-10 s                 ; 4.3e-10 s                  ; No                        ; Yes                       ;
+; eneta_resetn        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.79e-06 V                   ; 2.38 V              ; -0.036 V            ; 0.183 V                              ; 0.07 V                               ; 4.76e-10 s                  ; 4.7e-10 s                   ; Yes                        ; Yes                        ; 2.32 V                      ; 1.79e-06 V                  ; 2.38 V             ; -0.036 V           ; 0.183 V                             ; 0.07 V                              ; 4.76e-10 s                 ; 4.7e-10 s                  ; Yes                       ; Yes                       ;
+; user_led[0]         ; 1.5 V        ; 0 s                 ; 0 s                 ; 1.37 V                       ; 8.23e-07 V                   ; 1.39 V              ; -0.0078 V           ; 0.038 V                              ; 0.03 V                               ; 4.88e-10 s                  ; 5.36e-10 s                  ; Yes                        ; Yes                        ; 1.37 V                      ; 8.23e-07 V                  ; 1.39 V             ; -0.0078 V          ; 0.038 V                             ; 0.03 V                              ; 4.88e-10 s                 ; 5.36e-10 s                 ; Yes                       ; Yes                       ;
+; user_led[1]         ; 1.5 V        ; 0 s                 ; 0 s                 ; 1.37 V                       ; 8.24e-07 V                   ; 1.39 V              ; -0.00775 V          ; 0.038 V                              ; 0.03 V                               ; 4.88e-10 s                  ; 5.36e-10 s                  ; Yes                        ; Yes                        ; 1.37 V                      ; 8.24e-07 V                  ; 1.39 V             ; -0.00775 V         ; 0.038 V                             ; 0.03 V                              ; 4.88e-10 s                 ; 5.36e-10 s                 ; Yes                       ; Yes                       ;
+; user_led[2]         ; 1.5 V        ; 0 s                 ; 0 s                 ; 1.37 V                       ; 8.23e-07 V                   ; 1.39 V              ; -0.0078 V           ; 0.038 V                              ; 0.03 V                               ; 4.88e-10 s                  ; 5.36e-10 s                  ; Yes                        ; Yes                        ; 1.37 V                      ; 8.23e-07 V                  ; 1.39 V             ; -0.0078 V          ; 0.038 V                             ; 0.03 V                              ; 4.88e-10 s                 ; 5.36e-10 s                 ; Yes                       ; Yes                       ;
+; user_led[3]         ; 1.5 V        ; 0 s                 ; 0 s                 ; 1.37 V                       ; 8.23e-07 V                   ; 1.39 V              ; -0.0078 V           ; 0.038 V                              ; 0.03 V                               ; 4.88e-10 s                  ; 5.36e-10 s                  ; Yes                        ; Yes                        ; 1.37 V                      ; 8.23e-07 V                  ; 1.39 V             ; -0.0078 V          ; 0.038 V                             ; 0.03 V                              ; 4.88e-10 s                 ; 5.36e-10 s                 ; Yes                       ; Yes                       ;
+; user_led[4]         ; 1.5 V        ; 0 s                 ; 0 s                 ; 1.37 V                       ; 8.24e-07 V                   ; 1.39 V              ; -0.00775 V          ; 0.038 V                              ; 0.03 V                               ; 4.88e-10 s                  ; 5.36e-10 s                  ; Yes                        ; Yes                        ; 1.37 V                      ; 8.24e-07 V                  ; 1.39 V             ; -0.00775 V         ; 0.038 V                             ; 0.03 V                              ; 4.88e-10 s                 ; 5.36e-10 s                 ; Yes                       ; Yes                       ;
+; enet_mdc            ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.79e-06 V                   ; 2.38 V              ; -0.041 V            ; 0.145 V                              ; 0.14 V                               ; 4.54e-10 s                  ; 4.3e-10 s                   ; No                         ; Yes                        ; 2.32 V                      ; 1.79e-06 V                  ; 2.38 V             ; -0.041 V           ; 0.145 V                             ; 0.14 V                              ; 4.54e-10 s                 ; 4.3e-10 s                  ; No                        ; Yes                       ;
+; enet_mdio           ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.79e-06 V                   ; 2.38 V              ; -0.0389 V           ; 0.145 V                              ; 0.139 V                              ; 4.54e-10 s                  ; 4.3e-10 s                   ; No                         ; Yes                        ; 2.32 V                      ; 1.79e-06 V                  ; 2.38 V             ; -0.0389 V          ; 0.145 V                             ; 0.139 V                             ; 4.54e-10 s                 ; 4.3e-10 s                  ; No                        ; Yes                       ;
+; altera_reserved_tdo ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.04e-06 V                   ; 2.37 V              ; -0.0108 V           ; 0.13 V                               ; 0.066 V                              ; 6.32e-10 s                  ; 6.45e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.04e-06 V                  ; 2.37 V             ; -0.0108 V          ; 0.13 V                              ; 0.066 V                             ; 6.32e-10 s                 ; 6.45e-10 s                 ; No                        ; Yes                       ;
++---------------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Fast 1200mv 0c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  ;
++---------------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin                 ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; eneta_tx_d[0]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 9.94e-08 V                   ; 2.78 V              ; -0.0444 V           ; 0.25 V                               ; 0.107 V                              ; 2.67e-10 s                  ; 2.75e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 9.94e-08 V                  ; 2.78 V             ; -0.0444 V          ; 0.25 V                              ; 0.107 V                             ; 2.67e-10 s                 ; 2.75e-10 s                 ; No                        ; Yes                       ;
+; eneta_tx_d[1]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 9.94e-08 V                   ; 2.78 V              ; -0.0444 V           ; 0.25 V                               ; 0.107 V                              ; 2.67e-10 s                  ; 2.75e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 9.94e-08 V                  ; 2.78 V             ; -0.0444 V          ; 0.25 V                              ; 0.107 V                             ; 2.67e-10 s                 ; 2.75e-10 s                 ; No                        ; Yes                       ;
+; eneta_tx_d[2]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 9.95e-08 V                   ; 2.78 V              ; -0.0452 V           ; 0.248 V                              ; 0.108 V                              ; 2.67e-10 s                  ; 2.75e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 9.95e-08 V                  ; 2.78 V             ; -0.0452 V          ; 0.248 V                             ; 0.108 V                             ; 2.67e-10 s                 ; 2.75e-10 s                 ; No                        ; Yes                       ;
+; eneta_tx_d[3]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 9.94e-08 V                   ; 2.78 V              ; -0.0444 V           ; 0.25 V                               ; 0.107 V                              ; 2.67e-10 s                  ; 2.75e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 9.94e-08 V                  ; 2.78 V             ; -0.0444 V          ; 0.25 V                              ; 0.107 V                             ; 2.67e-10 s                 ; 2.75e-10 s                 ; No                        ; Yes                       ;
+; eneta_tx_en         ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 9.95e-08 V                   ; 2.78 V              ; -0.0452 V           ; 0.248 V                              ; 0.108 V                              ; 2.67e-10 s                  ; 2.75e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 9.95e-08 V                  ; 2.78 V             ; -0.0452 V          ; 0.248 V                             ; 0.108 V                             ; 2.67e-10 s                 ; 2.75e-10 s                 ; No                        ; Yes                       ;
+; eneta_gtx_clk       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 9.95e-08 V                   ; 2.78 V              ; -0.0452 V           ; 0.248 V                              ; 0.108 V                              ; 2.67e-10 s                  ; 2.75e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 9.95e-08 V                  ; 2.78 V             ; -0.0452 V          ; 0.248 V                             ; 0.108 V                             ; 2.67e-10 s                 ; 2.75e-10 s                 ; No                        ; Yes                       ;
+; eneta_resetn        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 9.95e-08 V                   ; 2.77 V              ; -0.0486 V           ; 0.285 V                              ; 0.06 V                               ; 2.8e-10 s                   ; 3.04e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 9.95e-08 V                  ; 2.77 V             ; -0.0486 V          ; 0.285 V                             ; 0.06 V                              ; 2.8e-10 s                  ; 3.04e-10 s                 ; No                        ; Yes                       ;
+; user_led[0]         ; 1.5 V        ; 0 s                 ; 0 s                 ; 1.57 V                       ; 2.35e-08 V                   ; 1.63 V              ; -0.0475 V           ; 0.117 V                              ; 0.092 V                              ; 2.7e-10 s                   ; 2.7e-10 s                   ; Yes                        ; Yes                        ; 1.57 V                      ; 2.35e-08 V                  ; 1.63 V             ; -0.0475 V          ; 0.117 V                             ; 0.092 V                             ; 2.7e-10 s                  ; 2.7e-10 s                  ; Yes                       ; Yes                       ;
+; user_led[1]         ; 1.5 V        ; 0 s                 ; 0 s                 ; 1.57 V                       ; 2.34e-08 V                   ; 1.63 V              ; -0.0474 V           ; 0.117 V                              ; 0.092 V                              ; 2.7e-10 s                   ; 2.7e-10 s                   ; Yes                        ; Yes                        ; 1.57 V                      ; 2.34e-08 V                  ; 1.63 V             ; -0.0474 V          ; 0.117 V                             ; 0.092 V                             ; 2.7e-10 s                  ; 2.7e-10 s                  ; Yes                       ; Yes                       ;
+; user_led[2]         ; 1.5 V        ; 0 s                 ; 0 s                 ; 1.57 V                       ; 2.35e-08 V                   ; 1.63 V              ; -0.0475 V           ; 0.117 V                              ; 0.092 V                              ; 2.7e-10 s                   ; 2.7e-10 s                   ; Yes                        ; Yes                        ; 1.57 V                      ; 2.35e-08 V                  ; 1.63 V             ; -0.0475 V          ; 0.117 V                             ; 0.092 V                             ; 2.7e-10 s                  ; 2.7e-10 s                  ; Yes                       ; Yes                       ;
+; user_led[3]         ; 1.5 V        ; 0 s                 ; 0 s                 ; 1.57 V                       ; 2.35e-08 V                   ; 1.63 V              ; -0.0475 V           ; 0.117 V                              ; 0.092 V                              ; 2.7e-10 s                   ; 2.7e-10 s                   ; Yes                        ; Yes                        ; 1.57 V                      ; 2.35e-08 V                  ; 1.63 V             ; -0.0475 V          ; 0.117 V                             ; 0.092 V                             ; 2.7e-10 s                  ; 2.7e-10 s                  ; Yes                       ; Yes                       ;
+; user_led[4]         ; 1.5 V        ; 0 s                 ; 0 s                 ; 1.57 V                       ; 2.34e-08 V                   ; 1.63 V              ; -0.0474 V           ; 0.117 V                              ; 0.092 V                              ; 2.7e-10 s                   ; 2.7e-10 s                   ; Yes                        ; Yes                        ; 1.57 V                      ; 2.34e-08 V                  ; 1.63 V             ; -0.0474 V          ; 0.117 V                             ; 0.092 V                             ; 2.7e-10 s                  ; 2.7e-10 s                  ; Yes                       ; Yes                       ;
+; enet_mdc            ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 9.94e-08 V                   ; 2.78 V              ; -0.0444 V           ; 0.25 V                               ; 0.107 V                              ; 2.67e-10 s                  ; 2.75e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 9.94e-08 V                  ; 2.78 V             ; -0.0444 V          ; 0.25 V                              ; 0.107 V                             ; 2.67e-10 s                 ; 2.75e-10 s                 ; No                        ; Yes                       ;
+; enet_mdio           ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 9.95e-08 V                   ; 2.78 V              ; -0.0452 V           ; 0.248 V                              ; 0.108 V                              ; 2.67e-10 s                  ; 2.75e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 9.95e-08 V                  ; 2.78 V             ; -0.0452 V          ; 0.248 V                             ; 0.108 V                             ; 2.67e-10 s                 ; 2.75e-10 s                 ; No                        ; Yes                       ;
+; altera_reserved_tdo ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 1.68e-07 V                   ; 2.73 V              ; -0.0395 V           ; 0.361 V                              ; 0.109 V                              ; 3.1e-10 s                   ; 4.41e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 1.68e-07 V                  ; 2.73 V             ; -0.0395 V          ; 0.361 V                             ; 0.109 V                             ; 3.1e-10 s                  ; 4.41e-10 s                 ; No                        ; Yes                       ;
++---------------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++---------------------------------------------------------------------------------------------+
+; Setup Transfers                                                                             ;
++---------------------+---------------------+------------+------------+------------+----------+
+; From Clock          ; To Clock            ; RR Paths   ; FR Paths   ; RF Paths   ; FF Paths ;
++---------------------+---------------------+------------+------------+------------+----------+
+; altera_reserved_tck ; altera_reserved_tck ; 6536       ; 0          ; 82         ; 2        ;
+; clk_125             ; altera_reserved_tck ; false path ; 0          ; 0          ; 0        ;
+; altera_reserved_tck ; clk_125             ; false path ; 0          ; 0          ; 0        ;
+; clk_125             ; clk_125             ; 98853      ; 0          ; 0          ; 0        ;
+; rx_clk_125          ; clk_125             ; 280        ; 0          ; 0          ; 0        ;
+; clk_125             ; rx_clk_125          ; 188        ; 0          ; 0          ; 0        ;
+; rx_clk_125          ; rx_clk_125          ; 12621      ; 10         ; 5          ; 0        ;
+; virtual_clk_125     ; rx_clk_125          ; 5          ; false path ; false path ; 5        ;
++---------------------+---------------------+------------+------------+------------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------------------------------+
+; Hold Transfers                                                                            ;
++---------------------+---------------------+------------+----------+----------+------------+
+; From Clock          ; To Clock            ; RR Paths   ; FR Paths ; RF Paths ; FF Paths   ;
++---------------------+---------------------+------------+----------+----------+------------+
+; altera_reserved_tck ; altera_reserved_tck ; 6536       ; 0        ; 82       ; 2          ;
+; clk_125             ; altera_reserved_tck ; false path ; 0        ; 0        ; 0          ;
+; altera_reserved_tck ; clk_125             ; false path ; 0        ; 0        ; 0          ;
+; clk_125             ; clk_125             ; 98853      ; 0        ; 0        ; 0          ;
+; rx_clk_125          ; clk_125             ; 280        ; 0        ; 0        ; 0          ;
+; clk_125             ; rx_clk_125          ; 188        ; 0        ; 0        ; 0          ;
+; rx_clk_125          ; rx_clk_125          ; 12621      ; 10       ; 5        ; 0          ;
+; virtual_clk_125     ; rx_clk_125          ; false path ; 5        ; 5        ; false path ;
++---------------------+---------------------+------------+----------+----------+------------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-----------------------------------------------------------------------------------------+
+; Recovery Transfers                                                                      ;
++---------------------+---------------------+------------+----------+----------+----------+
+; From Clock          ; To Clock            ; RR Paths   ; FR Paths ; RF Paths ; FF Paths ;
++---------------------+---------------------+------------+----------+----------+----------+
+; altera_reserved_tck ; altera_reserved_tck ; 131        ; 0        ; 1        ; 0        ;
+; clk_125             ; altera_reserved_tck ; false path ; 0        ; 0        ; 0        ;
+; altera_reserved_tck ; clk_125             ; false path ; 0        ; 0        ; 0        ;
+; clk_125             ; clk_125             ; 2759       ; 0        ; 0        ; 0        ;
+; clk_125             ; rx_clk_125          ; 3          ; 0        ; 0        ; 0        ;
+; rx_clk_125          ; rx_clk_125          ; 1538       ; 0        ; 0        ; 0        ;
++---------------------+---------------------+------------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-----------------------------------------------------------------------------------------+
+; Removal Transfers                                                                       ;
++---------------------+---------------------+------------+----------+----------+----------+
+; From Clock          ; To Clock            ; RR Paths   ; FR Paths ; RF Paths ; FF Paths ;
++---------------------+---------------------+------------+----------+----------+----------+
+; altera_reserved_tck ; altera_reserved_tck ; 131        ; 0        ; 1        ; 0        ;
+; clk_125             ; altera_reserved_tck ; false path ; 0        ; 0        ; 0        ;
+; altera_reserved_tck ; clk_125             ; false path ; 0        ; 0        ; 0        ;
+; clk_125             ; clk_125             ; 2759       ; 0        ; 0        ; 0        ;
+; clk_125             ; rx_clk_125          ; 3          ; 0        ; 0        ; 0        ;
+; rx_clk_125          ; rx_clk_125          ; 1538       ; 0        ; 0        ; 0        ;
++---------------------+---------------------+------------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths Summary                    ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 6     ; 6    ;
+; Unconstrained Input Port Paths  ; 320   ; 320  ;
+; Unconstrained Output Ports      ; 12    ; 12   ;
+; Unconstrained Output Port Paths ; 13    ; 13   ;
++---------------------------------+-------+------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Clock Status Summary                                                                                     ;
++----------------------------------------------------------+---------------------+-----------+-------------+
+; Target                                                   ; Clock               ; Type      ; Status      ;
++----------------------------------------------------------+---------------------+-----------+-------------+
+;                                                          ; virtual_clk_125     ; Virtual   ; Constrained ;
+; altera_reserved_tck                                      ; altera_reserved_tck ; Base      ; Constrained ;
+; clk_50_max10                                             ; clk_50_max10        ; Base      ; Constrained ;
+; eneta_rx_clk                                             ; rx_clk_125          ; Base      ; Constrained ;
+; fyp_eth_pll1|altpll_component|auto_generated|pll1|clk[0] ; clk_125             ; Generated ; Constrained ;
+; fyp_eth_pll1|altpll_component|auto_generated|pll1|clk[1] ; clk_125_shift       ; Generated ; Constrained ;
++----------------------------------------------------------+---------------------+-----------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                                  ;
++---------------------+--------------------------------------------------------------------------------------+
+; Input Port          ; Comment                                                                              ;
++---------------------+--------------------------------------------------------------------------------------+
+; altera_reserved_tdi ; Partially constrained                                                                ;
+; altera_reserved_tms ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; enet_mdio           ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; fpga_resetn         ; Partially constrained                                                                ;
+; user_pb[2]          ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; user_pb[3]          ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++---------------------+--------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                                  ;
++---------------------+---------------------------------------------------------------------------------------+
+; Output Port         ; Comment                                                                               ;
++---------------------+---------------------------------------------------------------------------------------+
+; altera_reserved_tdo ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; enet_mdc            ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; enet_mdio           ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; eneta_gtx_clk       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; eneta_resetn        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; eneta_tx_d[0]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; eneta_tx_d[1]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; eneta_tx_d[2]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; eneta_tx_d[3]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; eneta_tx_en         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; user_led[2]         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; user_led[3]         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++---------------------+---------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                                  ;
++---------------------+--------------------------------------------------------------------------------------+
+; Input Port          ; Comment                                                                              ;
++---------------------+--------------------------------------------------------------------------------------+
+; altera_reserved_tdi ; Partially constrained                                                                ;
+; altera_reserved_tms ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; enet_mdio           ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; fpga_resetn         ; Partially constrained                                                                ;
+; user_pb[2]          ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; user_pb[3]          ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++---------------------+--------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                                  ;
++---------------------+---------------------------------------------------------------------------------------+
+; Output Port         ; Comment                                                                               ;
++---------------------+---------------------------------------------------------------------------------------+
+; altera_reserved_tdo ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; enet_mdc            ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; enet_mdio           ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; eneta_gtx_clk       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; eneta_resetn        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; eneta_tx_d[0]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; eneta_tx_d[1]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; eneta_tx_d[2]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; eneta_tx_d[3]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; eneta_tx_en         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; user_led[2]         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; user_led[3]         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++---------------------+---------------------------------------------------------------------------------------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Timing Analyzer
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Sat Feb 16 15:42:52 2019
+Info: Command: quartus_sta fyp_max10_tse -c fyp_max10_tse_top
+Info: qsta_default_script.tcl version: #1
+Warning (20013): Ignored 16 assignments for entity "fyp_clkctrl" -- entity does not exist in design
+Warning (20013): Ignored 14 assignments for entity "fyp_clkctrl_altclkctrl_0" -- entity does not exist in design
+Warning (20013): Ignored 16 assignments for entity "fyp_gpio" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_NAME altera_gpio_lite -entity fyp_gpio -sip fyp_gpio/fyp_gpio.sip -library lib_fyp_gpio was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_VERSION 18.1 -entity fyp_gpio -sip fyp_gpio/fyp_gpio.sip -library lib_fyp_gpio was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_ENV mwpim -entity fyp_gpio -sip fyp_gpio/fyp_gpio.sip -library lib_fyp_gpio was ignored
+Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Info (332164): Evaluating HDL-embedded SDC commands
+    Info (332165): Entity GHVD5181
+        Info (332166): set_disable_timing [get_cells -hierarchical QXXQ6833_0]
+        Info (332166): set_disable_timing [get_cells -hierarchical JEQQ5299_0]
+        Info (332166): set_disable_timing [get_cells -hierarchical JEQQ5299_1]
+        Info (332166): set_disable_timing [get_cells -hierarchical JEQQ5299_2]
+        Info (332166): set_disable_timing [get_cells -hierarchical JEQQ5299_3]
+        Info (332166): set_disable_timing [get_cells -hierarchical JEQQ5299_4]
+        Info (332166): set_disable_timing [get_cells -hierarchical JEQQ5299_5]
+        Info (332166): set_disable_timing [get_cells -hierarchical JEQQ5299_6]
+        Info (332166): set_disable_timing [get_cells -hierarchical JEQQ5299_7]
+        Info (332166): set_disable_timing [get_cells -hierarchical BITP7563_0]
+    Info (332165): Entity alt_jtag_atlantic
+        Info (332166): set_false_path -from [get_registers {*|alt_jtag_atlantic:*|jupdate}] -to [get_registers {*|alt_jtag_atlantic:*|jupdate1*}] 
+        Info (332166): set_false_path -from [get_registers {*|alt_jtag_atlantic:*|rdata[*]}] -to [get_registers {*|alt_jtag_atlantic*|td_shift[*]}]
+        Info (332166): set_false_path -from [get_registers {*|alt_jtag_atlantic:*|rdata[*]}] -to [get_registers {*|alt_jtag_atlantic*|td_shift[*]}]
+        Info (332166): set_false_path -from [get_registers {*|alt_jtag_atlantic:*|rdata[*]}] -to [get_registers {*|alt_jtag_atlantic*|td_shift[*]}]
+        Info (332166): set_false_path -from [get_registers {*|alt_jtag_atlantic:*|rdata[*]}] -to [get_registers {*|alt_jtag_atlantic*|td_shift[*]}]
+        Info (332166): set_false_path -from [get_registers {*|alt_jtag_atlantic:*|rdata[*]}] -to [get_registers {*|alt_jtag_atlantic*|td_shift[*]}]
+        Info (332166): set_false_path -from [get_registers {*|alt_jtag_atlantic:*|rdata[*]}] -to [get_registers {*|alt_jtag_atlantic*|td_shift[*]}]
+        Info (332166): set_false_path -from [get_registers {*|alt_jtag_atlantic:*|rdata[*]}] -to [get_registers {*|alt_jtag_atlantic*|td_shift[*]}]
+        Info (332166): set_false_path -from [get_registers {*|alt_jtag_atlantic:*|rdata[*]}] -to [get_registers {*|alt_jtag_atlantic*|td_shift[*]}]
+        Info (332166): set_false_path -from [get_registers {*|alt_jtag_atlantic:*|read}] -to [get_registers {*|alt_jtag_atlantic:*|read1*}] 
+        Info (332166): set_false_path -from [get_registers {*|alt_jtag_atlantic:*|read_req}]
+        Info (332166): set_false_path -from [get_registers {*|alt_jtag_atlantic:*|rvalid}] -to [get_registers {*|alt_jtag_atlantic*|td_shift[*]}]
+        Info (332166): set_false_path -from [get_registers {*|t_dav}] -to [get_registers {*|alt_jtag_atlantic:*|tck_t_dav}]
+        Info (332166): set_false_path -from [get_registers {*|alt_jtag_atlantic:*|user_saw_rvalid}] -to [get_registers {*|alt_jtag_atlantic:*|rvalid0*}]
+        Info (332166): set_false_path -from [get_registers {*|alt_jtag_atlantic:*|wdata[*]}] -to [get_registers {*}]
+        Info (332166): set_false_path -from [get_registers {*|alt_jtag_atlantic:*|wdata[*]}] -to [get_registers {*}]
+        Info (332166): set_false_path -from [get_registers {*|alt_jtag_atlantic:*|wdata[*]}] -to [get_registers {*}]
+        Info (332166): set_false_path -from [get_registers {*|alt_jtag_atlantic:*|wdata[*]}] -to [get_registers {*}]
+        Info (332166): set_false_path -from [get_registers {*|alt_jtag_atlantic:*|wdata[*]}] -to [get_registers {*}]
+        Info (332166): set_false_path -from [get_registers {*|alt_jtag_atlantic:*|wdata[*]}] -to [get_registers {*}]
+        Info (332166): set_false_path -from [get_registers {*|alt_jtag_atlantic:*|wdata[*]}] -to [get_registers {*}]
+        Info (332166): set_false_path -from [get_registers {*|alt_jtag_atlantic:*|wdata[*]}] -to [get_registers {*}]
+        Info (332166): set_false_path -from [get_registers {*|alt_jtag_atlantic:*|write}] -to [get_registers {*|alt_jtag_atlantic:*|write1*}] 
+        Info (332166): set_false_path -from [get_registers {*|alt_jtag_atlantic:*|write_stalled}] -to [get_registers {*|alt_jtag_atlantic:*|t_ena*}]
+        Info (332166): set_false_path -from [get_registers {*|alt_jtag_atlantic:*|write_stalled}] -to [get_registers {*|alt_jtag_atlantic:*|t_pause*}]
+        Info (332166): set_false_path -from [get_registers {*|alt_jtag_atlantic:*|write_valid}]
+    Info (332165): Entity altera_std_synchronizer
+        Info (332166): set_false_path -to [get_keepers {*altera_std_synchronizer:*|din_s1}]
+    Info (332165): Entity pzdyqx_impl
+        Info (332166): set_false_path -from [get_keepers {altera_reserved_tdi}] -to [get_keepers {pzdyqx*}]
+    Info (332165): Entity sld_hub
+        Info (332166): create_clock -name altera_reserved_tck [get_ports {altera_reserved_tck}] -period 10MHz   
+        Info (332166): set_clock_groups -asynchronous -group {altera_reserved_tck}
+Warning (332174): Ignored filter at qsta_default_script.tcl(1297): *|alt_jtag_atlantic:*|jupdate could not be matched with a register File: C:/intelFPGA_lite/18.1/quartus/common/tcl/internal/qsta_default_script.tcl Line: 1297
+Warning (332174): Ignored filter at qsta_default_script.tcl(1297): *|alt_jtag_atlantic:*|jupdate1* could not be matched with a register File: C:/intelFPGA_lite/18.1/quartus/common/tcl/internal/qsta_default_script.tcl Line: 1297
+Warning (332049): Ignored set_false_path at qsta_default_script.tcl(1297): Argument <from> is an empty collection File: C:/intelFPGA_lite/18.1/quartus/common/tcl/internal/qsta_default_script.tcl Line: 1297
+    Info (332050): read_sdc File: C:/intelFPGA_lite/18.1/quartus/common/tcl/internal/qsta_default_script.tcl Line: 1297
+Warning (332049): Ignored set_false_path at qsta_default_script.tcl(1297): Argument <to> is an empty collection File: C:/intelFPGA_lite/18.1/quartus/common/tcl/internal/qsta_default_script.tcl Line: 1297
+Warning (332174): Ignored filter at qsta_default_script.tcl(1297): *|alt_jtag_atlantic:*|read could not be matched with a register File: C:/intelFPGA_lite/18.1/quartus/common/tcl/internal/qsta_default_script.tcl Line: 1297
+Warning (332174): Ignored filter at qsta_default_script.tcl(1297): *|alt_jtag_atlantic:*|read1* could not be matched with a register File: C:/intelFPGA_lite/18.1/quartus/common/tcl/internal/qsta_default_script.tcl Line: 1297
+Warning (332049): Ignored set_false_path at qsta_default_script.tcl(1297): Argument <from> is an empty collection File: C:/intelFPGA_lite/18.1/quartus/common/tcl/internal/qsta_default_script.tcl Line: 1297
+    Info (332050): read_sdc File: C:/intelFPGA_lite/18.1/quartus/common/tcl/internal/qsta_default_script.tcl Line: 1297
+Warning (332049): Ignored set_false_path at qsta_default_script.tcl(1297): Argument <to> is an empty collection File: C:/intelFPGA_lite/18.1/quartus/common/tcl/internal/qsta_default_script.tcl Line: 1297
+Warning (332174): Ignored filter at qsta_default_script.tcl(1297): *|alt_jtag_atlantic:*|read_req could not be matched with a register File: C:/intelFPGA_lite/18.1/quartus/common/tcl/internal/qsta_default_script.tcl Line: 1297
+Warning (332049): Ignored set_false_path at qsta_default_script.tcl(1297): Argument <from> is an empty collection File: C:/intelFPGA_lite/18.1/quartus/common/tcl/internal/qsta_default_script.tcl Line: 1297
+    Info (332050): read_sdc File: C:/intelFPGA_lite/18.1/quartus/common/tcl/internal/qsta_default_script.tcl Line: 1297
+Warning (332174): Ignored filter at qsta_default_script.tcl(1297): *|alt_jtag_atlantic:*|rvalid0* could not be matched with a register File: C:/intelFPGA_lite/18.1/quartus/common/tcl/internal/qsta_default_script.tcl Line: 1297
+Warning (332049): Ignored set_false_path at qsta_default_script.tcl(1297): Argument <to> is an empty collection File: C:/intelFPGA_lite/18.1/quartus/common/tcl/internal/qsta_default_script.tcl Line: 1297
+    Info (332050): read_sdc File: C:/intelFPGA_lite/18.1/quartus/common/tcl/internal/qsta_default_script.tcl Line: 1297
+Warning (332174): Ignored filter at qsta_default_script.tcl(1297): *|alt_jtag_atlantic:*|wdata[*] could not be matched with a register File: C:/intelFPGA_lite/18.1/quartus/common/tcl/internal/qsta_default_script.tcl Line: 1297
+Warning (332049): Ignored set_false_path at qsta_default_script.tcl(1297): Argument <from> is an empty collection File: C:/intelFPGA_lite/18.1/quartus/common/tcl/internal/qsta_default_script.tcl Line: 1297
+    Info (332050): read_sdc File: C:/intelFPGA_lite/18.1/quartus/common/tcl/internal/qsta_default_script.tcl Line: 1297
+Warning (332049): Ignored set_false_path at qsta_default_script.tcl(1297): Argument <from> is an empty collection File: C:/intelFPGA_lite/18.1/quartus/common/tcl/internal/qsta_default_script.tcl Line: 1297
+    Info (332050): read_sdc File: C:/intelFPGA_lite/18.1/quartus/common/tcl/internal/qsta_default_script.tcl Line: 1297
+Warning (332049): Ignored set_false_path at qsta_default_script.tcl(1297): Argument <from> is an empty collection File: C:/intelFPGA_lite/18.1/quartus/common/tcl/internal/qsta_default_script.tcl Line: 1297
+    Info (332050): read_sdc File: C:/intelFPGA_lite/18.1/quartus/common/tcl/internal/qsta_default_script.tcl Line: 1297
+Warning (332049): Ignored set_false_path at qsta_default_script.tcl(1297): Argument <from> is an empty collection File: C:/intelFPGA_lite/18.1/quartus/common/tcl/internal/qsta_default_script.tcl Line: 1297
+    Info (332050): read_sdc File: C:/intelFPGA_lite/18.1/quartus/common/tcl/internal/qsta_default_script.tcl Line: 1297
+Warning (332049): Ignored set_false_path at qsta_default_script.tcl(1297): Argument <from> is an empty collection File: C:/intelFPGA_lite/18.1/quartus/common/tcl/internal/qsta_default_script.tcl Line: 1297
+    Info (332050): read_sdc File: C:/intelFPGA_lite/18.1/quartus/common/tcl/internal/qsta_default_script.tcl Line: 1297
+Warning (332049): Ignored set_false_path at qsta_default_script.tcl(1297): Argument <from> is an empty collection File: C:/intelFPGA_lite/18.1/quartus/common/tcl/internal/qsta_default_script.tcl Line: 1297
+    Info (332050): read_sdc File: C:/intelFPGA_lite/18.1/quartus/common/tcl/internal/qsta_default_script.tcl Line: 1297
+Warning (332049): Ignored set_false_path at qsta_default_script.tcl(1297): Argument <from> is an empty collection File: C:/intelFPGA_lite/18.1/quartus/common/tcl/internal/qsta_default_script.tcl Line: 1297
+    Info (332050): read_sdc File: C:/intelFPGA_lite/18.1/quartus/common/tcl/internal/qsta_default_script.tcl Line: 1297
+Warning (332049): Ignored set_false_path at qsta_default_script.tcl(1297): Argument <from> is an empty collection File: C:/intelFPGA_lite/18.1/quartus/common/tcl/internal/qsta_default_script.tcl Line: 1297
+    Info (332050): read_sdc File: C:/intelFPGA_lite/18.1/quartus/common/tcl/internal/qsta_default_script.tcl Line: 1297
+Warning (332174): Ignored filter at qsta_default_script.tcl(1297): *|alt_jtag_atlantic:*|t_pause* could not be matched with a register File: C:/intelFPGA_lite/18.1/quartus/common/tcl/internal/qsta_default_script.tcl Line: 1297
+Warning (332049): Ignored set_false_path at qsta_default_script.tcl(1297): Argument <to> is an empty collection File: C:/intelFPGA_lite/18.1/quartus/common/tcl/internal/qsta_default_script.tcl Line: 1297
+    Info (332050): read_sdc File: C:/intelFPGA_lite/18.1/quartus/common/tcl/internal/qsta_default_script.tcl Line: 1297
+Info (332104): Reading SDC File: 'fyp_max10_tse_sys/synthesis/submodules/altera_reset_controller.sdc'
+Info (332104): Reading SDC File: 'fyp_max10_tse_sys/synthesis/submodules/altera_avalon_st_jtag_interface.sdc'
+Info (332104): Reading SDC File: 'fyp_max10_tse_sys/synthesis/submodules/altera_eth_tse_mac.sdc'
+Info (332104): Reading SDC File: 'fyp_tse.sdc'
+Warning (332174): Ignored filter at fyp_tse.sdc(12): fyp_clkctrl1|altclkctrl_0|fyp_clkctrl_altclkctrl_0_sub_component|clkctrl1|outclk could not be matched with a pin File: C:/intelFPGA_lite/18.1/fyp_max10_tse/fyp_tse.sdc Line: 12
+Warning (332049): Ignored create_generated_clock at fyp_tse.sdc(12): Argument -source is an empty collection File: C:/intelFPGA_lite/18.1/fyp_max10_tse/fyp_tse.sdc Line: 12
+    Info (332050): create_generated_clock -name gtx_125_clk -source [get_pins {fyp_clkctrl1|altclkctrl_0|fyp_clkctrl_altclkctrl_0_sub_component|clkctrl1|outclk}] -master_clock {clk_125_shift} [get_ports {eneta_gtx_clk}] File: C:/intelFPGA_lite/18.1/fyp_max10_tse/fyp_tse.sdc Line: 12
+Info (332151): Clock uncertainty is not calculated until you update the timing netlist.
+Info: Output Max Delay = -0.9
+Info: Output Min Delay = -2.7
+Warning (332174): Ignored filter at fyp_tse.sdc(27): gtx_125_clk could not be matched with a clock File: C:/intelFPGA_lite/18.1/fyp_max10_tse/fyp_tse.sdc Line: 27
+Warning (332049): Ignored set_output_delay at fyp_tse.sdc(27): Argument -clock is not an object ID File: C:/intelFPGA_lite/18.1/fyp_max10_tse/fyp_tse.sdc Line: 27
+    Info (332050): set_output_delay -clock gtx_125_clk -max $output_max_delay [get_ports "eneta_tx_d* eneta_tx_en"] File: C:/intelFPGA_lite/18.1/fyp_max10_tse/fyp_tse.sdc Line: 27
+Warning (332049): Ignored set_output_delay at fyp_tse.sdc(28): Argument -clock is not an object ID File: C:/intelFPGA_lite/18.1/fyp_max10_tse/fyp_tse.sdc Line: 28
+    Info (332050): set_output_delay -clock gtx_125_clk -max $output_max_delay [get_ports "eneta_tx_d* eneta_tx_en"] -clock_fall -add_delay File: C:/intelFPGA_lite/18.1/fyp_max10_tse/fyp_tse.sdc Line: 28
+Warning (332049): Ignored set_output_delay at fyp_tse.sdc(29): Argument -clock is not an object ID File: C:/intelFPGA_lite/18.1/fyp_max10_tse/fyp_tse.sdc Line: 29
+    Info (332050): set_output_delay -clock gtx_125_clk -min $output_min_delay [get_ports "eneta_tx_d* eneta_tx_en"] -add_delay File: C:/intelFPGA_lite/18.1/fyp_max10_tse/fyp_tse.sdc Line: 29
+Warning (332049): Ignored set_output_delay at fyp_tse.sdc(30): Argument -clock is not an object ID File: C:/intelFPGA_lite/18.1/fyp_max10_tse/fyp_tse.sdc Line: 30
+    Info (332050): set_output_delay -clock gtx_125_clk -min $output_min_delay [get_ports "eneta_tx_d* eneta_tx_en"] -clock_fall -add_delay File: C:/intelFPGA_lite/18.1/fyp_max10_tse/fyp_tse.sdc Line: 30
+Warning (332049): Ignored set_false_path at fyp_tse.sdc(35): Argument <to> is an empty collection File: C:/intelFPGA_lite/18.1/fyp_max10_tse/fyp_tse.sdc Line: 35
+    Info (332050): set_false_path -fall_from [get_clocks clk_125] -rise_to [get_clocks gtx_125_clk] -setup File: C:/intelFPGA_lite/18.1/fyp_max10_tse/fyp_tse.sdc Line: 35
+Warning (332049): Ignored set_false_path at fyp_tse.sdc(36): Argument <to> is an empty collection File: C:/intelFPGA_lite/18.1/fyp_max10_tse/fyp_tse.sdc Line: 36
+    Info (332050): set_false_path -rise_from [get_clocks clk_125] -fall_to [get_clocks gtx_125_clk] -setup File: C:/intelFPGA_lite/18.1/fyp_max10_tse/fyp_tse.sdc Line: 36
+Warning (332049): Ignored set_false_path at fyp_tse.sdc(37): Argument <to> is an empty collection File: C:/intelFPGA_lite/18.1/fyp_max10_tse/fyp_tse.sdc Line: 37
+    Info (332050): set_false_path -fall_from [get_clocks clk_125] -fall_to [get_clocks gtx_125_clk] -hold File: C:/intelFPGA_lite/18.1/fyp_max10_tse/fyp_tse.sdc Line: 37
+Warning (332049): Ignored set_false_path at fyp_tse.sdc(38): Argument <to> is an empty collection File: C:/intelFPGA_lite/18.1/fyp_max10_tse/fyp_tse.sdc Line: 38
+    Info (332050): set_false_path -rise_from [get_clocks clk_125] -rise_to [get_clocks gtx_125_clk] -hold File: C:/intelFPGA_lite/18.1/fyp_max10_tse/fyp_tse.sdc Line: 38
+Info: Input Max Delay for 125MHz domain= 0.8
+Info: Input Min Delay for 125MHz domain= -0.8
+Warning (332174): Ignored filter at fyp_tse.sdc(64): gtx_125_clk could not be matched with a clock File: C:/intelFPGA_lite/18.1/fyp_max10_tse/fyp_tse.sdc Line: 64
+Warning (332174): Ignored filter at fyp_tse.sdc(66): *sld_signaltap* could not be matched with a register File: C:/intelFPGA_lite/18.1/fyp_max10_tse/fyp_tse.sdc Line: 66
+Warning (332049): Ignored set_false_path at fyp_tse.sdc(66): Argument <to> is an empty collection File: C:/intelFPGA_lite/18.1/fyp_max10_tse/fyp_tse.sdc Line: 66
+    Info (332050): set_false_path -to [get_registers *sld_signaltap*] File: C:/intelFPGA_lite/18.1/fyp_max10_tse/fyp_tse.sdc Line: 66
+Info (332104): Reading SDC File: 'c:/intelfpga_lite/18.1/fyp_max10_tse/db/ip/fyp_max10_tse_sys/submodules/altera_avalon_st_jtag_interface.sdc'
+Info (332104): Reading SDC File: 'c:/intelfpga_lite/18.1/fyp_max10_tse/db/ip/fyp_max10_tse_sys/submodules/altera_eth_tse_mac.sdc'
+Info (332104): Reading SDC File: 'c:/intelfpga_lite/18.1/fyp_max10_tse/db/ip/fyp_max10_tse_sys/submodules/altera_reset_controller.sdc'
+Info (332097): The following timing edges are non-unate.  The Timing Analyzer will assume pos-unate behavior for these edges in the clock network.
+    Info (332098): Cell: altera_internal_jtag  from: tck  to: tckutap
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
+Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow 1200mV 85C Model
+Info: Can't run Report Timing Closure Recommendations. The current device family is not supported.
+Info (332146): Worst-case setup slack is 0.318
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.318               0.000 rx_clk_125 
+    Info (332119):     0.979               0.000 clk_125 
+    Info (332119):    44.237               0.000 altera_reserved_tck 
+Info (332146): Worst-case hold slack is 0.183
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.183               0.000 rx_clk_125 
+    Info (332119):     0.224               0.000 clk_125 
+    Info (332119):     0.308               0.000 altera_reserved_tck 
+Info (332146): Worst-case recovery slack is 3.079
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     3.079               0.000 clk_125 
+    Info (332119):     3.773               0.000 rx_clk_125 
+    Info (332119):    48.041               0.000 altera_reserved_tck 
+Info (332146): Worst-case removal slack is 0.863
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.863               0.000 altera_reserved_tck 
+    Info (332119):     0.880               0.000 clk_125 
+    Info (332119):     2.717               0.000 rx_clk_125 
+Info (332146): Worst-case minimum pulse width slack is 3.514
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     3.514               0.000 rx_clk_125 
+    Info (332119):     3.660               0.000 clk_125 
+    Info (332119):     9.788               0.000 clk_50_max10 
+    Info (332119):    49.575               0.000 altera_reserved_tck 
+Info (332114): Report Metastability: Found 433 synchronizer chains.
+    Info (332114): Worst-Case MTBF of Design is 1e+09 years or 3.15e+16 seconds.
+    Info (332114): Typical MTBF of Design is 1e+09 years or 3.15e+16 seconds.
+
+    Info (332114): Number of Synchronizer Chains Found: 433
+    Info (332114): Shortest Synchronizer Chain: 2 Registers
+    Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 0.497
+    Info (332114): Worst Case Available Settling Time: 6.603 ns
+    Info (332114): 
+    Info (332114): Worst-Case MTBF values are calculated based on the worst-case silicon characteristics, with worst-case operating conditions.
+    Info (332114):   - Under worst-case conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 2.4
+    Info (332114): Typical MTBF values are calculated based on the nominal silicon characteristics, at nominal operating conditions.
+    Info (332114):   - Under typical conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 3.7
+Info: Analyzing Slow 1200mV 0C Model
+Info (334003): Started post-fitting delay annotation
+Warning (334000): Timing characteristics of device 10M50DAF484C6GES are preliminary
+Info (334004): Delay annotation completed successfully
+Info (332097): The following timing edges are non-unate.  The Timing Analyzer will assume pos-unate behavior for these edges in the clock network.
+    Info (332098): Cell: altera_internal_jtag  from: tck  to: tckutap
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
+Info (332146): Worst-case setup slack is 0.397
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.397               0.000 rx_clk_125 
+    Info (332119):     1.682               0.000 clk_125 
+    Info (332119):    44.731               0.000 altera_reserved_tck 
+Info (332146): Worst-case hold slack is 0.216
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.216               0.000 rx_clk_125 
+    Info (332119):     0.224               0.000 clk_125 
+    Info (332119):     0.279               0.000 altera_reserved_tck 
+Info (332146): Worst-case recovery slack is 3.549
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     3.549               0.000 clk_125 
+    Info (332119):     4.149               0.000 rx_clk_125 
+    Info (332119):    48.220               0.000 altera_reserved_tck 
+Info (332146): Worst-case removal slack is 0.798
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.798               0.000 altera_reserved_tck 
+    Info (332119):     0.813               0.000 clk_125 
+    Info (332119):     2.487               0.000 rx_clk_125 
+Info (332146): Worst-case minimum pulse width slack is 3.529
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     3.529               0.000 rx_clk_125 
+    Info (332119):     3.676               0.000 clk_125 
+    Info (332119):     9.833               0.000 clk_50_max10 
+    Info (332119):    49.600               0.000 altera_reserved_tck 
+Info (332114): Report Metastability: Found 433 synchronizer chains.
+    Info (332114): Worst-Case MTBF of Design is 1e+09 years or 3.15e+16 seconds.
+    Info (332114): Typical MTBF of Design is 1e+09 years or 3.15e+16 seconds.
+
+    Info (332114): Number of Synchronizer Chains Found: 433
+    Info (332114): Shortest Synchronizer Chain: 2 Registers
+    Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 0.497
+    Info (332114): Worst Case Available Settling Time: 6.722 ns
+    Info (332114): 
+    Info (332114): Worst-Case MTBF values are calculated based on the worst-case silicon characteristics, with worst-case operating conditions.
+    Info (332114):   - Under worst-case conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 2.4
+    Info (332114): Typical MTBF values are calculated based on the nominal silicon characteristics, at nominal operating conditions.
+    Info (332114):   - Under typical conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 3.7
+Info: Analyzing Fast 1200mV 0C Model
+Info (332097): The following timing edges are non-unate.  The Timing Analyzer will assume pos-unate behavior for these edges in the clock network.
+    Info (332098): Cell: altera_internal_jtag  from: tck  to: tckutap
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
+Info (332146): Worst-case setup slack is 0.866
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.866               0.000 rx_clk_125 
+    Info (332119):     4.535               0.000 clk_125 
+    Info (332119):    47.434               0.000 altera_reserved_tck 
+Info (332146): Worst-case hold slack is 0.094
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.094               0.000 rx_clk_125 
+    Info (332119):     0.102               0.000 clk_125 
+    Info (332119):     0.140               0.000 altera_reserved_tck 
+Info (332146): Worst-case recovery slack is 5.434
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     5.434               0.000 clk_125 
+    Info (332119):     5.773               0.000 rx_clk_125 
+    Info (332119):    49.277               0.000 altera_reserved_tck 
+Info (332146): Worst-case removal slack is 0.400
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.400               0.000 altera_reserved_tck 
+    Info (332119):     0.408               0.000 clk_125 
+    Info (332119):     1.452               0.000 rx_clk_125 
+Info (332146): Worst-case minimum pulse width slack is 3.418
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     3.418               0.000 rx_clk_125 
+    Info (332119):     3.711               0.000 clk_125 
+    Info (332119):     9.661               0.000 clk_50_max10 
+    Info (332119):    49.419               0.000 altera_reserved_tck 
+Info (332114): Report Metastability: Found 433 synchronizer chains.
+    Info (332114): Worst-Case MTBF of Design is 1e+09 years or 3.15e+16 seconds.
+    Info (332114): Typical MTBF of Design is 1e+09 years or 3.15e+16 seconds.
+
+    Info (332114): Number of Synchronizer Chains Found: 433
+    Info (332114): Shortest Synchronizer Chain: 2 Registers
+    Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 0.497
+    Info (332114): Worst Case Available Settling Time: 7.286 ns
+    Info (332114): 
+    Info (332114): Worst-Case MTBF values are calculated based on the worst-case silicon characteristics, with worst-case operating conditions.
+    Info (332114):   - Under worst-case conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 2.4
+    Info (332114): Typical MTBF values are calculated based on the nominal silicon characteristics, at nominal operating conditions.
+    Info (332114):   - Under typical conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 3.7
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus Prime Timing Analyzer was successful. 0 errors, 44 warnings
+    Info: Peak virtual memory: 4986 megabytes
+    Info: Processing ended: Sat Feb 16 15:43:07 2019
+    Info: Elapsed time: 00:00:15
+    Info: Total CPU time (on all processors): 00:00:25
+
+

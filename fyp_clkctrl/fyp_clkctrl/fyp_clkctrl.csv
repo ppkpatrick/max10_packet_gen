@@ -1,0 +1,18 @@
+# system info fyp_clkctrl on 2019.01.16.15:47:02
+system_info:
+name,value
+DEVICE,10M50DAF484C6GES
+DEVICE_FAMILY,MAX 10
+GENERATION_ID,1547653620
+#
+#
+# Files generated for fyp_clkctrl on 2019.01.16.15:47:02
+files:
+filepath,kind,attributes,module,is_top
+simulation/fyp_clkctrl.v,VERILOG,,fyp_clkctrl,true
+simulation/submodules/fyp_clkctrl_altclkctrl_0.v,VERILOG,,fyp_clkctrl_altclkctrl_0,false
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module
+fyp_clkctrl.altclkctrl_0,fyp_clkctrl_altclkctrl_0

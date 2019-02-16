@@ -1,0 +1,2 @@
+fyp_gpio_sim/fyp_gpio.v
+fyp_gpio_sim/altera_gpio_lite/altera_gpio_lite.sv

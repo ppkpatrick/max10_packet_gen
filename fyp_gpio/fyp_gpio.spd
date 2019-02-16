@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file
+   path="fyp_gpio_sim/altera_gpio_lite/altera_gpio_lite.sv"
+   type="SYSTEM_VERILOG"
+   library="fyp_gpio" />
+ <file path="fyp_gpio_sim/fyp_gpio.v" type="VERILOG" />
+ <topLevel name="fyp_gpio" />
+ <deviceFamily name="max10" />
+</simPackage>
