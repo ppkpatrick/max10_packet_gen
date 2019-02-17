@@ -27027,7 +27027,7 @@ clk => altera_reset_synchronizer_int_chain[1].CLK
 reset_out <= altera_reset_synchronizer_int_chain_out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|fyp_max10_tse_top|fyp_generator:fyp_generator1
+|fyp_max10_tse_top|fyp_transmission:fyp_transmission1
 clk => clk.IN1
 reset => reset.IN1
 gen_start => run_flag.OUTPUTSELECT
@@ -27172,7 +27172,7 @@ eth_ast_tx_sop <= tx_sop.DB_MAX_OUTPUT_PORT_TYPE
 eth_ast_tx_valid <= tx_valid.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|fyp_max10_tse_top|fyp_generator:fyp_generator1|fyp_udp:fyp_udp1
+|fyp_max10_tse_top|fyp_transmission:fyp_transmission1|fyp_udp_ip:fyp_udp_ip1
 clk => clk.IN2
 reset => reset.IN2
 udp_src_out[0] <= udp_checksum_gen:fyp_upd_checksum1.m_udp_source_port
@@ -27584,7 +27584,7 @@ udp_data_tlast_out <= axis_adapter:axis_adapter1.m_axis_tlast
 busy <= udp_checksum_gen:fyp_upd_checksum1.busy
 
 
-|fyp_max10_tse_top|fyp_generator:fyp_generator1|fyp_udp:fyp_udp1|axis_adapter:axis_adapter1
+|fyp_max10_tse_top|fyp_transmission:fyp_transmission1|fyp_udp_ip:fyp_udp_ip1|axis_adapter:axis_adapter1
 clk => temp_m_axis_tuser_reg[0].CLK
 clk => temp_m_axis_tlast_reg.CLK
 clk => temp_m_axis_tkeep_reg[0].CLK
@@ -27840,7 +27840,7 @@ m_axis_tdest[7] <= <GND>
 m_axis_tuser[0] <= m_axis_tuser_reg[0].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|fyp_max10_tse_top|fyp_generator:fyp_generator1|fyp_udp:fyp_udp1|udp_checksum_gen:fyp_upd_checksum1
+|fyp_max10_tse_top|fyp_transmission:fyp_transmission1|fyp_udp_ip:fyp_udp_ip1|udp_checksum_gen:fyp_upd_checksum1
 clk => clk.IN1
 rst => rst.IN1
 s_udp_hdr_valid => always4.IN1
@@ -28491,7 +28491,7 @@ m_udp_payload_axis_tuser <= axis_fifo:payload_fifo.m_axis_tuser
 busy <= busy_reg.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|fyp_max10_tse_top|fyp_generator:fyp_generator1|fyp_udp:fyp_udp1|udp_checksum_gen:fyp_upd_checksum1|axis_fifo:payload_fifo
+|fyp_max10_tse_top|fyp_transmission:fyp_transmission1|fyp_udp_ip:fyp_udp_ip1|udp_checksum_gen:fyp_upd_checksum1|axis_fifo:payload_fifo
 clk => mem.we_a.CLK
 clk => mem.waddr_a[10].CLK
 clk => mem.waddr_a[9].CLK

@@ -12,7 +12,7 @@
 */
 
 
-module fyp_generator(
+module fyp_transmission(
 
 	// Module inputs 
 	
@@ -385,7 +385,7 @@ always @(posedge clk)
 			end
 	end	
 	
-fyp_udp fyp_udp1(
+fyp_udp_ip fyp_udp_ip1(
 
 	.clk(clk) ,													// input  clk_sig
 	.reset(reset) ,											// input  reset_sig

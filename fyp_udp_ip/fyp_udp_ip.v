@@ -6,7 +6,7 @@
 	Student I.D: 15181383
 	Supervisor: Richard Conway
 	
-	Current file: UDP module
+	Current file: UDP/IP module
 	
 	Description: 
 	This block provides registers for storage of UDP, IP and Ethernet fields.
@@ -16,7 +16,8 @@
 	
 */
 
-module fyp_udp(
+
+module fyp_udp_ip(
 
 	input wire clk,
 	input wire reset,
@@ -67,6 +68,31 @@ module fyp_udp(
 	
 	output wire busy
 );
+
+// Module parameters for specifying packet field values
+
+parameter UDP_SRC = 16'h1111;
+parameter UDP_DST = 16'h2222;
+parameter UDP_DATA = 8'h11;
+
+parameter IP_VER = 4'h4;
+parameter IP_IHL = 4'h5;
+parameter IP_DSCP = 6'h00;
+parameter IP_ECN = 3'h0;
+parameter IP_LEN = 8'h00;
+parameter IP_ID = 16'h0000;
+parameter IP_FLAG = 3'h2;
+parameter IP_FRAG = 13'h0000;
+parameter IP_TTL = 8'h00;
+parameter IP_PROT = 8'h11;
+parameter IP_CHECK = 16'hb912;
+parameter IP_SRC = 32'h00000000;
+parameter IP_DST = 32'hc0a80105;
+
+parameter MAC_DST = 48'h00E04C68088F;
+parameter MAC_SRC = 48'h999999999999;
+parameter MAC_TYPE = 16'h0800;
+parameter MAC_CRC = 32'h00000000;
 
 /* Define connections INTO UDP block for length and checksum calculation */
 
@@ -122,39 +148,40 @@ wire udp_data_tready_adap;
 wire udp_data_tuser_adap;
 wire udp_data_tlast_adap;
 
+
 initial
 	begin
 		// Initialise fixed fields
 			
-		udp_src_in <= 16'h1111;
-		udp_dst_in <= 16'h2222;
+		udp_src_in <= UDP_SRC;
+		udp_dst_in <= UDP_DST;
 		
 		//	UDP data field registers
 		
-		udp_tdata_in <= 8'h11;
+		udp_tdata_in <= UDP_DATA;
 		
 		//	IP Header registers (V4)
 		
-		ip_version_in <= 4'h4;
-		ip_ihl_in <= 4'h5;
-		ip_dscp_in <= 6'h00;
-		ip_ecn_in <= 3'h0;
-		ip_length_in <= 8'h00; 						//calculated in checksum block, expected = 2e
-		ip_id_in <= 16'h0000;
-		ip_flags_in <= 3'h2;
-		ip_frag_offset_in <= 13'h0000;
-		ip_ttl_in <= 8'h00;
-		ip_protocol_in <= 8'h11; 					// UDP identifier
-		ip_head_checksum_in <= 16'hb912;
-		ip_src_in <= 32'h00000000;
-		ip_dst_in <= 32'hc0a80105;
+		ip_version_in <= IP_VER;
+		ip_ihl_in <= IP_IHL;
+		ip_dscp_in <= IP_DSCP;
+		ip_ecn_in <= IP_ECN;
+		ip_length_in <= IP_LEN; 						//calculated in checksum block, expected = 2e
+		ip_id_in <= IP_ID;
+		ip_flags_in <= IP_FLAG;
+		ip_frag_offset_in <= IP_FRAG;
+		ip_ttl_in <= IP_TTL;
+		ip_protocol_in <= IP_PROT; 					// UDP identifier
+		ip_head_checksum_in <= IP_CHECK;
+		ip_src_in <= IP_SRC;
+		ip_dst_in <= IP_DST;
 		
 		// MAC Header field register
 		
-		mac_dst_in <= 48'h00E04C68088F; // USB 3.0 Adaptor MAC: 00E04C68088F; Desktop NIC: ac220bd9f6a8
-		mac_src_in <= 48'h999999999999;
-		mac_type_in <= 16'h0800;
-		mac_crc <= 32'h11221122;
+		mac_dst_in <= MAC_DST; // USB 3.0 Adaptor MAC: 00E04C68088F; Desktop NIC: ac220bd9f6a8
+		mac_src_in <= MAC_SRC;
+		mac_type_in <= MAC_TYPE;
+		mac_crc <= MAC_CRC;
 		
 		// Control registers
 		
@@ -165,7 +192,7 @@ initial
 		udp_data_tlast_in <= 1'b0;
 
 		data_counter <= 32'h00000000;
-	
+
 	end
 	
 always @ (posedge clk)
@@ -174,36 +201,36 @@ always @ (posedge clk)
 		if (reset)
 			begin
 				// Initialise fixed fields
-			
-				udp_src_in <= 16'h1111;
-				udp_dst_in <= 16'h2222;
+					
+				udp_src_in <= UDP_SRC;
+				udp_dst_in <= UDP_DST;
 				
 				//	UDP data field registers
 				
-				udp_tdata_in <= 8'h11;
+				udp_tdata_in <= UDP_DATA;
 				
 				//	IP Header registers (V4)
 				
-				ip_version_in <= 4'h4;
-				ip_ihl_in <= 4'h5;
-				ip_dscp_in <= 6'h00;
-				ip_ecn_in <= 3'h0;
-				ip_length_in <= 8'h00; //2e
-				ip_id_in <= 16'h0000;
-				ip_flags_in <= 3'h2;
-				ip_frag_offset_in <= 13'h0000;
-				ip_ttl_in <= 8'h00;
-				ip_protocol_in <= 8'h11; 				// UDP identifier
-				ip_head_checksum_in <= 16'hb912; 	// *This must be provided, will have to write my own checksum logic*
-				ip_src_in <= 32'h00000000;
-				ip_dst_in <= 32'hc0a80105;
+				ip_version_in <= IP_VER;
+				ip_ihl_in <= IP_IHL;
+				ip_dscp_in <= IP_DSCP;
+				ip_ecn_in <= IP_ECN;
+				ip_length_in <= IP_LEN; 						//calculated in checksum block, expected = 2e
+				ip_id_in <= IP_ID;
+				ip_flags_in <= IP_FLAG;
+				ip_frag_offset_in <= IP_FRAG;
+				ip_ttl_in <= IP_TTL;
+				ip_protocol_in <= IP_PROT; 					// UDP identifier
+				ip_head_checksum_in <= IP_CHECK;
+				ip_src_in <= IP_SRC;
+				ip_dst_in <= IP_DST;
 				
 				// MAC Header field register
 				
-				mac_dst_in <= 48'h00E04C68088F;
-				mac_src_in <= 48'h999999999999;
-				mac_type_in <= 16'h0800;
-				mac_crc <= 32'h11221122;
+				mac_dst_in <= MAC_DST; // USB 3.0 Adaptor MAC: 00E04C68088F; Desktop NIC: ac220bd9f6a8
+				mac_src_in <= MAC_SRC;
+				mac_type_in <= MAC_TYPE;
+				mac_crc <= MAC_CRC;
 				
 				// Control registers
 				

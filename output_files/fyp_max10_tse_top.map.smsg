@@ -1,1 +1,2 @@
-Warning (10268): Verilog HDL information at fyp_generator.v(151): always construct contains both blocking and non-blocking assignments File: C:/intelFPGA_lite/18.1/max10_packet_gen/fyp_generator/fyp_generator.v Line: 151
+Info (10281): Verilog HDL Declaration information at fyp_udp_ip.v(95): object "MAC_CRC" differs only in case from object "mac_crc" in the same scope File: C:/intelFPGA_lite/18.1/max10_packet_gen/fyp_udp_ip/fyp_udp_ip.v Line: 95
+Warning (10268): Verilog HDL information at fyp_transmission.v(151): always construct contains both blocking and non-blocking assignments File: C:/intelFPGA_lite/18.1/max10_packet_gen/fyp_transmission/fyp_transmission.v Line: 151

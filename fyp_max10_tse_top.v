@@ -195,7 +195,7 @@ fyp_max10_tse_sys fyp_max10_tse_sys1 (
 
 );
 
-fyp_generator fyp_generator1(
+fyp_transmission fyp_transmission1(
 
 	/* As convention, any control inputs will be sampled on a rising edge.
 		The user push buttons on the Max 10 dev board are active low, therefore 

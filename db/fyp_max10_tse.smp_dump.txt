@@ -1,5 +1,5 @@
 
-State Machine - |fyp_max10_tse_top|fyp_generator:fyp_generator1|fyp_udp:fyp_udp1|udp_checksum_gen:fyp_upd_checksum1|state_reg
+State Machine - |fyp_max10_tse_top|fyp_transmission:fyp_transmission1|fyp_udp_ip:fyp_udp_ip1|udp_checksum_gen:fyp_upd_checksum1|state_reg
 Name state_reg.STATE_FINISH_SUM state_reg.STATE_SUM_PAYLOAD state_reg.STATE_SUM_HEADER_3 state_reg.STATE_SUM_HEADER_2 state_reg.STATE_SUM_HEADER_1 state_reg.STATE_IDLE 
 state_reg.STATE_IDLE 0 0 0 0 0 0 
 state_reg.STATE_SUM_HEADER_1 0 0 0 0 1 1 
@@ -8,7 +8,7 @@ state_reg.STATE_SUM_HEADER_3 0 0 1 0 0 1
 state_reg.STATE_SUM_PAYLOAD 0 1 0 0 0 1 
 state_reg.STATE_FINISH_SUM 1 0 0 0 0 1 
 
-State Machine - |fyp_max10_tse_top|fyp_generator:fyp_generator1|fyp_udp:fyp_udp1|axis_adapter:axis_adapter1|state_reg
+State Machine - |fyp_max10_tse_top|fyp_transmission:fyp_transmission1|fyp_udp_ip:fyp_udp_ip1|axis_adapter:axis_adapter1|state_reg
 Name state_reg.STATE_IDLE state_reg.STATE_TRANSFER_OUT state_reg.STATE_TRANSFER_IN 
 state_reg.STATE_IDLE 0 0 0 
 state_reg.STATE_TRANSFER_IN 1 0 1 

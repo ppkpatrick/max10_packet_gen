@@ -1,11 +1,11 @@
-Fitter Status : Successful - Sat Feb 16 16:21:34 2019
+Fitter Status : Successful - Sun Feb 17 13:30:07 2019
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : fyp_max10_tse_top
 Top-level Entity Name : fyp_max10_tse_top
 Family : MAX 10
 Device : 10M50DAF484C6GES
 Timing Models : Preliminary
-Total logic elements : 8,033 / 49,760 ( 16 % )
+Total logic elements : 8,020 / 49,760 ( 16 % )
     Total combinational functions : 5,656 / 49,760 ( 11 % )
     Dedicated logic registers : 5,865 / 49,760 ( 12 % )
 Total registers : 5875
