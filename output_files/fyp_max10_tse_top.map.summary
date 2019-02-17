@@ -1,10 +1,10 @@
-Analysis & Synthesis Status : Successful - Sun Feb 17 13:28:43 2019
+Analysis & Synthesis Status : Successful - Sun Feb 17 13:42:07 2019
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : fyp_max10_tse_top
 Top-level Entity Name : fyp_max10_tse_top
 Family : MAX 10
-Total logic elements : 9,041
-    Total combinational functions : 5,641
+Total logic elements : 9,042
+    Total combinational functions : 5,642
     Dedicated logic registers : 5,875
 Total registers : 5885
 Total pins : 26

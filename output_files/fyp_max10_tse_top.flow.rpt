@@ -1,5 +1,5 @@
 Flow report for fyp_max10_tse_top
-Sun Feb 17 13:30:40 2019
+Sun Feb 17 13:43:56 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,15 +40,15 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Sun Feb 17 13:30:24 2019       ;
+; Flow Status                        ; Successful - Sun Feb 17 13:43:41 2019       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; fyp_max10_tse_top                           ;
 ; Top-level Entity Name              ; fyp_max10_tse_top                           ;
 ; Family                             ; MAX 10                                      ;
 ; Device                             ; 10M50DAF484C6GES                            ;
 ; Timing Models                      ; Preliminary                                 ;
-; Total logic elements               ; 8,020 / 49,760 ( 16 % )                     ;
-;     Total combinational functions  ; 5,656 / 49,760 ( 11 % )                     ;
+; Total logic elements               ; 7,981 / 49,760 ( 16 % )                     ;
+;     Total combinational functions  ; 5,657 / 49,760 ( 11 % )                     ;
 ;     Dedicated logic registers      ; 5,865 / 49,760 ( 12 % )                     ;
 ; Total registers                    ; 5875                                        ;
 ; Total pins                         ; 26 / 360 ( 7 % )                            ;
@@ -66,7 +66,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 02/17/2019 13:25:18 ;
+; Start date & time ; 02/17/2019 13:39:30 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; fyp_max10_tse_top   ;
 +-------------------+---------------------+
@@ -77,17 +77,12 @@ refer to the applicable agreement for further details.
 +-------------------------------------+---------------------------------------------------------------------+---------------+-------------------+------------+
 ; Assignment Name                     ; Value                                                               ; Default Value ; Entity Name       ; Section Id ;
 +-------------------------------------+---------------------------------------------------------------------+---------------+-------------------+------------+
-; COMPILER_SIGNATURE_ID               ; 189262227699368.155040991711860                                     ; --            ; --                ; --         ;
+; COMPILER_SIGNATURE_ID               ; 189262227699368.155041076903296                                     ; --            ; --                ; --         ;
 ; ENABLE_SIGNALTAP                    ; Off                                                                 ; --            ; --                ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                                                  ; --            ; --                ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                                                   ; --            ; --                ; --         ;
 ; MISC_FILE                           ; fyp_max10_tse_sys/synthesis/../fyp_max10_tse_sys.cmp                ; --            ; --                ; --         ;
 ; MISC_FILE                           ; fyp_max10_tse_sys/synthesis/../../fyp_max10_tse_sys.qsys            ; --            ; --                ; --         ;
-; MISC_FILE                           ; fyp_clkctrl/fyp_clkctrl/synthesis/../fyp_clkctrl.cmp                ; --            ; --                ; --         ;
-; MISC_FILE                           ; fyp_clkctrl/fyp_clkctrl/synthesis/../../fyp_clkctrl.qsys            ; --            ; --                ; --         ;
-; MISC_FILE                           ; fyp_gpio/fyp_gpio.cmp                                               ; --            ; --                ; --         ;
-; MISC_FILE                           ; fyp_gpio/fyp_gpio_sim/fyp_gpio.v                                    ; --            ; --                ; --         ;
-; MISC_FILE                           ; fyp_gpio/fyp_gpio_sim/altera_gpio_lite/altera_gpio_lite.sv          ; --            ; --                ; --         ;
 ; MISC_FILE                           ; fyp_eth_pll/fyp_eth_pll_inst.v                                      ; --            ; --                ; --         ;
 ; MISC_FILE                           ; fyp_eth_pll/fyp_eth_pll_bb.v                                        ; --            ; --                ; --         ;
 ; MISC_FILE                           ; fyp_eth_pll/fyp_eth_pll.ppf                                         ; --            ; --                ; --         ;
@@ -104,14 +99,8 @@ refer to the applicable agreement for further details.
 ; PROJECT_OUTPUT_DIRECTORY            ; output_files                                                        ; --            ; --                ; --         ;
 ; SLD_FILE                            ; fyp_max10_tse_sys/synthesis/fyp_max10_tse_sys.regmap                ; --            ; --                ; --         ;
 ; SLD_FILE                            ; fyp_max10_tse_sys/synthesis/fyp_max10_tse_sys.debuginfo             ; --            ; --                ; --         ;
-; SLD_FILE                            ; fyp_clkctrl/fyp_clkctrl/synthesis/fyp_clkctrl.debuginfo             ; --            ; --                ; --         ;
-; SLD_INFO                            ; QSYS_NAME fyp_clkctrl HAS_SOPCINFO 1 GENERATION_ID 1547653625       ; --            ; fyp_clkctrl       ; --         ;
 ; SLD_INFO                            ; QSYS_NAME fyp_max10_tse_sys HAS_SOPCINFO 1 GENERATION_ID 1550334604 ; --            ; fyp_max10_tse_sys ; --         ;
 ; SOPCINFO_FILE                       ; fyp_max10_tse_sys/synthesis/../../fyp_max10_tse_sys.sopcinfo        ; --            ; --                ; --         ;
-; SOPCINFO_FILE                       ; fyp_clkctrl/fyp_clkctrl/synthesis/../../fyp_clkctrl.sopcinfo        ; --            ; --                ; --         ;
-; SPD_FILE                            ; fyp_gpio/fyp_gpio.spd                                               ; --            ; --                ; --         ;
-; SYNTHESIS_ONLY_QIP                  ; On                                                                  ; --            ; --                ; --         ;
-; SYNTHESIS_ONLY_QIP                  ; On                                                                  ; --            ; --                ; --         ;
 ; SYNTHESIS_ONLY_QIP                  ; On                                                                  ; --            ; --                ; --         ;
 ; USE_SIGNALTAP_FILE                  ; output_files/stp1.stp                                               ; --            ; --                ; --         ;
 +-------------------------------------+---------------------------------------------------------------------+---------------+-------------------+------------+
@@ -122,11 +111,11 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:03:10     ; 1.0                     ; 4994 MB             ; 00:03:14                           ;
-; Fitter               ; 00:01:21     ; 1.5                     ; 6142 MB             ; 00:02:48                           ;
-; Assembler            ; 00:00:08     ; 1.0                     ; 4736 MB             ; 00:00:08                           ;
-; Timing Analyzer      ; 00:00:14     ; 2.6                     ; 4985 MB             ; 00:00:25                           ;
-; Total                ; 00:04:53     ; --                      ; --                  ; 00:06:35                           ;
+; Analysis & Synthesis ; 00:02:22     ; 1.0                     ; 5008 MB             ; 00:03:15                           ;
+; Fitter               ; 00:01:17     ; 1.6                     ; 6144 MB             ; 00:02:47                           ;
+; Assembler            ; 00:00:08     ; 1.0                     ; 4734 MB             ; 00:00:08                           ;
+; Timing Analyzer      ; 00:00:14     ; 2.6                     ; 4983 MB             ; 00:00:25                           ;
+; Total                ; 00:04:01     ; --                      ; --                  ; 00:06:35                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

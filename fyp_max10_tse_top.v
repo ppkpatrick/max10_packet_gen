@@ -20,8 +20,6 @@
 	
 */
 
-
-
 module fyp_max10_tse_top(
 		
 	// Module inputs
@@ -116,7 +114,6 @@ always @(posedge clk_125)
 	end
 
 	
-	
 fyp_eth_pll fyp_eth_pll1 (
 	.areset (~fpga_resetn),
 	.inclk0 (clk_50_max10),
@@ -125,18 +122,6 @@ fyp_eth_pll fyp_eth_pll1 (
 	.locked ()
 );
 	
-//fyp_clkctrl fyp_clkctrl1 (
-//	.inclk  (clk_125_shift),   //  altclkctrl_input.inclk
-//	.outclk (clkctrl_out)  		// altclkctrl_output.outclk
-//);
-	
-//fyp_gpio fyp_gpio1 (
-//	.outclock (clkctrl_out),
-//	.din(2'b01),
-//	.pad_out(eneta_gtx_clk)
-//);	
-	
-
 
 fyp_max10_tse_sys fyp_max10_tse_sys1 (
 	
