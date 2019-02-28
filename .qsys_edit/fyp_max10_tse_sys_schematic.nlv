@@ -20,20 +20,20 @@ preplace inst fyp_max10_tse_sys.eth_tse_0.rgmii_in4_0 -pg 1
 preplace inst fyp_max10_tse_sys.master_0.b2p -pg 1
 preplace inst fyp_max10_tse_sys.master_0.clk_src -pg 1
 preplace inst fyp_max10_tse_sys.clk_125 -pg 1 -lvl 1 -y 340
-preplace netloc FAN_OUT<net_container>fyp_max10_tse_sys</net_container>(MASTER)clk_125.clk,(SLAVE)jtag_uart_0.clk,(SLAVE)master_0.clk,(SLAVE)eth_tse_0.control_port_clock_connection) 1 1 3 430 240 810 390 NJ
 preplace netloc EXPORT<net_container>fyp_max10_tse_sys</net_container>(SLAVE)fyp_max10_tse_sys.eth_tse_0_transmit_clock_connection,(SLAVE)eth_tse_0.transmit_clock_connection) 1 0 3 NJ 200 NJ 200 NJ
-preplace netloc EXPORT<net_container>fyp_max10_tse_sys</net_container>(SLAVE)fyp_max10_tse_sys.eth_tse_0_transmit,(SLAVE)eth_tse_0.transmit) 1 0 3 NJ 180 NJ 180 NJ
 preplace netloc EXPORT<net_container>fyp_max10_tse_sys</net_container>(SLAVE)clk_125.clk_in,(SLAVE)fyp_max10_tse_sys.clk_sys_125) 1 0 1 NJ
+preplace netloc FAN_OUT<net_container>fyp_max10_tse_sys</net_container>(SLAVE)jtag_uart_0.reset,(MASTER)clk_125.clk_reset,(SLAVE)eth_tse_0.reset_connection,(SLAVE)master_0.clk_reset) 1 1 3 430 240 790 430 NJ
 preplace netloc EXPORT<net_container>fyp_max10_tse_sys</net_container>(SLAVE)fyp_max10_tse_sys.eth_tse_0_pcs_mac_tx_clock_connection,(SLAVE)eth_tse_0.pcs_mac_tx_clock_connection) 1 0 3 NJ 140 NJ 140 NJ
-preplace netloc POINT_TO_POINT<net_container>fyp_max10_tse_sys</net_container>(SLAVE)eth_tse_0.control_port,(MASTER)master_0.master) 1 2 1 730
+preplace netloc FAN_OUT<net_container>fyp_max10_tse_sys</net_container>(SLAVE)master_0.clk,(MASTER)clk_125.clk,(SLAVE)eth_tse_0.control_port_clock_connection,(SLAVE)jtag_uart_0.clk) 1 1 3 410 220 810 390 NJ
 preplace netloc EXPORT<net_container>fyp_max10_tse_sys</net_container>(SLAVE)clk_125.clk_in_reset,(SLAVE)fyp_max10_tse_sys.reset_sys_125) 1 0 1 NJ
-preplace netloc EXPORT<net_container>fyp_max10_tse_sys</net_container>(SLAVE)eth_tse_0.receive_clock_connection,(SLAVE)fyp_max10_tse_sys.eth_tse_0_receive_clock_connection) 1 0 3 NJ 160 NJ 160 NJ
-preplace netloc EXPORT<net_container>fyp_max10_tse_sys</net_container>(SLAVE)eth_tse_0.mac_misc_connection,(SLAVE)fyp_max10_tse_sys.eth_tse_0_mac_misc_connection) 1 0 3 NJ 60 NJ 60 NJ
 preplace netloc EXPORT<net_container>fyp_max10_tse_sys</net_container>(SLAVE)eth_tse_0.mac_rgmii_connection,(SLAVE)fyp_max10_tse_sys.eth_tse_0_mac_rgmii_connection) 1 0 3 NJ 80 NJ 80 NJ
+preplace netloc EXPORT<net_container>fyp_max10_tse_sys</net_container>(SLAVE)eth_tse_0.transmit,(SLAVE)fyp_max10_tse_sys.eth_tse_0_transmit) 1 0 3 NJ 180 NJ 180 NJ
+preplace netloc EXPORT<net_container>fyp_max10_tse_sys</net_container>(SLAVE)fyp_max10_tse_sys.eth_tse_0_pcs_mac_rx_clock_connection,(SLAVE)eth_tse_0.pcs_mac_rx_clock_connection) 1 0 3 NJ 120 NJ 120 NJ
+preplace netloc EXPORT<net_container>fyp_max10_tse_sys</net_container>(SLAVE)fyp_max10_tse_sys.eth_tse_0_receive_clock_connection,(SLAVE)eth_tse_0.receive_clock_connection) 1 0 3 NJ 160 NJ 160 NJ
+preplace netloc EXPORT<net_container>fyp_max10_tse_sys</net_container>(SLAVE)fyp_max10_tse_sys.eth_tse_0_mac_misc_connection,(SLAVE)eth_tse_0.mac_misc_connection) 1 0 3 NJ 60 NJ 60 NJ
 preplace netloc EXPORT<net_container>fyp_max10_tse_sys</net_container>(SLAVE)fyp_max10_tse_sys.eth_tse_0_mac_mdio_connection,(SLAVE)eth_tse_0.mac_mdio_connection) 1 0 3 NJ 40 NJ 40 NJ
+preplace netloc POINT_TO_POINT<net_container>fyp_max10_tse_sys</net_container>(MASTER)master_0.master,(SLAVE)eth_tse_0.control_port) 1 2 1 730
 preplace netloc EXPORT<net_container>fyp_max10_tse_sys</net_container>(SLAVE)fyp_max10_tse_sys.eth_tse_0_mac_status_connection,(SLAVE)eth_tse_0.mac_status_connection) 1 0 3 NJ 100 NJ 100 NJ
 preplace netloc EXPORT<net_container>fyp_max10_tse_sys</net_container>(MASTER)eth_tse_0.receive,(MASTER)fyp_max10_tse_sys.eth_tse_0_receive) 1 3 2 NJ 160 NJ
-preplace netloc EXPORT<net_container>fyp_max10_tse_sys</net_container>(SLAVE)eth_tse_0.pcs_mac_rx_clock_connection,(SLAVE)fyp_max10_tse_sys.eth_tse_0_pcs_mac_rx_clock_connection) 1 0 3 NJ 120 NJ 120 NJ
-preplace netloc FAN_OUT<net_container>fyp_max10_tse_sys</net_container>(SLAVE)jtag_uart_0.reset,(SLAVE)eth_tse_0.reset_connection,(SLAVE)master_0.clk_reset,(MASTER)clk_125.clk_reset) 1 1 3 410 220 830 430 NJ
 levelinfo -pg 1 0 200 1700
 levelinfo -hier fyp_max10_tse_sys 210 240 510 1090 1420 1560

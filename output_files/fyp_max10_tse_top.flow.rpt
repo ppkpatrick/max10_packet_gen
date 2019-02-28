@@ -1,5 +1,5 @@
 Flow report for fyp_max10_tse_top
-Sun Feb 17 14:04:06 2019
+Thu Feb 28 22:29:11 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,7 +40,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Sun Feb 17 14:03:52 2019       ;
+; Flow Status                        ; Successful - Thu Feb 28 22:28:55 2019       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; fyp_max10_tse_top                           ;
 ; Top-level Entity Name              ; fyp_max10_tse_top                           ;
@@ -66,7 +66,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 02/17/2019 13:59:54 ;
+; Start date & time ; 02/28/2019 22:24:35 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; fyp_max10_tse_top   ;
 +-------------------+---------------------+
@@ -77,7 +77,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+---------------------------------------------------------------------+---------------+-------------------+------------+
 ; Assignment Name                     ; Value                                                               ; Default Value ; Entity Name       ; Section Id ;
 +-------------------------------------+---------------------------------------------------------------------+---------------+-------------------+------------+
-; COMPILER_SIGNATURE_ID               ; 189262227699368.155041199311980                                     ; --            ; --                ; --         ;
+; COMPILER_SIGNATURE_ID               ; 273549554413296.155139267403572                                     ; --            ; --                ; --         ;
 ; ENABLE_SIGNALTAP                    ; Off                                                                 ; --            ; --                ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                                                  ; --            ; --                ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                                                   ; --            ; --                ; --         ;
@@ -99,7 +99,7 @@ refer to the applicable agreement for further details.
 ; PROJECT_OUTPUT_DIRECTORY            ; output_files                                                        ; --            ; --                ; --         ;
 ; SLD_FILE                            ; fyp_max10_tse_sys/synthesis/fyp_max10_tse_sys.regmap                ; --            ; --                ; --         ;
 ; SLD_FILE                            ; fyp_max10_tse_sys/synthesis/fyp_max10_tse_sys.debuginfo             ; --            ; --                ; --         ;
-; SLD_INFO                            ; QSYS_NAME fyp_max10_tse_sys HAS_SOPCINFO 1 GENERATION_ID 1550334604 ; --            ; fyp_max10_tse_sys ; --         ;
+; SLD_INFO                            ; QSYS_NAME fyp_max10_tse_sys HAS_SOPCINFO 1 GENERATION_ID 1551392655 ; --            ; fyp_max10_tse_sys ; --         ;
 ; SOPCINFO_FILE                       ; fyp_max10_tse_sys/synthesis/../../fyp_max10_tse_sys.sopcinfo        ; --            ; --                ; --         ;
 ; SYNTHESIS_ONLY_QIP                  ; On                                                                  ; --            ; --                ; --         ;
 ; USE_SIGNALTAP_FILE                  ; output_files/stp1.stp                                               ; --            ; --                ; --         ;
@@ -111,11 +111,11 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:02:14     ; 1.0                     ; 4988 MB             ; 00:03:29                           ;
-; Fitter               ; 00:01:14     ; 1.5                     ; 6148 MB             ; 00:02:49                           ;
-; Assembler            ; 00:00:08     ; 1.0                     ; 4735 MB             ; 00:00:07                           ;
-; Timing Analyzer      ; 00:00:13     ; 2.5                     ; 4982 MB             ; 00:00:24                           ;
-; Total                ; 00:03:49     ; --                      ; --                  ; 00:06:49                           ;
+; Analysis & Synthesis ; 00:02:21     ; 1.0                     ; 4981 MB             ; 00:03:32                           ;
+; Fitter               ; 00:01:30     ; 1.1                     ; 5563 MB             ; 00:02:02                           ;
+; Assembler            ; 00:00:07     ; 1.0                     ; 4734 MB             ; 00:00:06                           ;
+; Timing Analyzer      ; 00:00:15     ; 1.5                     ; 4907 MB             ; 00:00:20                           ;
+; Total                ; 00:04:13     ; --                      ; --                  ; 00:06:00                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -124,10 +124,10 @@ refer to the applicable agreement for further details.
 +----------------------+------------------+------------+------------+----------------+
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; DESKTOP-VHMHLP8  ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter               ; DESKTOP-VHMHLP8  ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler            ; DESKTOP-VHMHLP8  ; Windows 10 ; 10.0       ; x86_64         ;
-; Timing Analyzer      ; DESKTOP-VHMHLP8  ; Windows 10 ; 10.0       ; x86_64         ;
+; Analysis & Synthesis ; DESKTOP-S1UUQF6  ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; DESKTOP-S1UUQF6  ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler            ; DESKTOP-S1UUQF6  ; Windows 10 ; 10.0       ; x86_64         ;
+; Timing Analyzer      ; DESKTOP-S1UUQF6  ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 
