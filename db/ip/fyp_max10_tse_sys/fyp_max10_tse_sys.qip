@@ -2,7 +2,7 @@ set_global_assignment -entity "fyp_max10_tse_sys" -library "fyp_max10_tse_sys" -
 set_global_assignment -entity "fyp_max10_tse_sys" -library "fyp_max10_tse_sys" -name IP_TOOL_VERSION "18.1"
 set_global_assignment -entity "fyp_max10_tse_sys" -library "fyp_max10_tse_sys" -name IP_TOOL_ENV "Qsys"
 set_global_assignment -library "fyp_max10_tse_sys" -name SOPCINFO_FILE [file join $::quartus(qip_path) "../../../fyp_max10_tse_sys.sopcinfo"]
-set_global_assignment -entity "fyp_max10_tse_sys" -library "fyp_max10_tse_sys" -name SLD_INFO "QSYS_NAME fyp_max10_tse_sys HAS_SOPCINFO 1 GENERATION_ID 1551392705"
+set_global_assignment -entity "fyp_max10_tse_sys" -library "fyp_max10_tse_sys" -name SLD_INFO "QSYS_NAME fyp_max10_tse_sys HAS_SOPCINFO 1 GENERATION_ID 1551614071"
 set_global_assignment -library "fyp_max10_tse_sys" -name SLD_FILE [file join $::quartus(qip_path) "fyp_max10_tse_sys.regmap"]
 set_global_assignment -library "fyp_max10_tse_sys" -name SLD_FILE [file join $::quartus(qip_path) "fyp_max10_tse_sys.debuginfo"]
 set_global_assignment -entity "fyp_max10_tse_sys" -library "fyp_max10_tse_sys" -name IP_TARGETED_DEVICE_FAMILY "MAX 10"
@@ -15,7 +15,7 @@ set_global_assignment -entity "fyp_max10_tse_sys" -library "fyp_max10_tse_sys" -
 set_global_assignment -entity "fyp_max10_tse_sys" -library "fyp_max10_tse_sys" -name IP_COMPONENT_REPORT_HIERARCHY "On"
 set_global_assignment -entity "fyp_max10_tse_sys" -library "fyp_max10_tse_sys" -name IP_COMPONENT_INTERNAL "Off"
 set_global_assignment -entity "fyp_max10_tse_sys" -library "fyp_max10_tse_sys" -name IP_COMPONENT_VERSION "MS4w"
-set_global_assignment -entity "fyp_max10_tse_sys" -library "fyp_max10_tse_sys" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTU1MTM5MjcwNQ==::QXV0byBHRU5FUkFUSU9OX0lE"
+set_global_assignment -entity "fyp_max10_tse_sys" -library "fyp_max10_tse_sys" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTU1MTYxNDA3MQ==::QXV0byBHRU5FUkFUSU9OX0lE"
 set_global_assignment -entity "fyp_max10_tse_sys" -library "fyp_max10_tse_sys" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfRkFNSUxZ::TUFYIDEw::QXV0byBERVZJQ0VfRkFNSUxZ"
 set_global_assignment -entity "fyp_max10_tse_sys" -library "fyp_max10_tse_sys" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0U=::MTBNNTBEQUY0ODRDNkdFUw==::QXV0byBERVZJQ0U="
 set_global_assignment -entity "fyp_max10_tse_sys" -library "fyp_max10_tse_sys" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfU1BFRURHUkFERQ==::Ng==::QXV0byBERVZJQ0VfU1BFRURHUkFERQ=="

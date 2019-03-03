@@ -1,5 +1,5 @@
 Analysis & Synthesis report for fyp_max10_tse_top
-Thu Feb 28 22:27:10 2019
+Sun Mar 03 11:56:39 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -195,7 +195,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Feb 28 22:27:10 2019       ;
+; Analysis & Synthesis Status        ; Successful - Sun Mar 03 11:56:39 2019       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; fyp_max10_tse_top                           ;
 ; Top-level Entity Name              ; fyp_max10_tse_top                           ;
@@ -306,15 +306,21 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 4           ;
-; Maximum allowed            ; 2           ;
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 8           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 2           ;
+; Maximum used               ; 8           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
 ;     Processor 2            ;   0.1%      ;
+;     Processor 3            ;   0.0%      ;
+;     Processor 4            ;   0.0%      ;
+;     Processor 5            ;   0.0%      ;
+;     Processor 6            ;   0.0%      ;
+;     Processor 7            ;   0.0%      ;
+;     Processor 8            ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -6654,7 +6660,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:27     ;
+; Top            ; 00:00:26     ;
 ; pzdyqx:nabboc  ; 00:00:01     ;
 +----------------+--------------+
 
@@ -6665,7 +6671,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Thu Feb 28 22:24:32 2019
+    Info: Processing started: Sun Mar 03 11:54:04 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off fyp_max10_tse -c fyp_max10_tse_top
 Warning (125092): Tcl Script File fyp_clkctrl/fyp_clkctrl/synthesis/fyp_clkctrl.qip not found
     Info (125063): set_global_assignment -name QIP_FILE fyp_clkctrl/fyp_clkctrl/synthesis/fyp_clkctrl.qip
@@ -6673,22 +6679,22 @@ Warning (125092): Tcl Script File fyp_gpio/fyp_gpio.qip not found
     Info (125063): set_global_assignment -name QIP_FILE fyp_gpio/fyp_gpio.qip
 Warning (125092): Tcl Script File fyp_gpio/fyp_gpio.sip not found
     Info (125063): set_global_assignment -name SIP_FILE fyp_gpio/fyp_gpio.sip
-Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
 Info (12248): Elaborating Platform Designer system entity "fyp_max10_tse_sys.qsys"
-Info (12250): 2019.02.28.22:24:58 Progress: Loading max10_packet_gen/fyp_max10_tse_sys.qsys
-Info (12250): 2019.02.28.22:24:58 Progress: Reading input file
-Info (12250): 2019.02.28.22:24:59 Progress: Adding clk_125 [clock_source 18.1]
-Info (12250): 2019.02.28.22:25:00 Progress: Parameterizing module clk_125
-Info (12250): 2019.02.28.22:25:00 Progress: Adding eth_tse_0 [altera_eth_tse 18.1]
-Info (12250): 2019.02.28.22:25:00 Progress: Parameterizing module eth_tse_0
-Info (12250): 2019.02.28.22:25:00 Progress: Adding jtag_uart_0 [altera_avalon_jtag_uart 18.1]
-Info (12250): 2019.02.28.22:25:00 Progress: Parameterizing module jtag_uart_0
-Info (12250): 2019.02.28.22:25:00 Progress: Adding master_0 [altera_jtag_avalon_master 18.1]
-Info (12250): 2019.02.28.22:25:00 Progress: Parameterizing module master_0
-Info (12250): 2019.02.28.22:25:00 Progress: Building connections
-Info (12250): 2019.02.28.22:25:00 Progress: Parameterizing connections
-Info (12250): 2019.02.28.22:25:00 Progress: Validating
-Info (12250): 2019.02.28.22:25:03 Progress: Done reading input file
+Info (12250): 2019.03.03.11:54:25 Progress: Loading max10_packet_gen/fyp_max10_tse_sys.qsys
+Info (12250): 2019.03.03.11:54:26 Progress: Reading input file
+Info (12250): 2019.03.03.11:54:26 Progress: Adding clk_125 [clock_source 18.1]
+Info (12250): 2019.03.03.11:54:27 Progress: Parameterizing module clk_125
+Info (12250): 2019.03.03.11:54:27 Progress: Adding eth_tse_0 [altera_eth_tse 18.1]
+Info (12250): 2019.03.03.11:54:27 Progress: Parameterizing module eth_tse_0
+Info (12250): 2019.03.03.11:54:27 Progress: Adding jtag_uart_0 [altera_avalon_jtag_uart 18.1]
+Info (12250): 2019.03.03.11:54:27 Progress: Parameterizing module jtag_uart_0
+Info (12250): 2019.03.03.11:54:27 Progress: Adding master_0 [altera_jtag_avalon_master 18.1]
+Info (12250): 2019.03.03.11:54:27 Progress: Parameterizing module master_0
+Info (12250): 2019.03.03.11:54:27 Progress: Building connections
+Info (12250): 2019.03.03.11:54:27 Progress: Parameterizing connections
+Info (12250): 2019.03.03.11:54:27 Progress: Validating
+Info (12250): 2019.03.03.11:54:30 Progress: Done reading input file
 Info (12250): Fyp_max10_tse_sys.jtag_uart_0: JTAG UART IP input clock need to be at least double (2x) the operating frequency of JTAG TCK on board
 Warning (12251): Fyp_max10_tse_sys.jtag_uart_0: Interrupt sender jtag_uart_0.irq is not connected to an interrupt receiver
 Warning (12251): Fyp_max10_tse_sys.jtag_uart_0: jtag_uart_0.avalon_jtag_slave must be connected to an Avalon-MM master
@@ -6698,7 +6704,7 @@ Info (12250): Interconnect is inserted between master master_0.master and slave 
 Info (12250): Interconnect is inserted between master master_0.master and slave eth_tse_0.control_port because the master has byteenable signal 4 bit wide, but the slave is 0 bit wide.
 Info (12250): Eth_tse_0: "fyp_max10_tse_sys" instantiated altera_eth_tse "eth_tse_0"
 Info (12250): Jtag_uart_0: Starting RTL generation for module 'fyp_max10_tse_sys_jtag_uart_0'
-Info (12250): Jtag_uart_0:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=fyp_max10_tse_sys_jtag_uart_0 --dir=C:/Users/PATRIC~1/AppData/Local/Temp/alt7955_3949384292323745204.dir/0002_jtag_uart_0_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/PATRIC~1/AppData/Local/Temp/alt7955_3949384292323745204.dir/0002_jtag_uart_0_gen//fyp_max10_tse_sys_jtag_uart_0_component_configuration.pl  --do_build_sim=0  ]
+Info (12250): Jtag_uart_0:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=fyp_max10_tse_sys_jtag_uart_0 --dir=C:/Users/Patrick/AppData/Local/Temp/alt7958_2589004415890060232.dir/0002_jtag_uart_0_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/Patrick/AppData/Local/Temp/alt7958_2589004415890060232.dir/0002_jtag_uart_0_gen//fyp_max10_tse_sys_jtag_uart_0_component_configuration.pl  --do_build_sim=0  ]
 Info (12250): Jtag_uart_0: Done RTL generation for module 'fyp_max10_tse_sys_jtag_uart_0'
 Info (12250): Jtag_uart_0: "fyp_max10_tse_sys" instantiated altera_avalon_jtag_uart "jtag_uart_0"
 Info (12250): Master_0: "fyp_max10_tse_sys" instantiated altera_jtag_avalon_master "master_0"
@@ -6719,6 +6725,10 @@ Info (12250): Master_0_master_translator: "mm_interconnect_0" instantiated alter
 Info (12250): Eth_tse_0_control_port_translator: "mm_interconnect_0" instantiated altera_merlin_slave_translator "eth_tse_0_control_port_translator"
 Info (12250): Fyp_max10_tse_sys: Done "fyp_max10_tse_sys" with 18 modules, 144 files
 Info (12249): Finished elaborating Platform Designer system entity "fyp_max10_tse_sys.qsys"
+Info (12021): Found 1 design units, including 1 entities, in source file fyp_udp_ip/fyp_udp_ip_testbench.v
+    Info (12023): Found entity 1: fyp_udp_ip_testbench File: C:/intelFPGA_lite/18.1/max10_packet_gen/fyp_udp_ip/fyp_udp_ip_testbench.v Line: 16
+Info (12021): Found 1 design units, including 1 entities, in source file fyp_transmission/fyp_transmission_testbench.v
+    Info (12023): Found entity 1: fyp_generator_testbench File: C:/intelFPGA_lite/18.1/max10_packet_gen/fyp_transmission/fyp_transmission_testbench.v Line: 19
 Info (12021): Found 1 design units, including 1 entities, in source file fyp_udp_ip/submodules/udp_checksum_gen.v
     Info (12023): Found entity 1: udp_checksum_gen File: C:/intelFPGA_lite/18.1/max10_packet_gen/fyp_udp_ip/submodules/udp_checksum_gen.v Line: 32
 Info (12021): Found 1 design units, including 1 entities, in source file fyp_udp_ip/submodules/axis_fifo.v
@@ -7661,7 +7671,7 @@ Info (12128): Elaborating entity "axis_fifo" for hierarchy "fyp_transmission:fyp
 Warning (10230): Verilog HDL assignment warning at axis_fifo.v(194): truncated value with size 32 to match size of target (12) File: C:/intelFPGA_lite/18.1/max10_packet_gen/fyp_udp_ip/submodules/axis_fifo.v Line: 194
 Warning (10230): Verilog HDL assignment warning at axis_fifo.v(268): truncated value with size 32 to match size of target (12) File: C:/intelFPGA_lite/18.1/max10_packet_gen/fyp_udp_ip/submodules/axis_fifo.v Line: 268
 Info (11170): Starting IP generation for the debug fabric: alt_sld_fab.
-Info (11172): 2019.02.28.22:26:07 Progress: Loading slddfb2f916/alt_sld_fab_wrapper_hw.tcl
+Info (11172): 2019.03.03.11:55:38 Progress: Loading slddfb2f916/alt_sld_fab_wrapper_hw.tcl
 Info (11172): Alt_sld_fab.alt_sld_fab: SLD fabric agents which did not specify prefer_host were connected to JTAG
 Info (11172): Alt_sld_fab: Generating alt_sld_fab "alt_sld_fab" for QUARTUS_SYNTH
 Info (11172): Alt_sld_fab: "alt_sld_fab" instantiated alt_sld_fab "alt_sld_fab"
@@ -7887,10 +7897,10 @@ Info (21057): Implemented 9422 device resources after synthesis - the final reso
     Info (21064): Implemented 219 RAM segments
     Info (21065): Implemented 1 PLLs
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 122 warnings
-    Info: Peak virtual memory: 4981 megabytes
-    Info: Processing ended: Thu Feb 28 22:27:10 2019
-    Info: Elapsed time: 00:02:38
-    Info: Total CPU time (on all processors): 00:03:49
+    Info: Peak virtual memory: 4987 megabytes
+    Info: Processing ended: Sun Mar 03 11:56:39 2019
+    Info: Elapsed time: 00:02:35
+    Info: Total CPU time (on all processors): 00:03:19
 
 
 +------------------------------------------+

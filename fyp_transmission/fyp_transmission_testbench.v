@@ -16,10 +16,11 @@
 
 `timescale 1ns/1ns
 
-module fyp_generator_testbench;
+module fyp_transmission_testbench;
 
 reg clk;
 reg gen_start;
+reg gen_stop;
 reg tx_rdy;
 
 
@@ -28,7 +29,8 @@ reg tx_rdy;
 fyp_transmission fyp_transmission1(
 
 	.clk(clk),
-	.gen_start(gen_start),      
+	.gen_start(gen_start),
+	.gen_stop(gen_stop),
 	.eth_ast_tx_data(),
 	.eth_ast_tx_eop(),
 	.eth_ast_tx_err(),
@@ -53,6 +55,7 @@ initial
 		// Initialize register values and allow settle time.
 		clk <= 1'b0;
 		gen_start <= 1'b0;
+		gen_stop <= 1'b0;
 		tx_rdy <= 1'b0;
 		#10;
 		tx_rdy <= 1'b1;

@@ -1,5 +1,5 @@
 Timing Analyzer report for fyp_max10_tse_top
-Thu Feb 28 22:29:12 2019
+Sun Mar 03 11:58:24 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -91,15 +91,18 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 4           ;
-; Maximum allowed            ; 2           ;
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 8           ;
 ;                            ;             ;
-; Average used               ; 1.48        ;
-; Maximum used               ; 2           ;
+; Average used               ; 2.58        ;
+; Maximum used               ; 8           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;  47.9%      ;
+;     Processor 2            ;  27.9%      ;
+;     Processor 3            ;  23.3%      ;
+;     Processor 4            ;  21.6%      ;
+;     Processors 5-8         ;  21.2%      ;
 +----------------------------+-------------+
 
 
@@ -108,13 +111,13 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------------------------------------+--------+--------------------------+
 ; SDC File Path                                                                                                  ; Status ; Read at                  ;
 +----------------------------------------------------------------------------------------------------------------+--------+--------------------------+
-; fyp_max10_tse_sys/synthesis/submodules/altera_reset_controller.sdc                                             ; OK     ; Thu Feb 28 22:29:01 2019 ;
-; fyp_max10_tse_sys/synthesis/submodules/altera_avalon_st_jtag_interface.sdc                                     ; OK     ; Thu Feb 28 22:29:01 2019 ;
-; fyp_max10_tse_sys/synthesis/submodules/altera_eth_tse_mac.sdc                                                  ; OK     ; Thu Feb 28 22:29:02 2019 ;
-; fyp_tse.sdc                                                                                                    ; OK     ; Thu Feb 28 22:29:02 2019 ;
-; c:/intelfpga_lite/18.1/max10_packet_gen/db/ip/fyp_max10_tse_sys/submodules/altera_avalon_st_jtag_interface.sdc ; OK     ; Thu Feb 28 22:29:02 2019 ;
-; c:/intelfpga_lite/18.1/max10_packet_gen/db/ip/fyp_max10_tse_sys/submodules/altera_eth_tse_mac.sdc              ; OK     ; Thu Feb 28 22:29:02 2019 ;
-; c:/intelfpga_lite/18.1/max10_packet_gen/db/ip/fyp_max10_tse_sys/submodules/altera_reset_controller.sdc         ; OK     ; Thu Feb 28 22:29:02 2019 ;
+; fyp_max10_tse_sys/synthesis/submodules/altera_reset_controller.sdc                                             ; OK     ; Sun Mar 03 11:58:17 2019 ;
+; fyp_max10_tse_sys/synthesis/submodules/altera_avalon_st_jtag_interface.sdc                                     ; OK     ; Sun Mar 03 11:58:17 2019 ;
+; fyp_max10_tse_sys/synthesis/submodules/altera_eth_tse_mac.sdc                                                  ; OK     ; Sun Mar 03 11:58:18 2019 ;
+; fyp_tse.sdc                                                                                                    ; OK     ; Sun Mar 03 11:58:18 2019 ;
+; c:/intelfpga_lite/18.1/max10_packet_gen/db/ip/fyp_max10_tse_sys/submodules/altera_avalon_st_jtag_interface.sdc ; OK     ; Sun Mar 03 11:58:18 2019 ;
+; c:/intelfpga_lite/18.1/max10_packet_gen/db/ip/fyp_max10_tse_sys/submodules/altera_eth_tse_mac.sdc              ; OK     ; Sun Mar 03 11:58:18 2019 ;
+; c:/intelfpga_lite/18.1/max10_packet_gen/db/ip/fyp_max10_tse_sys/submodules/altera_reset_controller.sdc         ; OK     ; Sun Mar 03 11:58:18 2019 ;
 +----------------------------------------------------------------------------------------------------------------+--------+--------------------------+
 
 
@@ -694,10 +697,10 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Thu Feb 28 22:28:56 2019
+    Info: Processing started: Sun Mar 03 11:58:11 2019
 Info: Command: quartus_sta fyp_max10_tse -c fyp_max10_tse_top
 Info: qsta_default_script.tcl version: #1
-Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
 Info (332164): Evaluating HDL-embedded SDC commands
@@ -970,9 +973,9 @@ Info (332114): Report Metastability: Found 433 synchronizer chains.
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime Timing Analyzer was successful. 0 errors, 41 warnings
-    Info: Peak virtual memory: 4907 megabytes
-    Info: Processing ended: Thu Feb 28 22:29:12 2019
-    Info: Elapsed time: 00:00:16
-    Info: Total CPU time (on all processors): 00:00:20
+    Info: Peak virtual memory: 4983 megabytes
+    Info: Processing ended: Sun Mar 03 11:58:24 2019
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:24
 
 
