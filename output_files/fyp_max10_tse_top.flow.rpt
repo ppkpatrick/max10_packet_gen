@@ -1,5 +1,5 @@
 Flow report for fyp_max10_tse_top
-Sun Mar 03 11:58:24 2019
+Wed Mar 06 10:52:32 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,7 +40,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Sun Mar 03 11:58:10 2019       ;
+; Flow Status                        ; Successful - Wed Mar 06 10:52:16 2019       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; fyp_max10_tse_top                           ;
 ; Top-level Entity Name              ; fyp_max10_tse_top                           ;
@@ -66,7 +66,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 03/03/2019 11:54:07 ;
+; Start date & time ; 03/06/2019 10:48:09 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; fyp_max10_tse_top   ;
 +-------------------+---------------------+
@@ -77,7 +77,7 @@ refer to the applicable agreement for further details.
 +--------------------------------------+---------------------------------------------------------------------+---------------+-------------------+----------------+
 ; Assignment Name                      ; Value                                                               ; Default Value ; Entity Name       ; Section Id     ;
 +--------------------------------------+---------------------------------------------------------------------+---------------+-------------------+----------------+
-; COMPILER_SIGNATURE_ID                ; 189262227699368.155161404711360                                     ; --            ; --                ; --             ;
+; COMPILER_SIGNATURE_ID                ; 273549554413296.155186928902164                                     ; --            ; --                ; --             ;
 ; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; fyp_transmission_testbench                                          ; --            ; --                ; eda_simulation ;
 ; EDA_OUTPUT_DATA_FORMAT               ; None                                                                ; --            ; --                ; eda_simulation ;
 ; EDA_TEST_BENCH_ENABLE_STATUS         ; NOT_USED                                                            ; --            ; --                ; eda_simulation ;
@@ -115,11 +115,11 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:02:18     ; 1.0                     ; 4987 MB             ; 00:03:02                           ;
-; Fitter               ; 00:01:15     ; 1.5                     ; 6141 MB             ; 00:02:47                           ;
-; Assembler            ; 00:00:08     ; 1.0                     ; 4734 MB             ; 00:00:07                           ;
-; Timing Analyzer      ; 00:00:13     ; 2.6                     ; 4983 MB             ; 00:00:24                           ;
-; Total                ; 00:03:54     ; --                      ; --                  ; 00:06:20                           ;
+; Analysis & Synthesis ; 00:02:18     ; 1.0                     ; 4989 MB             ; 00:03:21                           ;
+; Fitter               ; 00:01:23     ; 1.2                     ; 5572 MB             ; 00:01:54                           ;
+; Assembler            ; 00:00:07     ; 1.0                     ; 4736 MB             ; 00:00:06                           ;
+; Timing Analyzer      ; 00:00:15     ; 1.5                     ; 4907 MB             ; 00:00:20                           ;
+; Total                ; 00:04:03     ; --                      ; --                  ; 00:05:41                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -128,10 +128,10 @@ refer to the applicable agreement for further details.
 +----------------------+------------------+------------+------------+----------------+
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; DESKTOP-VHMHLP8  ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter               ; DESKTOP-VHMHLP8  ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler            ; DESKTOP-VHMHLP8  ; Windows 10 ; 10.0       ; x86_64         ;
-; Timing Analyzer      ; DESKTOP-VHMHLP8  ; Windows 10 ; 10.0       ; x86_64         ;
+; Analysis & Synthesis ; DESKTOP-S1UUQF6  ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; DESKTOP-S1UUQF6  ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler            ; DESKTOP-S1UUQF6  ; Windows 10 ; 10.0       ; x86_64         ;
+; Timing Analyzer      ; DESKTOP-S1UUQF6  ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 

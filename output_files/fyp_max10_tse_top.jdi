@@ -145,7 +145,7 @@
     <sld_info hpath="fyp_max10_tse_sys:fyp_max10_tse_sys1" name="fyp_max10_tse_sys1">
       <assignment_values>
         <assignment_value text="QSYS_NAME fyp_max10_tse_sys HAS_SOPCINFO 1 GENERATION_ID 1551392655"/>
-        <assignment_value text="QSYS_NAME fyp_max10_tse_sys HAS_SOPCINFO 1 GENERATION_ID 1551614071"/>
+        <assignment_value text="QSYS_NAME fyp_max10_tse_sys HAS_SOPCINFO 1 GENERATION_ID 1551869318"/>
       </assignment_values>
       <parameters/>
     </sld_info>
