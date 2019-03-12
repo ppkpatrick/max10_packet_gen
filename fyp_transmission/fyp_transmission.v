@@ -5,9 +5,12 @@
 	FPGA-implemented Ethernet packet generator 
 
 	Student I.D: 15181383
-	Supervisor: Richard Conway
+	Supervisor: Dr. Richard Conway
 	
 	Current file: Packet transmitter module
+	
+	Description: This module contains the logic for the transmission of generated packet data 
+	into the MAC block.
 	
 */
 

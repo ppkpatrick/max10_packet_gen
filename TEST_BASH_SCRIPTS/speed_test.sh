@@ -1,5 +1,16 @@
 #!/bin/bash
  
+	#FPGA-implemented Network Packet Generator
+	#Student: Patrick Corley
+	
+	#Student ID: 15181383
+	#Supervisor: Dr. Richard Conway
+	
+	#Current file: Speed Measurement Bash script
+	
+	#Description: This script is run on a Linux OS to determine the throughput of 
+	#data on a specified Ethernet port.
+	
 INTERVAL="1"  # update interval in seconds
  
 IF="enp2s0"

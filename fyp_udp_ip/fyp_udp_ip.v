@@ -4,7 +4,7 @@
 	FPGA-implemented Ethernet packet generator 
 
 	Student I.D: 15181383
-	Supervisor: Richard Conway
+	Supervisor: Dr. Richard Conway
 	
 	Current file: UDP/IP module
 	
@@ -85,9 +85,9 @@ parameter IP_FLAG = 3'h2;
 parameter IP_FRAG = 13'h0000;
 parameter IP_TTL = 8'h00;
 parameter IP_PROT = 8'h11;
-parameter IP_CHECK = 16'hb912;
+parameter IP_CHECK = 16'hb9c6; //orig= b912
 parameter IP_SRC = 32'h00000000;
-parameter IP_DST = 32'hc0a80105;
+parameter IP_DST = 32'hc0a80051;
 
 parameter MAC_DST = 48'h00E04C68088F;
 parameter MAC_SRC = 48'h999999999999;

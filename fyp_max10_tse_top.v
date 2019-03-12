@@ -4,19 +4,13 @@
 	FPGA-implemented Ethernet packet generator 
 
 	Student I.D: 15181383
-	Supervisor: Richard Conway
+	Supervisor: Dr. Richard Conway
 	
 	Current file: Top level module
 	
-	TODO: 
-	
-	1. Build state-machine or otherwise to generate traffic (instantiated module)
-		- Start with simpled fixed-packet generator with static CRC appended to ethernet frame.
-		- Build random payload generator logic.
-		- Build or instantiate ethernet CRC generator logic.
-	2. [Done] Clean-up resets and clocks.
-	3. Implement NIOS2 soft processor to initialize hardware on power-up and set config registers
-	4. Add support for 10Mb/100Mb operation if time permits (optional)
+	Description: This module defines the interconnects of the submodules that 
+	make up the design as a whole. This module also contains logic to drive status
+	LEDs on the FPGA development board.
 	
 */
 

@@ -1,8 +1,11 @@
 /* 
 	FPGA-implemented Network Packet Generator
 	Student: Patrick Corley
+	
 	Student ID: 15181383
-	Supervisor: Richard Conway
+	Supervisor: Dr. Richard Conway
+	
+	Current file: UDP/IP Testbench
 	
 	Description: 
 	Testbench for simulation and testing of fyp_udp_ip verilog block.
